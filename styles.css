@@ -60,7 +60,7 @@ body::before {
   height: 420px;
   max-width: 40vw;
   max-height: 40vw;
-  background-image: url("imagenes/Systek_LogoTransparente.png?v=20260726");
+  background-image: url("imagenes/Systek_LogoTransparente.webp?v=20260726");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -1009,7 +1009,7 @@ textarea,
   height: 60px;
   border-radius: 999px;
   background-color: #22c55e;
-  background-image: url("imagenes/WhatsApp.png");
+  background-image: url("imagenes/whatsapp.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 36px 36px;
@@ -1109,4 +1109,113 @@ textarea,
   .btn-small {
     display: none;
   }
+}
+
+/* FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 760px;
+}
+
+.faq-item {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  margin: 0.75rem 0 0.2rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.case-img {
+  aspect-ratio: 1200 / 546;
+  object-fit: cover;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.case-video {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.case-logo {
+  aspect-ratio: 1 / 1;
+}
+
+/* 404 */
+.page-404 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left, #1d283a 0, #020617 45%, #000 100%);
+}
+
+.error-404 {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 520px;
+}
+
+.error-404-logo {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.error-404-code {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(110deg, #22d3ee, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.error-404 h1 {
+  margin: 0.4rem 0 0.8rem;
+  font-size: 1.7rem;
+}
+
+.error-404 p {
+  color: var(--text-soft);
+  margin: 0 0 1.4rem;
+  line-height: 1.5;
+}
+
+.error-404-alt {
+  margin-top: 1.2rem !important;
+  font-size: 0.95rem;
+}
+
+.error-404-alt a {
+  color: #93c5fd;
 }

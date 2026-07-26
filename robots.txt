@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /google1a5f0b84c7a0b732.html
+Disallow: /gbp-texto-sugerido.txt
+
+Sitemap: https://www.systek.uy/sitemap.xml

@@ -2,129 +2,232 @@
 <html lang="es-UY">
 <head>
   <meta charset="UTF-8" />
-  <title>Systek | Desarrollo Web, E-commerce y Automatización con IA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0f172a">
-  <meta name="description" content="Creamos e-commerces profesionales, chatbots con IA e integraciones a medida para hacer crecer tu negocio digital." />
-  <meta name="keywords" content="desarrollo web, ecommerce, chatbot IA, automatización negocios, páginas web para empresas, desarrollo web Uruguay">
-  <meta name="author" content="Systek">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Systek - Desarrollo Web y Automatización con IA">
-  <meta property="og:description" content="Creamos e-commerces, chatbots con IA e integraciones para hacer crecer tu negocio digital.">
-  <meta property="og:image" content="https://systekuy.github.io/imagenes/Systek_LogoTransparente.png">
-  <meta property="og:url" content="https://systekuy.github.io">
-  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desarrollo web a medida Uruguay | Systek</title>
+  <meta name="description" content="Armo e-commerce y landing pages a medida en Uruguay, con código real (sin Shopify). Rápido, cercano y pensado para vender." />
+  <meta name="author" content="Systek" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://www.systek.uy/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Desarrollo web a medida Uruguay | Systek" />
+  <meta property="og:description" content="E-commerce y landing pages a medida, con código real. Base en Montevideo, también trabajo con Argentina." />
+  <meta property="og:image" content="https://www.systek.uy/imagenes/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://www.systek.uy/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_UY" />
+  <meta property="og:site_name" content="Systek" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Desarrollo web a medida Uruguay | Systek" />
+  <meta name="twitter:description" content="E-commerce y landing pages a medida, con código real. Base en Montevideo." />
+  <meta name="twitter:image" content="https://www.systek.uy/imagenes/og-image.jpg" />
+
+  <!-- Icons / PWA-ish -->
+  <link rel="icon" href="imagenes/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="imagenes/favicon-48.png" />
+  <link rel="apple-touch-icon" href="imagenes/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Performance -->
+  <link rel="preload" href="font/Source_Serif_4/SourceSerif4-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="styles.css?v=20260726seo" as="style" />
+  <link rel="stylesheet" href="styles.css?v=20260726seo" />
+
+  <!-- JSON-LD: ProfessionalService + Services + FAQ -->
   <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Organization",
- "name": "Systek",
- "url": "https://systekuy.github.io",
- "logo": "https://systekuy.github.io/imagenes/Systek_LogoTransparente.png",
- "description": "Desarrollo web, e-commerce y automatización con IA para empresas.",
- "address": {
-   "@type": "PostalAddress",
-   "addressLocality": "Montevideo",
-   "addressCountry": "UY"
- },
- "sameAs": [
-   "https://www.instagram.com/",
-   "https://www.linkedin.com/"
- ]
-}
-</script>
-  <link rel="canonical" href="https://systekuy.github.io/">
-  <link rel="stylesheet" href="styles.css?v=20260726c" />
-  <link rel="icon" href="imagenes/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="imagenes/favicon-48.png">
-  <link rel="apple-touch-icon" href="imagenes/apple-touch-icon.png">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.systek.uy/#business",
+        "name": "Systek",
+        "description": "Desarrollo de e-commerce y landing pages a medida, con código real, sin plataformas como Shopify. Base en Montevideo, Uruguay.",
+        "url": "https://www.systek.uy/",
+        "image": "https://www.systek.uy/imagenes/Systek_LogoTransparente.webp",
+        "logo": "https://www.systek.uy/imagenes/Systek_LogoTransparente.webp",
+        "email": "systekuy@gmail.com",
+        "telephone": "+59897990860",
+        "priceRange": "$$",
+        "areaServed": [
+          { "@type": "Country", "name": "Uruguay" },
+          { "@type": "Country", "name": "Argentina" },
+          { "@type": "City", "name": "Montevideo" }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Montevideo",
+          "addressCountry": "UY"
+        },
+        "sameAs": [
+          "https://www.instagram.com/systek.uy/"
+        ],
+        "knowsAbout": [
+          "desarrollo web a medida",
+          "e-commerce a medida",
+          "landing pages profesionales",
+          "páginas web para negocios Uruguay"
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "E-commerce a medida",
+        "serviceType": "E-commerce a medida",
+        "description": "Tiendas online con código propio: catálogo, carrito, pagos (Mercado Pago / Stripe), envíos y SEO. Sin Shopify.",
+        "provider": { "@id": "https://www.systek.uy/#business" },
+        "areaServed": ["Uruguay", "Argentina"]
+      },
+      {
+        "@type": "Service",
+        "name": "Landing pages profesionales",
+        "serviceType": "Landing page",
+        "description": "Landing pages rápidas y claras para captar consultas y ventas, con SEO técnico y diseño a medida.",
+        "provider": { "@id": "https://www.systek.uy/#business" },
+        "areaServed": ["Uruguay", "Argentina"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Por qué no uso Shopify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Porque quiero que tu tienda sea tuya de verdad: código a medida, sin mensualidades de plataforma ni plantillas limitadas. Vos decidís cómo funciona cada detalle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tarda un e-commerce a medida?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depende del alcance, pero un e-commerce bien armado suele estar en semanas, no meses eternos. Arrancamos con un diagnóstico corto y te digo tiempos reales."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Trabajás solo en Montevideo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Estoy basado en Montevideo, Uruguay, y trabajo remoto con clientes de todo el país y de Argentina. Coordinamos por WhatsApp."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué incluye una landing page profesional?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Diseño a medida, copy claro, formulario o WhatsApp, carga rápida y base SEO para que Google te encuentre. Pensada para convertir visitas en consultas."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics 4: reemplazá G-XXXXXXXXXX por tu Measurement ID -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
 </head>
 <body id="top">
   <header class="nav">
     <div class="container nav-content">
       <a href="#top" class="logo">
         <img
-          src="imagenes/logo_blanco_transparente.png?v=20260726"
-          alt="Systek"
+          src="imagenes/logo_blanco_transparente.webp"
+          alt="Logo Systek — desarrollo web a medida Uruguay"
           class="logo-img"
           width="42"
           height="42"
+          fetchpriority="high"
         />
         <span class="logo-text">Systek</span>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Principal">
         <a href="#servicios">Servicios</a>
         <a href="#casos">Resultados</a>
-        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#proceso">Cómo trabajo</a>
+        <a href="#faq">FAQ</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a href="#contacto" class="btn btn-small btn-outline">Agenda tu cita</a>
+      <a href="#contacto" class="btn btn-small btn-outline">Escribime</a>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true">
         <div class="hero-mesh"></div>
         <div class="hero-grid"></div>
       </div>
       <div class="container hero-grid-content">
         <div class="hero-copy">
-          <h1>
-            <span class="gradient-text">Creamos páginas web para negocios de Montevideo que quieren vender más.</span>
+          <h1 id="hero-title">
+            <span class="gradient-text">Desarrollo web a medida en Uruguay: e-commerce y landing pages que venden.</span>
           </h1>
           <p class="hero-subtitle">
-            Diseñamos tu presencia online con enfoque en resultados. No solo construimos páginas: implementamos formularios inteligentes y automatizaciones para que no pierdas consultas y generes oportunidades reales.            
+            Soy Systek. Armo páginas web y tiendas online con código real — no plantillas de Shopify.
+            Trabajo desde Montevideo con negocios de Uruguay y Argentina: rápido, cercano y con calidad de nivel top.
           </p>
           <div class="hero-actions">
-            <a href="https://wa.me/59897990860" class="btn" target="_blank" rel="noopener noreferrer">Agendar reunión gratuita</a>
+            <a href="https://wa.me/59897990860" class="btn" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
             <button class="btn btn-secondary" type="button" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">
-              Ver cómo trabajamos
+              Ver servicios
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="section reveal">
+    <section id="servicios" class="section reveal" aria-labelledby="servicios-title">
       <div class="container">
         <div class="section-header reveal">
-          <h2>Porque elegir Systek? Nuestros Servicios</h2>    
+          <h2 id="servicios-title">E-commerce a medida y landing pages profesionales</h2>
+          <p>Dos cosas que hago muy bien: tiendas online propias y landings que convierten. Sin plataformas de terceros que te limiten.</p>
         </div>
 
         <div class="cards-grid">
           <article class="card reveal">
-            <h3>E‑commerce profesionales</h3>
+            <h3>E-commerce a medida (sin Shopify)</h3>
             <ul class="card-list">
-              <li>Tiendas online rápidas, seguras y optimizadas para vender</li><br/>
-              <li>Catálogo, carrito, pasarelas de pago (que no te arruinan con las comisiones), envíos y analítica avanzada</li><br/>
-              <li>Optimización SEO y velocidad para que tu pagina exista de verdad</li><br/>
+              <li>Tienda online con código tuyo: catálogo, carrito y checkout</li>
+              <li>Pagos con Mercado Pago o Stripe, envíos y analítica</li>
+              <li>SEO y velocidad para que Google te muestre de verdad</li>
             </ul>
           </article>
 
           <article class="card reveal">
-            <h3>Inteligencia Artificial</h3>
+            <h3>Landing pages para negocios</h3>
             <ul class="card-list">
-              <li>Asistentes virtuales que responden a tus clientes 24/7, integrados en tu web, WhatsApp u otros canales</li><br/>
-              <li>Entrenados con la información de tu negocio</li><br/>
-              <li>Flujos de atención y ventas personalizados</li><br/>
-              <li>Integración con CRM y email</li><br/>
+              <li>Una página clara para captar consultas y ventas</li>
+              <li>Diseño a medida, pensado para tu oferta (no un template genérico)</li>
+              <li>Ideal para emprendimientos y profesionales en Uruguay</li>
             </ul>
           </article>
 
           <article class="card reveal">
-            <h3>Desarrollo a Medida?</h3>
+            <h3>¿Por qué código a medida?</h3>
             <p>
-              Si necesitás un sistema "diferente", un desarrollo complejo que no encaja en lo convencional, estamos listos.
-              Contanos tu idea y la convertimos en una solución funcional
+              Porque tu negocio no es igual al de al lado. Con código propio podés cambiar lo que quieras,
+              sin pelearte con plantillas ni pagar de por vida una plataforma.
             </p>
             <div class="card-actions">
-              <br/>
               <a href="https://wa.me/59897990860" class="btn btn-invertido" target="_blank" rel="noopener noreferrer">
-                Tu solucion
+                Contame tu idea
               </a>
             </div>
           </article>
@@ -132,138 +235,200 @@
       </div>
     </section>
 
-
-    <!-- CASOS / PORTFOLIO (placeholder) -->
-    <section id="casos" class="section reveal">
+    <section id="casos" class="section reveal" aria-labelledby="casos-title">
       <div class="container">
         <div class="section-header reveal">
-          <h2>Resultados</h2>
+          <h2 id="casos-title">Resultados reales: e-commerce y landing pages</h2>
+          <p>Proyectos que ya están online. Tocá cada marca para visitar el sitio.</p>
         </div>
         <div class="cases-grid">
           <article class="case-card reveal">
             <h3 class="case-title">
-              <a href="https://gingers.com.uy" 
-                 target="_blank" 
+              <a href="https://gingers.com.uy"
+                 target="_blank"
                  rel="noopener noreferrer"
                  class="case-link">
-                 
-                <img src="imagenes/gingers_logo.png" 
-                     alt="Logo Gingers" 
-                     class="case-logo">
-                Gingers: E-commerce profesional
+                <img src="imagenes/gingers_logo.webp"
+                     alt="Logo de Gingers, e-commerce a medida en Uruguay"
+                     class="case-logo"
+                     width="45"
+                     height="45"
+                     loading="lazy"
+                     decoding="async" />
+                Gingers: e-commerce a medida
               </a>
             </h3>
-            <p><b>Gingers</b> fue nuestro primer cliente y necesitaba su pagina web desde cero, hoy en dia la pagina es su mayor fuente de ingresos</p>
-            <video class="case-video" autoplay muted loop playsinline>
-              <source src="imagenes/gingers_video.mp4" type="video/mp4">
+            <p>
+              <strong>Gingers</strong> necesitaba su tienda desde cero. Hoy su e-commerce es una de las principales fuentes de ingresos del negocio.
+            </p>
+            <video class="case-video"
+                   autoplay
+                   muted
+                   loop
+                   playsinline
+                   preload="metadata"
+                   width="640"
+                   height="360"
+                   aria-label="Recorrido del e-commerce Gingers">
+              <source src="imagenes/gingers_video.mp4" type="video/mp4" />
               Tu navegador no soporta video.
             </video>
             <p>
-              Haz clic en el logo para visitar su página, 
-              o <a href="https://gingers.com.uy" target="_blank" rel="noopener noreferrer"class="link-blanco">aquí!</a>
-            </p> 
+              Visitá el e-commerce de Gingers en
+              <a href="https://gingers.com.uy" target="_blank" rel="noopener noreferrer" class="link-blanco">gingers.com.uy</a>.
+            </p>
           </article>
+
           <article class="case-card reveal">
             <h3 class="case-title">
-              <a href="https://danielavolzabogada.com.uy" 
-                 target="_blank" 
+              <a href="https://danielavolzabogada.com.uy"
+                 target="_blank"
                  rel="noopener noreferrer"
                  class="case-link">
-                <img src="imagenes/abogada_logo.png" 
-                     alt="Logo Daniela Volz" 
-                     class="case-logo">
-                Abogada: Landing Page
+                <img src="imagenes/abogada_logo.webp"
+                     alt="Logo de Daniela Volz, landing page profesional"
+                     class="case-logo"
+                     width="45"
+                     height="45"
+                     loading="lazy"
+                     decoding="async" />
+                Landing page para abogada
               </a>
             </h3>
-            <p>Una clienta abogada queria algo simple y rapido, una landing en donde mostrar sus servicios, que con el correcto SEO impulso sus proyectos!</p><br/>
-          <img src="imagenes/abogada.png" alt="landing abogada" class="case-img"><br/>
-          <p>
-            Haz clic en el logo para visitar su página, 
-            o <a href="https://danielavolzabogada.com.uy" target="_blank" rel="noopener noreferrer"class="link-blanco">aquí!</a>
-          </p> 
+            <p>
+              Una landing simple y rápida para mostrar servicios. Con SEO bien armado, impulsó consultas y proyectos nuevos.
+            </p>
+            <img src="imagenes/abogada.webp"
+                 alt="Captura de landing page profesional para abogada en Uruguay"
+                 class="case-img"
+                 width="1200"
+                 height="546"
+                 loading="lazy"
+                 decoding="async" />
+            <p>
+              Visitá la landing en
+              <a href="https://danielavolzabogada.com.uy" target="_blank" rel="noopener noreferrer" class="link-blanco">danielavolzabogada.com.uy</a>.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN PROCESO -->
-    <section id="proceso" class="section section-light">
+    <section id="proceso" class="section section-light" aria-labelledby="proceso-title">
       <div class="container reveal grupo-proceso">
-        <!-- Header -->
         <div class="section-header reveal">
-          <h2>Quienes somos? Cómo trabajamos?</h2>
-          <p>Un proceso claro, de principio a fin, para que tengas visibilidad total.</p>
+          <h2 id="proceso-title">Cómo trabajo el desarrollo web a medida</h2>
+          <p>Proceso claro, de punta a punta. Sin estructuras infladas ni costos de más.</p>
         </div>
-    
-        <!-- Tarjetas -->
+
         <div class="steps">
-          <!-- Tarjeta Quiénes somos -->
           <div class="step">
-            <h3>¿Quiénes somos?</h3>
-            <p>Somos un <strong>Grupo</strong> de estudiantes de ingeniería en sistemas y fundadores de 
-               <strong>Systek</strong>. Trabajamos directamente en cada proyecto, combinando conocimientos de desarrollo, diseño y estrategia digital.</p>
-            <p>Enfoque simple y profesional: <strong>hacer que tu negocio funcione mejor online sin estructuras infladas ni costos innecesarios</strong>.</p>
+            <h3>Quién soy</h3>
+            <p>
+              Soy ingeniero de software y fundador de <strong>Systek</strong>. Trabajo directo en cada proyecto:
+              desarrollo, diseño y estrategia digital, sin intermediarios.
+            </p>
+            <p>
+              Base en <strong>Montevideo, Uruguay</strong>, expandiendo a Argentina.
+              El mensaje es simple: esto no es difícil de conseguir, y mis páginas están entre las mejores.
+            </p>
           </div>
-    
-          <!-- Tarjeta Cómo trabajamos -->
+
           <div class="step">
-            <h3>Cómo trabajamos</h3>
+            <h3>El proceso</h3>
             <ul>
-              <li><strong>Diagnóstico:</strong> Entiendo tu negocio y objetivos para saber dónde empezar.</li>
-              <li><strong>Diseño de la solución:</strong> Defino cómo tu e-commerce, chatbot o formulario va a funcionar de manera óptima.</li>
-              <li><strong>Desarrollo e integración:</strong> Construyo e integro todo, probando cada detalle.</li>
-              <li><strong>Lanzamiento y optimización:</strong> Despliego, mido resultados y mejoro constantemente para que tu inversión rinda. Ofrecemos soporte hasta el último día.</li>
+              <li><strong>Diagnóstico:</strong> entiendo tu negocio y objetivos.</li>
+              <li><strong>Diseño de la solución:</strong> defino cómo va a funcionar tu e-commerce o landing.</li>
+              <li><strong>Desarrollo:</strong> construyo e integro todo, probando cada detalle.</li>
+              <li><strong>Lanzamiento:</strong> publico, mido y optimizo. Soporte hasta el último día.</li>
             </ul>
           </div>
         </div>
-    
-        <!-- Carousel integrado al mismo contenedor para animación conjunta -->
-        <section class="logo-carousel">
-          <div class="logo-track">
-            <img src="imagenes/js.png?v=20260726" alt="JavaScript">
-            <img src="imagenes/htmlsvg.png?v=20260726" alt="HTML">
-            <img src="imagenes/csssvg.png?v=20260726" alt="CSS">
-            <img src="imagenes/stripe.png?v=20260726" alt="Stripe">
-            <img src="imagenes/mp.png?v=20260726" alt="MercadoPago">
-            <img src="imagenes/C++.svg.png?v=20260726" alt="C++">
-            <img src="imagenes/pyt.svg.png?v=20260726" alt="Python">
 
-            <!-- Duplicados para scroll infinito -->
-            <img src="imagenes/js.png?v=20260726" alt="">
-            <img src="imagenes/htmlsvg.png?v=20260726" alt="">
-            <img src="imagenes/csssvg.png?v=20260726" alt="">
-            <img src="imagenes/stripe.png?v=20260726" alt="">
-            <img src="imagenes/mp.png?v=20260726" alt="">
-            <img src="imagenes/C++.svg.png?v=20260726" alt="">
-            <img src="imagenes/pyt.svg.png?v=20260726" alt="">
+        <div class="logo-carousel" aria-label="Tecnologías que uso">
+          <div class="logo-track">
+            <img src="imagenes/js.webp" alt="JavaScript" width="80" height="50" loading="lazy" decoding="async" />
+            <img src="imagenes/html.webp" alt="HTML5" width="80" height="50" loading="lazy" decoding="async" />
+            <img src="imagenes/css.webp" alt="CSS3" width="80" height="50" loading="lazy" decoding="async" />
+            <img src="imagenes/stripe.webp" alt="Stripe" width="80" height="50" loading="lazy" decoding="async" />
+            <img src="imagenes/mp.webp" alt="Mercado Pago" width="80" height="50" loading="lazy" decoding="async" />
+            <img src="imagenes/cplusplus.webp" alt="C++" width="80" height="50" loading="lazy" decoding="async" />
+            <img src="imagenes/python.webp" alt="Python" width="80" height="50" loading="lazy" decoding="async" />
+
+            <img src="imagenes/js.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
+            <img src="imagenes/html.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
+            <img src="imagenes/css.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
+            <img src="imagenes/stripe.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
+            <img src="imagenes/mp.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
+            <img src="imagenes/cplusplus.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
+            <img src="imagenes/python.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
           </div>
-        </section>
-    
-      </div> <!-- cierre correcto de container -->
+        </div>
+      </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="section contact reveal">
+    <section id="faq" class="section reveal" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="faq-title">Preguntas frecuentes sobre páginas web a medida</h2>
+          <p>Lo que me preguntan antes de arrancar un e-commerce o una landing.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>¿Por qué no uso Shopify?</summary>
+            <p>
+              Porque quiero que tu tienda sea tuya de verdad: código a medida, sin mensualidades de plataforma
+              ni plantillas limitadas. Vos decidís cómo funciona cada detalle.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>¿Cuánto tarda un e-commerce a medida?</summary>
+            <p>
+              Depende del alcance, pero un e-commerce bien armado suele estar en semanas, no meses eternos.
+              Arrancamos con un diagnóstico corto y te digo tiempos reales.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>¿Trabajás solo en Montevideo?</summary>
+            <p>
+              Estoy basado en Montevideo, Uruguay, y trabajo remoto con clientes de todo el país y de Argentina.
+              Coordinamos por WhatsApp.
+            </p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>¿Qué incluye una landing page profesional?</summary>
+            <p>
+              Diseño a medida, copy claro, formulario o WhatsApp, carga rápida y base SEO para que Google te encuentre.
+              Pensada para convertir visitas en consultas.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section contact reveal" aria-labelledby="contacto-title">
       <div class="container contact-grid">
         <div class="reveal contact-intro">
-          <h2>Cuéntanos sobre tu proyecto</h2>
+          <h2 id="contacto-title">Contame tu proyecto</h2>
           <p>
-            Completa el formulario y en menos de 12 horas te contactamos con una propuesta
-            clara y adaptada a tu negocio.
+            Completá el formulario y en menos de 12 horas te escribo con una propuesta clara.
+            También podés mandarme un WhatsApp directo.
           </p>
           <ul class="contact-list">
-            <li>Definimos el alcance y tiempos</li>
-            <li>Te proponemos la mejor combinación de soluciones</li>
+            <li>Definimos alcance y tiempos</li>
+            <li>Te propongo la mejor opción (e-commerce o landing)</li>
             <li>Sin compromiso</li>
           </ul>
 
           <div class="contact-logo-wrap">
             <img
-              src="imagenes/logo_blanco_transparente.png?v=20260726"
-              alt="Systek"
+              src="imagenes/logo_blanco_transparente.webp"
+              alt="Logo Systek"
               class="contact-logo"
               width="460"
               height="460"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -281,32 +446,32 @@
             <input type="hidden" name="_subject" value="Nuevo mensaje desde Systek" />
             <div class="field">
               <label for="nombre">Nombre</label>
-              <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre" />
+              <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre" autocomplete="name" />
             </div>
             <div class="field">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="nombre@empresa.com" />
+              <input id="email" name="email" type="email" required placeholder="nombre@empresa.com" autocomplete="email" />
             </div>
             <div class="field">
               <label for="empresa">Empresa</label>
-              <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa" />
+              <input id="empresa" name="empresa" type="text" placeholder="Nombre de tu empresa" autocomplete="organization" />
             </div>
             <div class="field">
-              <label for="servicio">¿Qué necesitas?</label>
+              <label for="servicio">¿Qué necesitás?</label>
               <select id="servicio" name="servicio">
-                <option value="ecommerce">E‑commerce profesional</option>
-                <option value="chatbot">Chatbot con IA</option>
-                <option value="formularios">Formularios inteligentes</option>
-                <option value="varios">Algo especial</option>
+                <option value="ecommerce">E-commerce a medida</option>
+                <option value="landing">Landing page profesional</option>
+                <option value="ambos">E-commerce + landing</option>
+                <option value="otro">Otra consulta</option>
               </select>
             </div>
             <div class="field">
-              <label for="mensaje">Descríbenos tu proyecto</label>
-              <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
+              <label for="mensaje">Contame tu proyecto</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Qué necesitás, plazos, ideas..."></textarea>
             </div>
             <button type="submit" class="btn btn-full" id="contact-submit">Enviar mensaje</button>
             <p class="form-hint" id="form-hint">
-              No enviamos spam. Usaremos tus datos solo para responder a tu consulta.
+              No mando spam. Uso tus datos solo para responderte.
             </p>
           </div>
 
@@ -330,40 +495,35 @@
 
   <footer class="footer">
     <div class="footer-content">
-  
-      <!-- Contacto -->
       <div class="footer-contact">
-        <p>systekuy@gmail.com</p>
+        <p><a href="mailto:systekuy@gmail.com" class="footer-phone">systekuy@gmail.com</a></p>
         <p>Montevideo, Uruguay</p>
         <p><a href="https://wa.me/59897990860" target="_blank" rel="noopener noreferrer" class="footer-phone">+598 97 990 860</a></p>
       </div>
 
-      <!-- Links rápidos -->
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="Pie de página">
         <a href="#servicios">Servicios</a>
-        <a href="#casos">Casos</a>
+        <a href="#casos">Resultados</a>
+        <a href="#faq">FAQ</a>
         <a href="#contacto">Contacto</a>
-      </div>
-  
-      <!-- Redes sociales y legal -->
+      </nav>
+
       <div class="footer-actions">
         <div class="social-links">
-          <a href="https://www.instagram.com/systek.uy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img src="imagenes/instagramlogo.png" alt="Instagram" height="20">
+          <a href="https://www.instagram.com/systek.uy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Systek">
+            <img src="imagenes/instagram.webp" alt="" width="20" height="20" loading="lazy" decoding="async" />
           </a>
         </div>
-        <span class="footer-note">© <span id="year"></span> Systek. Todos los derechos reservados.</span>
+        <span class="footer-note">© <span id="year"></span> Systek. Desarrollo web a medida en Uruguay.</span>
         <button class="btn btn-small btn-outline" type="button" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">
-          Llegaste al final. Solo te falta ponerte en contacto. Clic aquí :)
+          ¿Listo? Escribime desde el formulario
         </button>
       </div>
-  
     </div>
   </footer>
 
-  <a href="https://wa.me/59897990860" class="whatsapp-floating" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"></a>
+  <a href="https://wa.me/59897990860" class="whatsapp-floating" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp con Systek"></a>
 
-  <script src="script.js?v=20260726b"></script>
+  <script src="script.js?v=20260726seo" defer></script>
 </body>
-
 </html>

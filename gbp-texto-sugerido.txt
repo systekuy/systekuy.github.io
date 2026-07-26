@@ -1,0 +1,31 @@
+# Texto sugerido — Google Business Profile (Systek)
+
+## Nombre del perfil
+Systek
+
+## Categoría principal
+Diseñador de sitios web
+(alternativas: Servicio de desarrollo de software / Consultor de marketing digital — elegí la que Google deje como principal y el resto como adicionales)
+
+## Categorías adicionales
+Desarrollador de software
+Servicio de comercio electrónico
+
+## Descripción (750 caracteres máx — tono Systek)
+Armo e-commerce y landing pages a medida con código real, sin Shopify ni plantillas genéricas. Trabajo desde Montevideo con negocios de Uruguay y Argentina: rápido, cercano y con calidad de nivel top. Si necesitás una tienda online propia o una landing que convierta consultas, escribime por WhatsApp y lo vemos.
+
+## Zona de servicio
+- Uruguay (todo el país; base Montevideo)
+- Argentina (remoto)
+No marques solo una dirección física si no atendés público en un local — usá “zona de servicio”.
+
+## Contacto (NAP — mantener igual en web e Instagram)
+Nombre: Systek
+Zona: Montevideo, Uruguay
+Teléfono: +598 97 990 860
+Email: systekuy@gmail.com
+Web: https://www.systek.uy/
+Instagram: https://www.instagram.com/systek.uy/
+
+## Acción principal del perfil
+“Enviar mensaje” o “Sitio web” → https://www.systek.uy/#contacto

@@ -15,7 +15,7 @@ function showFormFields() {
   if (fields) fields.hidden = false;
   if (form) form.reset();
   if (hint) {
-    hint.textContent = "No enviamos spam. Usaremos tus datos solo para responder a tu consulta.";
+    hint.textContent = "No mandamos spam. Usamos tus datos solo para responderte.";
     hint.style.color = "";
   }
 }

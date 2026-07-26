@@ -58,12 +58,15 @@ body::before {
   right: -120px;
   width: 420px;
   height: 420px;
-  background-image: url("imagenes/Systek_LogoTransparente.png");
+  max-width: 40vw;
+  max-height: 40vw;
+  background-image: url("imagenes/Systek_LogoTransparente.png?v=20260726");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
   opacity: 0.04;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
   }
 
 h1, h2, h3, h4, h5, h6 {
@@ -118,12 +121,18 @@ textarea,
     gap: 0.55rem;
     color: var(--text);
     text-decoration: none;
+    position: relative;
+    z-index: 2;
   }
 
   .logo-img {
     height: 42px;
-    width: auto;
+    width: 42px;
+    max-height: 42px;
+    max-width: 42px;
+    object-fit: contain;
     display: block;
+    flex-shrink: 0;
   }
   
   .logo-text {
@@ -268,19 +277,21 @@ textarea,
     padding: 5.5rem 0 4.5rem;
     overflow: hidden;
     background: linear-gradient(160deg, #0b1a3a 0%, #1e1b4b 45%, #0c4a6e 100%);
+    z-index: 1;
   }
 
   .hero-bg {
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
     overflow: hidden;
   }
 
   .hero-mesh {
     position: absolute;
-    inset: -40%;
+    inset: -20%;
+    max-width: none;
     background:
       radial-gradient(ellipse 50% 45% at 15% 30%, rgba(59, 130, 246, 0.65), transparent 55%),
       radial-gradient(ellipse 45% 40% at 85% 20%, rgba(139, 92, 246, 0.55), transparent 50%),
@@ -291,9 +302,9 @@ textarea,
 
   .hero-grid {
     position: absolute;
-    inset: -15%;
-    width: 130%;
-    height: 130%;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     background-image:
       linear-gradient(rgba(148, 197, 255, 0.18) 1px, transparent 1px),
       linear-gradient(90deg, rgba(148, 197, 255, 0.18) 1px, transparent 1px);
@@ -308,7 +319,7 @@ textarea,
     content: "";
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     background: linear-gradient(
       to bottom,
       rgba(2, 6, 23, 0.25) 0%,
@@ -320,27 +331,29 @@ textarea,
 
   @keyframes hero-mesh-drift {
     0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    25% { transform: translate(8%, -6%) scale(1.1) rotate(1.5deg); }
-    50% { transform: translate(-4%, 7%) scale(1.06) rotate(-1deg); }
-    75% { transform: translate(-7%, -3%) scale(1.12) rotate(1deg); }
+    25% { transform: translate(4%, -3%) scale(1.04) rotate(0.8deg); }
+    50% { transform: translate(-2%, 4%) scale(1.03) rotate(-0.6deg); }
+    75% { transform: translate(-4%, -2%) scale(1.05) rotate(0.5deg); }
     100% { transform: translate(0, 0) scale(1) rotate(0deg); }
   }
 
   @keyframes hero-grid-pan {
     0% { transform: translate(0, 0); }
-    100% { transform: translate(-96px, -96px); }
+    100% { transform: translate(-48px, -48px); }
   }
   
 .hero-grid-content {
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-copy {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-copy h1 {
@@ -349,6 +362,8 @@ textarea,
     line-height: 1.15;
     margin-bottom: 1rem;
     text-shadow: 0 2px 24px rgba(2, 6, 23, 0.45);
+    position: relative;
+    z-index: 2;
   }
   
   .gradient-text {
@@ -381,6 +396,8 @@ textarea,
     margin: 1rem 0 1rem 0; 
     text-align: left;
     text-shadow: 0 1px 12px rgba(2, 6, 23, 0.5);
+    position: relative;
+    z-index: 2;
   }
   
   .hero-actions {

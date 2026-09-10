@@ -36,8 +36,8 @@
 
   <!-- Performance -->
   <link rel="preload" href="font/Source_Serif_4/SourceSerif4-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="styles.css?v=20260726h" as="style" />
-  <link rel="stylesheet" href="styles.css?v=20260726h" />
+  <link rel="preload" href="styles.css?v=20260909e" as="style" />
+  <link rel="stylesheet" href="styles.css?v=20260909e" />
 
   <!-- JSON-LD: ProfessionalService + Services + FAQ -->
   <script type="application/ld+json">
@@ -170,20 +170,19 @@
         <a href="#faq">FAQ</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a href="#contacto" class="btn btn-small btn-outline">Escribinos</a>
+      <a href="#contacto" class="btn btn-small btn-outline">Escribenos</a>
     </div>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true">
-        <div class="hero-mesh"></div>
-        <div class="hero-grid"></div>
+        <canvas id="hero-waves" class="hero-waves"></canvas>
       </div>
       <div class="container hero-grid-content">
         <div class="hero-copy">
           <h1 id="hero-title">
-            <span class="gradient-text">E-commerce a medida, IA y sistemas de gestión para negocios en Uruguay.</span>
+            <span class="gradient-text"><em>E-commerce</em> a medida, IA y sistemas de gestión para negocios en <em>Uruguay</em>.</span>
           </h1>
           <p class="hero-subtitle">
             Somos Systek. Desarrollamos páginas web y tiendas online con código real.
@@ -197,6 +196,9 @@
           </div>
         </div>
       </div>
+      <a href="#servicios" class="hero-scroll-hint" aria-label="Bajar a servicios">
+        <span class="hero-scroll-hint-icon" aria-hidden="true"></span>
+      </a>
     </section>
 
     <section id="servicios" class="section reveal" aria-labelledby="servicios-title">
@@ -357,7 +359,6 @@
             <img src="imagenes/css.webp" alt="CSS3" width="80" height="50" loading="lazy" decoding="async" />
             <img src="imagenes/stripe.webp" alt="Stripe" width="80" height="50" loading="lazy" decoding="async" />
             <img src="imagenes/mp.webp" alt="Mercado Pago" width="80" height="50" loading="lazy" decoding="async" />
-            <img src="imagenes/cplusplus.webp" alt="C++" width="80" height="50" loading="lazy" decoding="async" />
             <img src="imagenes/python.webp" alt="Python" width="80" height="50" loading="lazy" decoding="async" />
 
             <img src="imagenes/js.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
@@ -365,7 +366,6 @@
             <img src="imagenes/css.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
             <img src="imagenes/stripe.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
             <img src="imagenes/mp.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
-            <img src="imagenes/cplusplus.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
             <img src="imagenes/python.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
           </div>
         </div>
@@ -529,6 +529,6 @@
 
   <a href="https://wa.me/59897990860" class="whatsapp-floating" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp con Systek"></a>
 
-  <script src="script.js?v=20260726d" defer></script>
+  <script src="script.js?v=20260909c" defer></script>
 </body>
 </html>

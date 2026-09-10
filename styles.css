@@ -97,9 +97,13 @@ textarea,
     position: sticky;
     top: 0;
     z-index: 20;
-    backdrop-filter: blur(16px);
-    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.5), transparent);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+    background: #0b1224;
+    border-bottom: none;
+    transition: background-color 0.35s ease;
+  }
+
+  .nav.is-scrolled {
+    background: #1a2744;
   }
 
   .nav .container {
@@ -285,9 +289,13 @@ textarea,
   .hero {
     position: relative;
     isolation: isolate;
-    padding: 5.5rem 0 4.5rem;
+    min-height: calc(100svh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.5rem 0 5.5rem;
     overflow: hidden;
-    background: linear-gradient(160deg, #0b1a3a 0%, #1e1b4b 45%, #0c4a6e 100%);
+    background: #07111f;
     z-index: 1;
   }
 
@@ -295,35 +303,16 @@ textarea,
     position: absolute;
     inset: 0;
     z-index: 0;
-    pointer-events: none;
     overflow: hidden;
   }
 
-  .hero-mesh {
-    position: absolute;
-    inset: -20%;
-    max-width: none;
-    background:
-      radial-gradient(ellipse 50% 45% at 15% 30%, rgba(59, 130, 246, 0.65), transparent 55%),
-      radial-gradient(ellipse 45% 40% at 85% 20%, rgba(139, 92, 246, 0.55), transparent 50%),
-      radial-gradient(ellipse 55% 50% at 60% 85%, rgba(56, 189, 248, 0.5), transparent 55%),
-      radial-gradient(ellipse 40% 35% at 30% 75%, rgba(217, 70, 239, 0.35), transparent 50%);
-    animation: hero-mesh-drift 10s ease-in-out infinite;
-  }
-
-  .hero-grid {
+  .hero-waves {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    background-image:
-      linear-gradient(rgba(148, 197, 255, 0.18) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(148, 197, 255, 0.18) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 75%);
-    animation: hero-grid-pan 12s linear infinite;
-    opacity: 0.95;
+    display: block;
+    pointer-events: none;
   }
 
   .hero::after {
@@ -333,24 +322,11 @@ textarea,
     z-index: 0;
     background: linear-gradient(
       to bottom,
-      rgba(2, 6, 23, 0.25) 0%,
-      rgba(2, 6, 23, 0.15) 50%,
+      rgba(2, 6, 23, 0.15) 0%,
+      rgba(2, 6, 23, 0.1) 45%,
       rgba(2, 6, 23, 0.55) 100%
     );
     pointer-events: none;
-  }
-
-  @keyframes hero-mesh-drift {
-    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    25% { transform: translate(4%, -3%) scale(1.04) rotate(0.8deg); }
-    50% { transform: translate(-2%, 4%) scale(1.03) rotate(-0.6deg); }
-    75% { transform: translate(-4%, -2%) scale(1.05) rotate(0.5deg); }
-    100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-  }
-
-  @keyframes hero-grid-pan {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-48px, -48px); }
   }
   
 .hero-grid-content {
@@ -358,6 +334,7 @@ textarea,
   flex-direction: column;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .hero-copy {
@@ -376,7 +353,7 @@ textarea,
     position: relative;
     z-index: 2;
   }
-  
+
   .gradient-text {
     background: linear-gradient(
       110deg,
@@ -416,6 +393,32 @@ textarea,
     gap: 1rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    left: 50%;
+    bottom: 1.35rem;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .hero-scroll-hint-icon {
+    width: 18px;
+    height: 18px;
+    border-right: 2px solid rgba(191, 219, 254, 0.9);
+    border-bottom: 2px solid rgba(191, 219, 254, 0.9);
+    transform: rotate(45deg);
+    animation: hero-scroll-bounce 1.6s ease-in-out infinite;
+  }
+
+  @keyframes hero-scroll-bounce {
+    0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.55; }
+    50% { transform: rotate(45deg) translate(4px, 4px); opacity: 1; }
   }
   
   .hero-badges {
@@ -922,9 +925,8 @@ textarea,
 
   @media (prefers-reduced-motion: reduce) {
     .contact-logo,
-    .hero-mesh,
-    .hero-grid,
-    .gradient-text {
+    .gradient-text,
+    .hero-scroll-hint-icon {
       animation: none;
     }
   }
@@ -1055,6 +1057,12 @@ textarea,
     display: none;
   }
 
+  .hero {
+    min-height: calc(100svh - 70px);
+    justify-content: center;
+    padding: 2.8rem 0 4.8rem;
+  }
+
   /* Hero */
   .hero-grid-content {
     grid-template-columns: minmax(0, 1fr);
@@ -1103,11 +1111,36 @@ textarea,
 @media (max-width: 640px) {
   /* Hero */
   .hero {
-    padding-top: 3.2rem;
+    min-height: calc(100svh - 70px);
+    justify-content: center;
+    padding: 2.2rem 0 4.6rem;
   }
 
   .hero-copy h1 {
-    font-size: 2rem;
+    font-size: 2.05rem;
+    line-height: 1.22;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.08rem;
+    line-height: 1.45;
+    margin: 0.75rem 0 1.15rem;
+  }
+
+  .hero-actions {
+    margin-bottom: 0;
+    gap: 0.75rem;
+  }
+
+  .hero-actions .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-scroll-hint {
+    bottom: 1.1rem;
+    font-size: 0.78rem;
   }
 
   /* Grids móviles */

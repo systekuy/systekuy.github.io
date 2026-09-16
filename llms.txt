@@ -2,7 +2,7 @@
 
 > Systek hace desarrollo web a medida desde Montevideo, Uruguay: desarrollos a medida, e-commerce a medida e IA, con código propio, sin Shopify, WordPress ni plantillas. La inteligencia artificial (asistentes con modelos de lenguaje y automatizaciones) se integra dentro de esas webs y sistemas. Trabaja con negocios de todo Uruguay y toma proyectos en Argentina. Activo desde 2025.
 
-El trato es directo con quien diseña y programa el proyecto (Tomás Ibarra, fundador), por WhatsApp o formulario, sin intermediarios.
+El trato es directo con quien diseña y programa el proyecto (Tomás Ibarra, fundador: https://www.linkedin.com/in/ttomasibarra/), por WhatsApp o formulario, sin intermediarios. Los proyectos arrancan a partir de 250 USD.
 
 ## Servicios
 
@@ -13,8 +13,8 @@ El trato es directo con quien diseña y programa el proyecto (Tomás Ibarra, fun
 
 ## Proyectos online
 
-- [Gingers](https://gingers.com.uy): e-commerce y panel de gestión a medida en Uruguay (Next.js, FastAPI, PostgreSQL; pagos con Mercado Pago, emails automáticos, avisos por WhatsApp y facturas en PDF). Más de 100 pedidos, más de 50 productos y más de 20 clientes.
-- [Daniela Volz, abogada](https://danielavolzabogada.com.uy): sitio web profesional con SEO.
+- [Gingers](https://gingers.com.uy): e-commerce y panel de gestión a medida en Uruguay (Next.js, FastAPI, PostgreSQL; pagos con Mercado Pago, emails automáticos, avisos por WhatsApp y facturas en PDF). Más de 100 pedidos, más de 50 productos y más de 20 clientes. Testimonio de Pilar de Arteaga (Gingers): “Quedó muuuuyyy buena, súper rápida y práctica, funciona todo de lujo.”
+- [Daniela Volz, abogada](https://danielavolzabogada.com.uy): sitio web profesional con SEO. Testimonio de Daniela Volz: “Genial, quedó buenísima, divina y muy rápida.”
 
 ## Stack
 
@@ -29,6 +29,7 @@ El trato es directo con quien diseña y programa el proyecto (Tomás Ibarra, fun
 ## Preguntas frecuentes
 
 - [¿Qué es el código a medida y cuánto tarda?](https://www.systek.uy/#faq): una web, tienda o sistema hecho desde cero para el negocio, con código propio, sin Shopify ni plantillas y sin depender de una plataforma. Un proyecto bien armado suele estar en semanas; se arranca con un diagnóstico corto que define tiempos reales.
+- [¿Cuánto cuesta un desarrollo a medida?](https://www.systek.uy/#faq): los proyectos arrancan a partir de 250 USD; el precio final depende del alcance (web profesional, e-commerce o sistema con usuarios, pagos e integraciones) y se define con un presupuesto claro después de un diagnóstico corto.
 - [¿Le podés integrar IA a mi web o sistema?](https://www.systek.uy/#faq): sí, como plus del desarrollo a medida o e-commerce: chatbots con IA para WhatsApp y la web con atención 24/7, asistentes virtuales entrenados con la información del negocio, agentes de IA que responden consultas, toman pedidos o agendan turnos, y automatización de procesos con n8n, usando modelos de lenguaje (LLM) de OpenAI (ChatGPT), Claude y Gemini.
 - [¿Mi web va a aparecer en Google y en las IAs?](https://www.systek.uy/#faq): cada web queda preparada con SEO para Google y GEO para que IAs como ChatGPT, Gemini o Perplexity la encuentren y la recomienden.
 - [¿Dónde trabaja?](https://www.systek.uy/#faq): base en Montevideo, clientes en todo Uruguay y proyectos en Argentina, coordinando online y por WhatsApp.

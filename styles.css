@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Source Serif 4";
-  src: url("font/Source_Serif_4/SourceSerif4-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("font/Source_Serif_4/SourceSerif4-Variable-latin.woff2") format("woff2");
   font-weight: 200 900;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Source Serif 4";
-  src: url("font/Source_Serif_4/SourceSerif4-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("font/Source_Serif_4/SourceSerif4-Italic-Variable-latin.woff2") format("woff2");
   font-weight: 200 900;
   font-style: italic;
   font-display: swap;
@@ -26,7 +26,6 @@
     --font: "Source Serif 4", Georgia, "Times New Roman", serif;
     --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
     --cherry: #f43f5e;
-    --cherry-soft: rgba(244, 63, 94, 0.16);
     /* Acento del panel de Integraciones (azul-violeta: el rojo parecía "pérdida") */
     --violet: #8b5cf6;
     --violet-soft: rgba(139, 92, 246, 0.18);
@@ -1226,6 +1225,48 @@ textarea,
   color: var(--text-soft);
 }
 
+/* Testimonio: sin caja, una línea azul-violeta a la izquierda */
+.case-quote {
+  position: relative;
+  margin: 1.4rem 0 0;
+  padding: 0.2rem 0 0.2rem 1.2rem;
+}
+
+.case-quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(var(--primary), var(--violet));
+}
+
+.case-quote p {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.case-quote footer {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-soft);
+}
+
+.case-quote-name {
+  color: var(--text);
+}
+
+.case-quote + .case-more {
+  margin-top: 1.4rem;
+}
+
 .case-more {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -2258,7 +2299,6 @@ textarea,
   --border: rgba(15, 23, 42, 0.14);
   --shadow-soft: 0 22px 60px rgba(15, 23, 42, 0.12);
   --cherry: #e11d48;
-  --cherry-soft: rgba(225, 29, 72, 0.12);
   --violet: #7c3aed;
   --violet-soft: rgba(124, 58, 237, 0.12);
   --violet-text: #6d28d9;

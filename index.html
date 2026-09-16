@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desarrollos a medida, e-commerce e IA en Uruguay | Systek</title>
+  <title>Systek | Desarrollos a medida, e-commerce e IA en Uruguay</title>
   <meta name="description" content="Hago desarrollos a medida, e-commerce e IA con código propio, sin Shopify ni plantillas. Desde Montevideo para Uruguay y Argentina." />
   <meta name="author" content="Systek" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#eef2f8" />
   <link rel="canonical" href="https://www.systek.uy/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Desarrollos a medida, e-commerce e IA en Uruguay | Systek" />
+  <meta property="og:title" content="Systek | Desarrollos a medida, e-commerce e IA en Uruguay" />
   <meta property="og:description" content="Desarrollos a medida, e-commerce e IA con código propio, sin Shopify ni plantillas. Desde Montevideo para Uruguay y Argentina." />
   <meta property="og:image" content="https://www.systek.uy/imagenes/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Systek: desarrollos a medida, e-commerce e IA en Uruguay" />
   <meta property="og:url" content="https://www.systek.uy/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_UY" />
@@ -23,9 +24,10 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Desarrollos a medida, e-commerce e IA en Uruguay | Systek" />
+  <meta name="twitter:title" content="Systek | Desarrollos a medida, e-commerce e IA en Uruguay" />
   <meta name="twitter:description" content="Desarrollos a medida, e-commerce e IA con código propio, sin Shopify ni plantillas. Desde Montevideo para Uruguay y Argentina." />
   <meta name="twitter:image" content="https://www.systek.uy/imagenes/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Systek: desarrollos a medida, e-commerce e IA en Uruguay" />
 
   <!-- Icons / PWA-ish -->
   <link rel="icon" href="imagenes/favicon.ico" sizes="any" />
@@ -35,9 +37,9 @@
   <link rel="manifest" href="manifest.json" />
 
   <!-- Performance -->
-  <link rel="preload" href="font/Source_Serif_4/SourceSerif4-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="styles.css?v=20260917n" as="style" />
-  <link rel="stylesheet" href="styles.css?v=20260917n" />
+  <link rel="preload" href="font/Source_Serif_4/SourceSerif4-Variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="styles.css?v=20260917o" as="style" />
+  <link rel="stylesheet" href="styles.css?v=20260917o" />
   <!-- Marca que hay JS (las animaciones/acordeón solo esconden contenido si JS corre: crawlers sin JS ven todo) -->
   <!-- Tema guardado (claro/oscuro) antes de pintar, para que no parpadee. Default: claro (data-theme en <html>) -->
   <script>
@@ -67,12 +69,12 @@
         "logo": "https://www.systek.uy/imagenes/Systek_LogoTransparente.webp",
         "email": "systekuy@gmail.com",
         "telephone": "+59897990860",
-        "priceRange": "$$",
+        "priceRange": "Desde USD 250",
         "foundingDate": "2025",
         "founder": { "@id": "https://www.systek.uy/#fundador" },
         "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@id": "https://www.systek.uy/#desarrollos" } },
-          { "@type": "Offer", "itemOffered": { "@id": "https://www.systek.uy/#ecommerce" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://www.systek.uy/#desarrollos" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 250, "priceCurrency": "USD" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://www.systek.uy/#ecommerce" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 250, "priceCurrency": "USD" } },
           { "@type": "Offer", "itemOffered": { "@id": "https://www.systek.uy/#ia" } }
         ],
         "areaServed": [
@@ -119,11 +121,20 @@
         ]
       },
       {
+        "@type": "WebSite",
+        "@id": "https://www.systek.uy/#website",
+        "url": "https://www.systek.uy/",
+        "name": "Systek",
+        "inLanguage": "es-UY",
+        "publisher": { "@id": "https://www.systek.uy/#business" }
+      },
+      {
         "@type": "Person",
         "@id": "https://www.systek.uy/#fundador",
         "name": "Tomás Ibarra",
         "jobTitle": "Fundador y desarrollador de software",
-        "worksFor": { "@id": "https://www.systek.uy/#business" }
+        "worksFor": { "@id": "https://www.systek.uy/#business" },
+        "sameAs": ["https://www.linkedin.com/in/ttomasibarra/"]
       },
       {
         "@type": "Service",
@@ -170,6 +181,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Es una web, tienda o sistema hecho desde cero para tu negocio, con código propio: sin Shopify, sin plantillas y sin depender de una plataforma. Vos decidís cómo funciona cada detalle y tenés control total sobre tu proyecto. ¿Los tiempos? Depende del alcance, pero un proyecto bien armado suele estar en semanas, no meses eternos: arranco con un diagnóstico corto y te doy tiempos reales."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta un desarrollo a medida?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Los proyectos arrancan a partir de 250 USD. El precio final depende de lo que necesites: no es lo mismo una web profesional que un e-commerce o un sistema con usuarios, pagos e integraciones. Después de un diagnóstico corto te paso un presupuesto claro, sin letra chica, y sabés desde el principio cuánto vas a invertir."
             }
           },
           {
@@ -495,6 +514,10 @@
               <li><strong data-count="50" data-prefix="+">+50</strong><span>productos</span></li>
               <li><strong data-count="20" data-prefix="+">+20</strong><span>clientes</span></li>
             </ul>
+            <blockquote class="case-quote">
+              <p>“Quedó muuuuyyy buena, súper rápida y práctica, funciona todo de lujo.”</p>
+              <footer><span class="case-quote-name">Pilar de Arteaga</span> · Gingers</footer>
+            </blockquote>
             <div class="case-more">
               <button type="button" class="case-toggle" data-accordion-toggle id="caso-gingers-btn" aria-expanded="true" aria-controls="caso-gingers">
                 <span>Sobre el proyecto</span>
@@ -542,6 +565,10 @@
                    loading="lazy"
                    decoding="async" />
             </a>
+            <blockquote class="case-quote">
+              <p>“Genial, quedó buenísima, divina y muy rápida.”</p>
+              <footer><span class="case-quote-name">Daniela Volz</span> · abogada</footer>
+            </blockquote>
             <div class="case-more">
               <button type="button" class="case-toggle" data-accordion-toggle id="caso-volz-btn" aria-expanded="true" aria-controls="caso-volz">
                 <span>Sobre el proyecto</span>
@@ -710,11 +737,30 @@
             <h3 class="faq-q">
               <button type="button" class="faq-toggle" data-accordion-toggle id="faq-2-btn" aria-expanded="true" aria-controls="faq-2">
                 <span class="faq-num" aria-hidden="true">02</span>
-                <span class="faq-text">¿Trabajás solo en Uruguay?</span>
+                <span class="faq-text">¿Cuánto cuesta un desarrollo a medida?</span>
                 <span class="service-icon" aria-hidden="true"></span>
               </button>
             </h3>
             <div class="faq-panel" data-accordion-panel id="faq-2" role="region" aria-labelledby="faq-2-btn">
+              <div class="faq-panel-inner">
+                <p>
+                  Los proyectos arrancan a partir de 250 USD. El precio final depende de lo que necesites: no es lo
+                  mismo una web profesional que un e-commerce o un sistema con usuarios, pagos e integraciones.
+                  Después de un diagnóstico corto te paso un presupuesto claro, sin letra chica, y sabés desde el
+                  principio cuánto vas a invertir.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-accordion-item>
+            <h3 class="faq-q">
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-3-btn" aria-expanded="true" aria-controls="faq-3">
+                <span class="faq-num" aria-hidden="true">03</span>
+                <span class="faq-text">¿Trabajás solo en Uruguay?</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" data-accordion-panel id="faq-3" role="region" aria-labelledby="faq-3-btn">
               <div class="faq-panel-inner">
                 <p>
                   No. Estoy en Montevideo y trabajo con negocios de todo el Uruguay, y también tomo proyectos de
@@ -725,13 +771,13 @@
           </div>
           <div class="faq-item reveal" data-accordion-item>
             <h3 class="faq-q">
-              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-3-btn" aria-expanded="true" aria-controls="faq-3">
-                <span class="faq-num" aria-hidden="true">03</span>
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-4-btn" aria-expanded="true" aria-controls="faq-4">
+                <span class="faq-num" aria-hidden="true">04</span>
                 <span class="faq-text">¿Le podés integrar IA a mi web o sistema?</span>
                 <span class="service-icon" aria-hidden="true"></span>
               </button>
             </h3>
-            <div class="faq-panel" data-accordion-panel id="faq-3" role="region" aria-labelledby="faq-3-btn">
+            <div class="faq-panel" data-accordion-panel id="faq-4" role="region" aria-labelledby="faq-4-btn">
               <div class="faq-panel-inner">
                 <p>
                   Sí, es un plus que le sumo a tu desarrollo a medida o e-commerce. Integro inteligencia artificial
@@ -746,13 +792,13 @@
           </div>
           <div class="faq-item reveal" data-accordion-item>
             <h3 class="faq-q">
-              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-4-btn" aria-expanded="true" aria-controls="faq-4">
-                <span class="faq-num" aria-hidden="true">04</span>
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-5-btn" aria-expanded="true" aria-controls="faq-5">
+                <span class="faq-num" aria-hidden="true">05</span>
                 <span class="faq-text">¿Con qué tecnologías trabajás?</span>
                 <span class="service-icon" aria-hidden="true"></span>
               </button>
             </h3>
-            <div class="faq-panel" data-accordion-panel id="faq-4" role="region" aria-labelledby="faq-4-btn">
+            <div class="faq-panel" data-accordion-panel id="faq-5" role="region" aria-labelledby="faq-5-btn">
               <div class="faq-panel-inner">
                 <p>
                   Frontend con Next.js, TypeScript y Tailwind CSS; backend en Python con FastAPI y PostgreSQL; deploy
@@ -765,13 +811,13 @@
           </div>
           <div class="faq-item reveal" data-accordion-item>
             <h3 class="faq-q">
-              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-5-btn" aria-expanded="true" aria-controls="faq-5">
-                <span class="faq-num" aria-hidden="true">05</span>
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-6-btn" aria-expanded="true" aria-controls="faq-6">
+                <span class="faq-num" aria-hidden="true">06</span>
                 <span class="faq-text">¿Mi web va a aparecer en Google y en las IAs?</span>
                 <span class="service-icon" aria-hidden="true"></span>
               </button>
             </h3>
-            <div class="faq-panel" data-accordion-panel id="faq-5" role="region" aria-labelledby="faq-5-btn">
+            <div class="faq-panel" data-accordion-panel id="faq-6" role="region" aria-labelledby="faq-6-btn">
               <div class="faq-panel-inner">
                 <p>
                   La dejo preparada para eso desde el código. SEO para que Google te muestre, y GEO para que las IAs

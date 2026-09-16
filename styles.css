@@ -1917,6 +1917,20 @@ textarea,
     display: none;
   }
 
+  /* Contacto: solo título + formulario (sin texto ni lista) */
+  .contact-intro > p:not(.eyebrow),
+  .contact-list {
+    display: none;
+  }
+
+  .contact-intro h2 {
+    margin-bottom: 0;
+  }
+
+  .contact-form {
+    padding-top: 1.6rem;
+  }
+
   .section-header {
     margin-bottom: 1.6rem;
   }

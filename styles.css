@@ -27,6 +27,10 @@
     --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
     --cherry: #f43f5e;
     --cherry-soft: rgba(244, 63, 94, 0.16);
+    /* Acento del panel de Integraciones (azul-violeta: el rojo parecía "pérdida") */
+    --violet: #8b5cf6;
+    --violet-soft: rgba(139, 92, 246, 0.18);
+    --violet-text: #c4b5fd;
     --line: rgba(148, 163, 184, 0.35);
     --line-soft: rgba(148, 163, 184, 0.22);
     --footer-bg: #0f172a;
@@ -787,21 +791,21 @@ textarea,
 }
 
 .eco-node.is-active {
-  border-color: var(--cherry);
-  box-shadow: 0 0 0 4px var(--cherry-soft), 0 18px 40px rgba(2, 6, 23, 0.6);
+  border-color: var(--violet);
+  box-shadow: 0 0 0 4px var(--violet-soft), 0 18px 40px rgba(2, 6, 23, 0.6);
 }
 
 .eco-node.is-active .eco-icon {
-  stroke: var(--cherry);
+  stroke: var(--violet);
 }
 
 .eco-node.is-active .eco-label {
-  color: #fda4af;
+  color: var(--violet-text);
 }
 
 .eco-node.is-active::after {
-  background: var(--cherry);
-  box-shadow: 0 0 10px rgba(244, 63, 94, 0.7);
+  background: var(--violet);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
 }
 
 .eco-panel {
@@ -836,7 +840,7 @@ textarea,
 }
 
 .eco-dots i:first-child {
-  background: var(--cherry);
+  background: var(--violet);
 }
 
 .eco-panel-title,
@@ -874,7 +878,7 @@ textarea,
 }
 
 .eco-metric-value.is-bump {
-  color: #fda4af;
+  color: var(--violet-text);
   transition: color 0.15s ease;
 }
 
@@ -919,8 +923,8 @@ textarea,
 }
 
 .eco-activity-list li.is-new::before {
-  background: var(--cherry);
-  box-shadow: 0 0 8px rgba(244, 63, 94, 0.8);
+  background: var(--violet);
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.8);
 }
 
 @keyframes eco-in {
@@ -2241,6 +2245,9 @@ textarea,
   --shadow-soft: 0 22px 60px rgba(15, 23, 42, 0.12);
   --cherry: #e11d48;
   --cherry-soft: rgba(225, 29, 72, 0.12);
+  --violet: #7c3aed;
+  --violet-soft: rgba(124, 58, 237, 0.12);
+  --violet-text: #6d28d9;
   --line: rgba(15, 23, 42, 0.14);
   --line-soft: rgba(15, 23, 42, 0.1);
   --footer-bg: #eef2f8;
@@ -2375,12 +2382,12 @@ textarea,
 }
 
 :root[data-theme="light"] .eco-node.is-active {
-  box-shadow: 0 0 0 4px var(--cherry-soft), 0 18px 40px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 0 0 4px var(--violet-soft), 0 18px 40px rgba(15, 23, 42, 0.12);
 }
 
 :root[data-theme="light"] .eco-node.is-active .eco-label,
 :root[data-theme="light"] .eco-metric-value.is-bump {
-  color: #e11d48;
+  color: var(--violet-text);
 }
 
 :root[data-theme="light"] .eco-panel {
@@ -2398,7 +2405,7 @@ textarea,
 }
 
 :root[data-theme="light"] .eco-dots i:first-child {
-  background: var(--cherry);
+  background: var(--violet);
 }
 
 :root[data-theme="light"] .eco-metric {
@@ -2415,7 +2422,7 @@ textarea,
 }
 
 :root[data-theme="light"] .eco-activity-list li.is-new::before {
-  background: var(--cherry);
+  background: var(--violet);
 }
 
 /* Contacto */

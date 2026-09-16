@@ -1,0 +1,44 @@
+# Systek
+
+> Systek hace desarrollo web a medida desde Montevideo, Uruguay: desarrollos a medida, e-commerce a medida e IA, con código propio, sin Shopify, WordPress ni plantillas. La inteligencia artificial (asistentes con modelos de lenguaje y automatizaciones) se integra dentro de esas webs y sistemas. Trabaja con negocios de todo Uruguay y toma proyectos en Argentina. Activo desde 2025.
+
+El trato es directo con quien diseña y programa el proyecto (Tomás Ibarra, fundador), por WhatsApp o formulario, sin intermediarios.
+
+## Servicios
+
+- [Desarrollos a medida](https://www.systek.uy/#servicios): webs, plataformas y sistemas hechos desde cero para lo que cada negocio necesite, sin límites de plantillas ni plataformas. Por ejemplo: plataformas con cuentas de usuario, pagos online, reservas de consultas y videollamadas integradas; paneles de administración; sistemas de gestión.
+- [E-commerce a medida](https://www.systek.uy/#servicios): tiendas online hechas desde cero con código propio. Catálogo, carrito y checkout, pagos con Mercado Pago, Stripe o PayPal (también desde el exterior), envíos, analítica, SEO técnico y GEO (visibilidad en Google y en motores de IA).
+- [IA integrada a tu web o sistema](https://www.systek.uy/#servicios): asistentes que responden a clientes 24/7 en la web o WhatsApp, entrenados con la información del negocio, y automatizaciones de atención y ventas con n8n, usando modelos como OpenAI, Claude y Gemini u opciones locales como Ollama.
+- [Integraciones](https://www.systek.uy/#integraciones): conexión con Mercado Libre, Mercado Pago, WhatsApp, email, Google Calendar y asistentes con IA.
+
+## Proyectos online
+
+- [Gingers](https://gingers.com.uy): e-commerce y panel de gestión a medida en Uruguay (Next.js, FastAPI, PostgreSQL; pagos con Mercado Pago, emails automáticos, avisos por WhatsApp y facturas en PDF). Más de 100 pedidos, más de 50 productos y más de 20 clientes.
+- [Daniela Volz, abogada](https://danielavolzabogada.com.uy): sitio web profesional con SEO.
+
+## Stack
+
+- Frontend: Next.js, TypeScript, Tailwind CSS
+- Backend y datos: Python, FastAPI, SQLAlchemy, PostgreSQL
+- Pagos: Mercado Pago, Stripe, PayPal, Payoneer (cobros del exterior)
+- Integraciones: WhatsApp Cloud API, Resend (email), Cloudinary, facturas en PDF
+- IA y automatización: OpenAI, Claude, Gemini, Grok, Ollama, n8n
+- Infraestructura: Vercel, Railway, GitHub
+- Medición, SEO y GEO: Google Analytics 4, Google Search Console, datos estructurados (schema.org), llms.txt
+
+## Preguntas frecuentes
+
+- [¿Qué es el código a medida y cuánto tarda?](https://www.systek.uy/#faq): una web, tienda o sistema hecho desde cero para el negocio, con código propio, sin Shopify ni plantillas y sin depender de una plataforma. Un proyecto bien armado suele estar en semanas; se arranca con un diagnóstico corto que define tiempos reales.
+- [¿Le podés integrar IA a mi web o sistema?](https://www.systek.uy/#faq): sí, como plus del desarrollo a medida o e-commerce: chatbots con IA para WhatsApp y la web con atención 24/7, asistentes virtuales entrenados con la información del negocio, agentes de IA que responden consultas, toman pedidos o agendan turnos, y automatización de procesos con n8n, usando modelos de lenguaje (LLM) de OpenAI (ChatGPT), Claude y Gemini.
+- [¿Mi web va a aparecer en Google y en las IAs?](https://www.systek.uy/#faq): cada web queda preparada con SEO para Google y GEO para que IAs como ChatGPT, Gemini o Perplexity la encuentren y la recomienden.
+- [¿Dónde trabaja?](https://www.systek.uy/#faq): base en Montevideo, clientes en todo Uruguay y proyectos en Argentina, coordinando online y por WhatsApp.
+
+## Contacto
+
+- Nombre: Systek
+- Ubicación: Montevideo, Uruguay
+- Teléfono / WhatsApp: +598 97 990 860
+- Email: systekuy@gmail.com
+- Web: https://www.systek.uy/
+- Instagram: https://www.instagram.com/systek.uy/
+- LinkedIn: https://www.linkedin.com/company/systekuy/

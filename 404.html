@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html lang="es-UY">
+<html lang="es-UY" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Página no encontrada | Systek</title>
-  <meta name="description" content="Esta página no existe. Volvé al inicio de Systek para ver e-commerce, IA y desarrollos a medida." />
+  <meta name="description" content="Esta página no existe. Volvé al inicio de Systek para ver desarrollos a medida, e-commerce e IA." />
   <meta name="robots" content="noindex, follow" />
   <meta name="author" content="Systek" />
   <link rel="canonical" href="https://www.systek.uy/404.html" />
   <link rel="icon" href="imagenes/favicon.ico" sizes="any" />
-  <link rel="stylesheet" href="styles.css?v=20260726d" />
+  <link rel="stylesheet" href="styles.css?v=20260917l" />
+  <!-- Tema guardado (claro/oscuro) antes de pintar, para que no parpadee. Default: claro (data-theme en <html>) -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      try {
+        var theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") root.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body class="page-404">
   <main class="error-404">
@@ -28,7 +39,7 @@
     </p>
     <a class="btn" href="/">Volver al inicio</a>
     <p class="error-404-alt">
-      O escribinos por
+      O escribime por
       <a href="https://wa.me/59897990860" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
     </p>
   </main>

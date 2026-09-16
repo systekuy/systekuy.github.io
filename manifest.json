@@ -1,11 +1,11 @@
 {
   "name": "Systek — Desarrollo web a medida",
   "short_name": "Systek",
-  "description": "E-commerce a medida, IA y sistemas de gestión en Uruguay, con código real.",
+  "description": "Desarrollos a medida, e-commerce e IA con código propio, en Uruguay y Argentina.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#050816",
-  "theme_color": "#0f172a",
+  "background_color": "#f6f8fc",
+  "theme_color": "#eef2f8",
   "lang": "es-UY",
   "icons": [
     {

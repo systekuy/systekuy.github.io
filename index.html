@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="es-UY">
+<html lang="es-UY" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Systek | Desarrollo web a medida Uruguay</title>
-  <meta name="description" content="Desarrollamos e-commerce a medida, IA y sistemas de gestión para negocios en Uruguay. Código real, rápido y cercano." />
+  <title>Desarrollos a medida, e-commerce e IA en Uruguay | Systek</title>
+  <meta name="description" content="Hago desarrollos a medida, e-commerce e IA con código propio, sin Shopify ni plantillas. Desde Montevideo para Uruguay y Argentina." />
   <meta name="author" content="Systek" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#eef2f8" />
   <link rel="canonical" href="https://www.systek.uy/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Systek | Desarrollo web a medida Uruguay" />
-  <meta property="og:description" content="E-commerce a medida, inteligencia artificial y desarrollos de gestión para tu negocio. Desde Montevideo para todo el Uruguay." />
+  <meta property="og:title" content="Desarrollos a medida, e-commerce e IA en Uruguay | Systek" />
+  <meta property="og:description" content="Desarrollos a medida, e-commerce e IA con código propio, sin Shopify ni plantillas. Desde Montevideo para Uruguay y Argentina." />
   <meta property="og:image" content="https://www.systek.uy/imagenes/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -23,8 +23,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Systek | Desarrollo web a medida Uruguay" />
-  <meta name="twitter:description" content="E-commerce a medida, IA y sistemas de gestión para tu negocio. Desde Montevideo para todo el Uruguay." />
+  <meta name="twitter:title" content="Desarrollos a medida, e-commerce e IA en Uruguay | Systek" />
+  <meta name="twitter:description" content="Desarrollos a medida, e-commerce e IA con código propio, sin Shopify ni plantillas. Desde Montevideo para Uruguay y Argentina." />
   <meta name="twitter:image" content="https://www.systek.uy/imagenes/og-image.jpg" />
 
   <!-- Icons / PWA-ish -->
@@ -36,10 +36,23 @@
 
   <!-- Performance -->
   <link rel="preload" href="font/Source_Serif_4/SourceSerif4-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="styles.css?v=20260909e" as="style" />
-  <link rel="stylesheet" href="styles.css?v=20260909e" />
+  <link rel="preload" href="styles.css?v=20260917l" as="style" />
+  <link rel="stylesheet" href="styles.css?v=20260917l" />
+  <!-- Marca que hay JS (las animaciones/acordeón solo esconden contenido si JS corre: crawlers sin JS ven todo) -->
+  <!-- Tema guardado (claro/oscuro) antes de pintar, para que no parpadee. Default: claro (data-theme en <html>) -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      try {
+        var theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") root.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
 
-  <!-- JSON-LD: ProfessionalService + Services + FAQ -->
+  <!-- JSON-LD: ProfessionalService (Organization) + fundador + Services + FAQ
+       foundingDate = mismo año que el footer. Sumar a sameAs los perfiles de GBP/Clutch/etc. cuando existan. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,16 +61,24 @@
         "@type": "ProfessionalService",
         "@id": "https://www.systek.uy/#business",
         "name": "Systek",
-        "description": "Desarrollo de e-commerce a medida, inteligencia artificial y sistemas de gestión para negocios. Equipo basado en Montevideo, Uruguay.",
+        "description": "Desarrollo web a medida con código propio, sin Shopify ni plantillas: desarrollos a medida, e-commerce a medida e inteligencia artificial integrada (asistentes con modelos de lenguaje y automatizaciones) para negocios. Desde Montevideo para Uruguay y Argentina.",
         "url": "https://www.systek.uy/",
-        "image": "https://www.systek.uy/imagenes/Systek_LogoTransparente.webp",
+        "image": "https://www.systek.uy/imagenes/og-image.jpg",
         "logo": "https://www.systek.uy/imagenes/Systek_LogoTransparente.webp",
         "email": "systekuy@gmail.com",
         "telephone": "+59897990860",
         "priceRange": "$$",
+        "foundingDate": "2025",
+        "founder": { "@id": "https://www.systek.uy/#fundador" },
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@id": "https://www.systek.uy/#desarrollos" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://www.systek.uy/#ecommerce" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://www.systek.uy/#ia" } }
+        ],
         "areaServed": [
           { "@type": "Country", "name": "Uruguay" },
-          { "@type": "City", "name": "Montevideo" }
+          { "@type": "City", "name": "Montevideo" },
+          { "@type": "Country", "name": "Argentina" }
         ],
         "address": {
           "@type": "PostalAddress",
@@ -65,73 +86,122 @@
           "addressCountry": "UY"
         },
         "sameAs": [
-          "https://www.instagram.com/systek.uy/"
+          "https://www.instagram.com/systek.uy/",
+          "https://www.linkedin.com/company/systekuy/"
         ],
         "knowsAbout": [
           "desarrollo web a medida",
-          "e-commerce a medida",
-          "inteligencia artificial para negocios",
           "sistemas de gestión a medida",
-          "páginas web para negocios Uruguay"
+          "software a medida",
+          "e-commerce a medida",
+          "tiendas online con código propio",
+          "integración de inteligencia artificial",
+          "páginas web para negocios Uruguay",
+          "SEO",
+          "GEO (Generative Engine Optimization)",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Mercado Pago",
+          "Stripe",
+          "PayPal",
+          "Payoneer",
+          "WhatsApp Cloud API",
+          "n8n",
+          "modelos de lenguaje",
+          "chatbots con IA para WhatsApp",
+          "asistentes virtuales con inteligencia artificial",
+          "agentes de IA",
+          "automatización de procesos con IA"
         ]
       },
       {
+        "@type": "Person",
+        "@id": "https://www.systek.uy/#fundador",
+        "name": "Tomás Ibarra",
+        "jobTitle": "Fundador y desarrollador de software",
+        "worksFor": { "@id": "https://www.systek.uy/#business" }
+      },
+      {
         "@type": "Service",
+        "@id": "https://www.systek.uy/#desarrollos",
+        "name": "Desarrollos a medida",
+        "serviceType": "Software de gestión a medida",
+        "description": "Webs, plataformas y sistemas a medida hechos desde cero con código propio para lo que cada negocio necesite: cuentas de usuario, pagos online, reservas y consultas, videollamadas, paneles de administración y sistemas de gestión, conectados con WhatsApp, email y las herramientas que ya usás.",
+        "provider": { "@id": "https://www.systek.uy/#business" },
+        "areaServed": ["Uruguay", "Argentina"]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.systek.uy/#ecommerce",
         "name": "E-commerce a medida",
         "serviceType": "E-commerce a medida",
-        "description": "Tiendas online con código propio: catálogo, carrito, pagos (Mercado Pago / Stripe), envíos y SEO.",
+        "description": "Tiendas online con código propio, sin Shopify ni plantillas: catálogo, carrito, pagos (Mercado Pago, Stripe, PayPal y cobros del exterior), envíos, SEO y GEO (visibilidad en Google y en motores de IA como ChatGPT, Claude y Perplexity).",
         "provider": { "@id": "https://www.systek.uy/#business" },
-        "areaServed": ["Uruguay"]
+        "areaServed": ["Uruguay", "Argentina"]
       },
       {
         "@type": "Service",
-        "name": "Inteligencia artificial para negocios",
-        "serviceType": "Inteligencia artificial",
-        "description": "Asistentes y automatizaciones con IA integrados a tu web, WhatsApp u otros canales, entrenados con la información de tu negocio.",
+        "@id": "https://www.systek.uy/#ia",
+        "name": "Integración de IA en tu web o sistema",
+        "serviceType": "Integración de inteligencia artificial",
+        "description": "Asistentes basados en modelos de lenguaje (OpenAI, Claude, Gemini) y automatizaciones de atención y ventas con n8n, integrados a tu e-commerce o sistema a medida, en la web o WhatsApp y entrenados con la información de tu negocio.",
         "provider": { "@id": "https://www.systek.uy/#business" },
-        "areaServed": ["Uruguay"]
+        "areaServed": ["Uruguay", "Argentina"]
       },
       {
-        "@type": "Service",
-        "name": "Desarrollos a medida de gestión",
-        "serviceType": "Software de gestión a medida",
-        "description": "Sistemas de gestión hechos a la medida de tu negocio: procesos, operaciones y herramientas internas con código propio.",
-        "provider": { "@id": "https://www.systek.uy/#business" },
-        "areaServed": ["Uruguay"]
+        "@type": "CreativeWork",
+        "@id": "https://www.systek.uy/#caso-gingers",
+        "name": "Gingers: e-commerce y panel de gestión a medida",
+        "url": "https://gingers.com.uy",
+        "creator": { "@id": "https://www.systek.uy/#business" },
+        "about": { "@id": "https://www.systek.uy/#ecommerce" },
+        "description": "Tienda online y panel de gestión a medida con Next.js, FastAPI y PostgreSQL: pagos con Mercado Pago, emails automáticos de pedidos, avisos por WhatsApp y facturas en PDF. Más de 100 pedidos, más de 50 productos y más de 20 clientes."
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "¿Qué es el código a medida?",
+            "name": "¿Qué es el código a medida y cuánto tarda?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Es una web, tienda o sistema hecho a tu medida: vos decidís cómo funciona cada detalle, con código propio y total control sobre tu proyecto."
+              "text": "Es una web, tienda o sistema hecho desde cero para tu negocio, con código propio: sin Shopify, sin plantillas y sin depender de una plataforma. Vos decidís cómo funciona cada detalle y tenés control total sobre tu proyecto. ¿Los tiempos? Depende del alcance, pero un proyecto bien armado suele estar en semanas, no meses eternos: arranco con un diagnóstico corto y te doy tiempos reales."
             }
           },
           {
             "@type": "Question",
-            "name": "¿Cuánto tarda un e-commerce a medida?",
+            "name": "¿Trabajás solo en Uruguay?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Depende del alcance, pero un e-commerce bien armado suele estar en semanas, no meses eternos. Arrancamos con un diagnóstico corto y te damos tiempos reales."
+              "text": "No. Estoy en Montevideo y trabajo con negocios de todo el Uruguay, y también tomo proyectos de Argentina y de donde sea que me necesiten. Coordinamos todo online y por WhatsApp, directo conmigo."
             }
           },
           {
             "@type": "Question",
-            "name": "¿Trabajan solo en Montevideo?",
+            "name": "¿Le podés integrar IA a mi web o sistema?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Estamos basados en Montevideo y trabajamos con negocios en todo el Uruguay. Coordinamos por WhatsApp."
+              "text": "Sí, es un plus que le sumo a tu desarrollo a medida o e-commerce. Integro inteligencia artificial para negocios en Uruguay y Argentina: chatbots con IA para WhatsApp y la web que atienden a tus clientes 24/7, asistentes virtuales entrenados con la información de tu negocio, agentes de IA que responden consultas, toman pedidos o agendan turnos, y automatización de procesos con n8n. Trabajo con modelos de lenguaje (LLM) como los de OpenAI (ChatGPT), Claude y Gemini, conectados directo a tu sistema."
             }
           },
           {
             "@type": "Question",
-            "name": "¿Qué pueden hacer con IA para mi negocio?",
+            "name": "¿Con qué tecnologías trabajás?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Asistentes que responden consultas 24/7, automatizaciones de atención y flujos de ventas, integrados a tu web o WhatsApp y entrenados con la información de tu negocio."
+              "text": "Frontend con Next.js, TypeScript y Tailwind CSS; backend en Python con FastAPI y PostgreSQL; deploy en Vercel y Railway. Integro pagos con Mercado Pago o Stripe, cobros del exterior con PayPal y Payoneer, emails, WhatsApp e IA (OpenAI, Claude, Gemini, automatizaciones con n8n). Siempre con código propio y sin plataformas cerradas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Mi web va a aparecer en Google y en las IAs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La dejo preparada para eso desde el código. SEO para que Google te muestre, y GEO para que las IAs como ChatGPT, Gemini o Perplexity te encuentren y te recomienden cuando alguien pregunta por lo que hacés: velocidad, datos estructurados, textos claros y fáciles de citar, y un archivo llms.txt pensado para las IAs."
             }
           }
         ]
@@ -166,11 +236,24 @@
       <nav class="nav-links" aria-label="Principal">
         <a href="#servicios">Servicios</a>
         <a href="#casos">Resultados</a>
-        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#proceso">Cómo trabajo</a>
         <a href="#faq">FAQ</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a href="#contacto" class="btn btn-small btn-outline">Escribenos</a>
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambiar a modo claro">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 14.2A8 8 0 1 1 9.8 4a6.3 6.3 0 0 0 10.2 10.2z" />
+            <path class="theme-star" d="M17.2 2.6l.55 1.45 1.45.55-1.45.55-.55 1.45-.55-1.45-1.45-.55 1.45-.55z" />
+            <path class="theme-star theme-star-2" d="M21.2 7.6l.35.9.9.35-.9.35-.35.9-.35-.9-.9-.35.9-.35z" />
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" />
+            <path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" />
+          </svg>
+        </button>
+        <a href="#contacto" class="btn btn-small btn-outline">Escribime</a>
+      </div>
     </div>
   </header>
 
@@ -182,17 +265,16 @@
       <div class="container hero-grid-content">
         <div class="hero-copy">
           <h1 id="hero-title">
-            <span class="gradient-text"><em>E-commerce</em> a medida, IA y sistemas de gestión para negocios en <em>Uruguay</em>.</span>
+            <span class="gradient-text"><span class="hero-line"><span class="hero-part"><em>Desarrollos a medida</em>,</span> <span class="hero-part">e-commerce e IA</span></span> <span class="hero-line">para negocios en <em>Uruguay</em>.</span></span>
           </h1>
+          <p class="hero-tagline">Trabajos únicos: vos lo soñás, Systek lo desarrolla.</p>
           <p class="hero-subtitle">
-            Somos Systek. Desarrollamos páginas web y tiendas online con código real.
-            Trabajamos desde Montevideo con negocios en todo el Uruguay: rápido, cercano, y con el nivel que ves en las páginas grandes — solo que nos contestás por WhatsApp.
+            En Systek hago desarrollo web con código propio, sin Shopify ni plantillas: desarrollos a medida, e-commerce e IA integrada donde te sume.
+            Trabajo desde Montevideo con negocios en todo el Uruguay: rápido, cercano, y con el nivel que ves en las páginas grandes — solo que me escribís por WhatsApp.
           </p>
           <div class="hero-actions">
             <a href="https://wa.me/59897990860" class="btn" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
-            <button class="btn btn-secondary" type="button" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">
-              Ver servicios
-            </button>
+            <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
           </div>
         </div>
       </div>
@@ -204,41 +286,171 @@
     <section id="servicios" class="section reveal" aria-labelledby="servicios-title">
       <div class="container">
         <div class="section-header reveal">
-          <h2 id="servicios-title">E-commerce, inteligencia artificial y gestión a medida</h2>
-          <p>Tres líneas en las que trabajamos fuerte: tiendas online, IA para tu negocio y sistemas de gestión hechos a tu medida.</p>
+          <p class="eyebrow" aria-hidden="true">Servicios</p>
+          <h2 id="servicios-title">Desarrollos a medida, e-commerce e IA</h2>
+          <p>Desarrollos a medida para tu negocio, tiendas online y, si te suma, inteligencia artificial integrada a todo lo que construyo.</p>
         </div>
 
-        <div class="cards-grid">
-          <article class="card reveal">
-            <h3>E-commerce a medida</h3>
-            <ul class="card-list">
-              <li>Tienda online con código tuyo: catálogo, carrito y checkout</li>
-              <li>Pagos con Mercado Pago o Stripe, envíos y analítica</li>
-              <li>SEO y velocidad para que Google te muestre de verdad</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>Inteligencia artificial</h3>
-            <ul class="card-list">
-              <li>Asistentes que responden a tus clientes 24/7 en web o WhatsApp</li>
-              <li>Entrenados con la información de tu negocio</li>
-              <li>Flujos de atención y ventas automatizados</li>
-            </ul>
-          </article>
-
-          <article class="card reveal">
-            <h3>Desarrollos a medida de gestión</h3>
-            <p>
-              Sistemas pensados para cómo opera tu negocio: procesos, operaciones y herramientas internas
-              con código propio, para que dejes de pelearte con planillas y softwares genéricos.
-            </p>
-            <div class="card-actions">
-              <a href="https://wa.me/59897990860" class="btn btn-invertido" target="_blank" rel="noopener noreferrer">
-                Contanos tu idea
-              </a>
+        <!-- Acordeón: sin JS se ven todos abiertos; script.js los colapsa (menos el primero) -->
+        <div class="services-accordion" data-accordion="first-open">
+          <article class="service-item" data-accordion-item>
+            <h3 class="service-heading">
+              <button type="button" class="service-toggle" data-accordion-toggle id="servicio-desarrollos-btn" aria-expanded="true" aria-controls="servicio-desarrollos">
+                <span class="service-num" aria-hidden="true">01</span>
+                <span class="service-title">Desarrollos a medida</span>
+                <span class="service-tag">Tu idea, desde cero</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="service-panel" data-accordion-panel id="servicio-desarrollos" role="region" aria-labelledby="servicio-desarrollos-btn">
+              <div class="service-panel-inner">
+                <p>
+                  Webs, plataformas y sistemas a medida, hechos desde cero con código propio para lo que tu negocio
+                  o tu idea necesite. Sin los límites de una plantilla ni de una plataforma: si lo podés imaginar,
+                  lo construyo.
+                </p>
+                <ul class="service-list">
+                  <li>La funcionalidad exacta que necesitás, no la que trae un software genérico</li>
+                  <li>Cuentas de usuario, pagos online y un panel para manejar todo</li>
+                  <li>Conectado con lo que ya usás: pagos, WhatsApp, email</li>
+                  <li>Pensado para crecer con vos</li>
+                </ul>
+                <a href="https://wa.me/59897990860" class="service-link" target="_blank" rel="noopener noreferrer">Contame tu idea por WhatsApp</a>
+              </div>
             </div>
           </article>
+
+          <article class="service-item" data-accordion-item>
+            <h3 class="service-heading">
+              <button type="button" class="service-toggle" data-accordion-toggle id="servicio-ecommerce-btn" aria-expanded="true" aria-controls="servicio-ecommerce">
+                <span class="service-num" aria-hidden="true">02</span>
+                <span class="service-title">E-commerce a medida</span>
+                <span class="service-tag">En semanas</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="service-panel" data-accordion-panel id="servicio-ecommerce" role="region" aria-labelledby="servicio-ecommerce-btn">
+              <div class="service-panel-inner">
+                <p>
+                  Tu tienda online hecha desde cero con código propio, sin Shopify ni plantillas: funciona como
+                  vos querés, no como te deja una plataforma.
+                </p>
+                <ul class="service-list">
+                  <li>Catálogo, carrito y checkout pensados para tu producto</li>
+                  <li>Pagos con Mercado Pago, Stripe o PayPal (también desde el exterior), envíos y analítica</li>
+                  <li>SEO y GEO: que te encuentren en Google y que las IAs como ChatGPT o Claude te recomienden</li>
+                </ul>
+                <a href="#casos" class="service-link">Mirá Gingers, un e-commerce que hice</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-item" data-accordion-item>
+            <h3 class="service-heading">
+              <button type="button" class="service-toggle" data-accordion-toggle id="servicio-ia-btn" aria-expanded="true" aria-controls="servicio-ia">
+                <span class="service-num" aria-hidden="true">03</span>
+                <span class="service-title">IA integrada a tu web o sistema</span>
+                <span class="service-tag">Plus integrado</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="service-panel" data-accordion-panel id="servicio-ia" role="region" aria-labelledby="servicio-ia-btn">
+              <div class="service-panel-inner">
+                <p>
+                  La inteligencia artificial no es un producto aparte: es un plus que le sumo a tu sistema o
+                  e-commerce. Uso modelos de lenguaje para armar asistentes que conocen tu negocio y automatizaciones
+                  que te sacan tareas repetitivas de encima.
+                </p>
+                <ul class="service-list">
+                  <li>Asistentes que responden a tus clientes 24/7 en la web o WhatsApp</li>
+                  <li>Entrenados con la información de tu negocio</li>
+                  <li>Automatizaciones de atención y ventas con n8n, conectadas a tu sistema</li>
+                  <li>Con los modelos que mejor le vienen a cada caso: OpenAI, Claude, Gemini u opciones locales como Ollama</li>
+                </ul>
+                <a href="#integraciones" class="service-link">Ver con qué se conecta</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="integraciones" class="section reveal" aria-labelledby="integraciones-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow" aria-hidden="true">Integraciones</p>
+          <h2 id="integraciones-title">Tu web o sistema, conectado con lo que ya usás</h2>
+          <p>
+            Lo que te desarrollo no queda aislado: lo conecto con tus pagos, tus canales de venta y tus
+            herramientas del día a día, para que todo pase por un solo lugar.
+          </p>
+        </div>
+
+        <div class="eco" data-eco>
+          <ul class="eco-nodes eco-nodes-left">
+            <li class="eco-node is-active" data-event="Venta en Mercado Libre · stock actualizado" data-effect="pedidos:1,cobrado:2350">
+              <svg class="eco-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+              <span class="eco-label">Ventas</span>
+              <span class="eco-name">Mercado Libre</span>
+            </li>
+            <li class="eco-node" data-event="Pago aprobado con Mercado Pago · pedido confirmado" data-effect="pedidos:1,cobrado:1890">
+              <svg class="eco-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h3"/></svg>
+              <span class="eco-label">Pagos</span>
+              <span class="eco-name">Mercado Pago</span>
+            </li>
+            <li class="eco-node" data-event="Consulta por WhatsApp · respondida al instante" data-effect="consultas:1">
+              <svg class="eco-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>
+              <span class="eco-label">Mensajes</span>
+              <span class="eco-name">WhatsApp</span>
+            </li>
+          </ul>
+
+          <div class="eco-panel" role="img" aria-label="Ejemplo ilustrativo de un panel de gestión conectado a Mercado Libre, Mercado Pago, WhatsApp, email, Google Calendar y un asistente con IA">
+            <div class="eco-panel-bar" aria-hidden="true">
+              <span class="eco-dots"><i></i><i></i><i></i></span>
+              <span class="eco-panel-title">Panel · tu negocio</span>
+            </div>
+            <div class="eco-metrics" aria-hidden="true">
+              <div class="eco-metric">
+                <span class="eco-metric-label">Pedidos hoy</span>
+                <span class="eco-metric-value" data-eco-metric="pedidos">24</span>
+              </div>
+              <div class="eco-metric">
+                <span class="eco-metric-label">Cobrado</span>
+                <span class="eco-metric-value" data-eco-metric="cobrado">$ 38.400</span>
+              </div>
+              <div class="eco-metric">
+                <span class="eco-metric-label">Consultas</span>
+                <span class="eco-metric-value" data-eco-metric="consultas">12</span>
+              </div>
+            </div>
+            <div class="eco-activity" aria-hidden="true">
+              <span class="eco-activity-label">Actividad</span>
+              <ul class="eco-activity-list" data-eco-activity>
+                <li class="is-new">Venta en Mercado Libre · stock actualizado</li>
+                <li>Turno agendado en Google Calendar</li>
+                <li>Email de confirmación enviado</li>
+              </ul>
+            </div>
+          </div>
+
+          <ul class="eco-nodes eco-nodes-right">
+            <li class="eco-node" data-event="Email de confirmación enviado">
+              <svg class="eco-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <span class="eco-label">Avisos</span>
+              <span class="eco-name">Email</span>
+            </li>
+            <li class="eco-node" data-event="Turno agendado en Google Calendar" data-effect="consultas:1">
+              <svg class="eco-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+              <span class="eco-label">Agenda</span>
+              <span class="eco-name">Google Calendar</span>
+            </li>
+            <li class="eco-node" data-event="Asistente IA respondió 5 consultas" data-effect="consultas:5">
+              <svg class="eco-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>
+              <span class="eco-label">IA</span>
+              <span class="eco-name">Asistente con IA</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -246,30 +458,30 @@
     <section id="casos" class="section reveal" aria-labelledby="casos-title">
       <div class="container">
         <div class="section-header reveal">
+          <p class="eyebrow" aria-hidden="true">Resultados</p>
           <h2 id="casos-title">Resultados reales: e-commerce y sitios a medida</h2>
-          <p>Proyectos que ya están online. Tocá cada marca para visitar el sitio.</p>
+          <p>Proyectos que ya están online. Tocá la marca o la captura para visitar el sitio.</p>
         </div>
-        <div class="cases-grid">
-          <article class="case-card reveal">
-            <h3 class="case-title">
-              <a href="https://gingers.com.uy"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 class="case-link">
+        <div class="cases-grid" data-accordion="closed">
+          <article class="case reveal" data-accordion-item>
+            <header class="case-head">
+              <a class="case-logo-link" href="https://gingers.com.uy" target="_blank" rel="noopener noreferrer" tabindex="-1">
                 <img src="imagenes/gingers_logo.webp"
-                     alt="Logo de Gingers, e-commerce a medida en Uruguay"
-                     class="case-logo"
-                     width="45"
-                     height="45"
+                     alt="Logo de Gingers"
+                     class="case-logo case-logo-spin"
+                     width="56"
+                     height="56"
                      loading="lazy"
                      decoding="async" />
-                Gingers: e-commerce a medida
               </a>
-            </h3>
-            <p>
-              <strong>Gingers</strong> necesitaba su tienda desde cero. Hoy su e-commerce es una de las principales fuentes de ingresos del negocio.
-            </p>
-            <div class="case-media">
+              <div>
+                <p class="case-kind">E-commerce a medida</p>
+                <h3 class="case-title">
+                  <a href="https://gingers.com.uy" target="_blank" rel="noopener noreferrer">Gingers</a>
+                </h3>
+              </div>
+            </header>
+            <a class="case-media" href="https://gingers.com.uy" target="_blank" rel="noopener noreferrer" tabindex="-1">
               <img src="imagenes/gin.webp"
                    alt="Captura del e-commerce Gingers en Uruguay"
                    class="case-img"
@@ -277,33 +489,51 @@
                    height="546"
                    loading="lazy"
                    decoding="async" />
+            </a>
+            <ul class="case-metrics" aria-label="Resultados de Gingers">
+              <li><strong data-count="100" data-prefix="+">+100</strong><span>pedidos</span></li>
+              <li><strong data-count="50" data-prefix="+">+50</strong><span>productos</span></li>
+              <li><strong data-count="20" data-prefix="+">+20</strong><span>clientes</span></li>
+            </ul>
+            <div class="case-more">
+              <button type="button" class="case-toggle" data-accordion-toggle id="caso-gingers-btn" aria-expanded="true" aria-controls="caso-gingers">
+                <span>Sobre el proyecto</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+              <div class="case-panel" data-accordion-panel id="caso-gingers" role="region" aria-labelledby="caso-gingers-btn">
+                <div class="case-panel-inner">
+                  <p>
+                    <strong>Gingers</strong> necesitaba su tienda desde cero. Hoy su e-commerce es una de las principales fuentes de ingresos del negocio.
+                  </p>
+                  <p>
+                    Le hice la tienda y su panel de gestión a medida: pedidos, productos, clientes e ingresos en un solo lugar,
+                    con pagos con Mercado Pago, emails automáticos de cada pedido, avisos por WhatsApp y facturas en PDF.
+                  </p>
+                  <a href="https://gingers.com.uy" class="service-link" target="_blank" rel="noopener noreferrer">Visitar gingers.com.uy</a>
+                </div>
+              </div>
             </div>
-            <p>
-              Visitá el e-commerce de Gingers en
-              <a href="https://gingers.com.uy" target="_blank" rel="noopener noreferrer" class="link-blanco">gingers.com.uy</a>.
-            </p>
           </article>
 
-          <article class="case-card reveal">
-            <h3 class="case-title">
-              <a href="https://danielavolzabogada.com.uy"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 class="case-link">
+          <article class="case reveal" data-accordion-item>
+            <header class="case-head">
+              <a class="case-logo-link" href="https://danielavolzabogada.com.uy" target="_blank" rel="noopener noreferrer" tabindex="-1">
                 <img src="imagenes/abogada_logo.webp"
-                     alt="Logo de Daniela Volz, sitio web profesional"
+                     alt="Logo de Daniela Volz, abogada"
                      class="case-logo"
-                     width="45"
-                     height="45"
+                     width="56"
+                     height="56"
                      loading="lazy"
                      decoding="async" />
-                Sitio web para abogada
               </a>
-            </h3>
-            <p>
-              Una web simple y rápida para mostrar servicios. Con SEO bien armado, impulsó consultas y proyectos nuevos.
-            </p>
-            <div class="case-media">
+              <div>
+                <p class="case-kind">Sitio web profesional</p>
+                <h3 class="case-title">
+                  <a href="https://danielavolzabogada.com.uy" target="_blank" rel="noopener noreferrer">Daniela Volz, abogada</a>
+                </h3>
+              </div>
+            </header>
+            <a class="case-media" href="https://danielavolzabogada.com.uy" target="_blank" rel="noopener noreferrer" tabindex="-1">
               <img src="imagenes/abogada.webp"
                    alt="Captura del sitio web profesional de Daniela Volz en Uruguay"
                    class="case-img"
@@ -311,62 +541,139 @@
                    height="546"
                    loading="lazy"
                    decoding="async" />
+            </a>
+            <div class="case-more">
+              <button type="button" class="case-toggle" data-accordion-toggle id="caso-volz-btn" aria-expanded="true" aria-controls="caso-volz">
+                <span>Sobre el proyecto</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+              <div class="case-panel" data-accordion-panel id="caso-volz" role="region" aria-labelledby="caso-volz-btn">
+                <div class="case-panel-inner">
+                  <p>
+                    Una web simple y rápida para mostrar servicios. Con SEO bien armado, impulsó consultas y proyectos nuevos.
+                  </p>
+                  <a href="https://danielavolzabogada.com.uy" class="service-link" target="_blank" rel="noopener noreferrer">Visitar danielavolzabogada.com.uy</a>
+                </div>
+              </div>
             </div>
-            <p>
-              Visitá el sitio en
-              <a href="https://danielavolzabogada.com.uy" target="_blank" rel="noopener noreferrer" class="link-blanco">danielavolzabogada.com.uy</a>.
-            </p>
           </article>
+
+          <!-- Plantilla para el próximo caso (copiar un <article class="case"> de arriba y cambiar):
+               logo + tipo ("Desarrollo a medida") + nombre, captura, métricas con data-count (opcional),
+               y en el panel: problema, qué hice y resultado. Ids únicos en el botón y el panel. -->
         </div>
       </div>
     </section>
 
-    <section id="proceso" class="section section-light" aria-labelledby="proceso-title">
-      <div class="container reveal grupo-proceso">
+    <section id="proceso" class="section reveal" aria-labelledby="proceso-title">
+      <div class="container">
         <div class="section-header reveal">
-          <h2 id="proceso-title">Cómo trabajamos el desarrollo web a medida</h2>
+          <p class="eyebrow" aria-hidden="true">Cómo trabajo</p>
+          <h2 id="proceso-title">Cómo trabajo el desarrollo web a medida</h2>
           <p>Proceso claro, de punta a punta. Sin estructuras infladas ni costos de más.</p>
         </div>
 
         <div class="steps">
-          <div class="step">
-            <h3>Quiénes somos</h3>
+          <div class="step reveal">
+            <h3>Quién soy</h3>
             <p>
-              Somos un equipo de ingeniería en sistemas y fundadores de <strong>Systek</strong>.
-              Trabajamos directo en cada proyecto: desarrollo, diseño y estrategia digital.
+              Detrás de <strong>Systek</strong> estoy yo, <strong>Tomás Ibarra</strong>: desarrollo, diseño y estrategia digital
+              de cada proyecto pasan por mí. Sin intermediarios, hablás directo con quien lo construye.
             </p>
             <p>
               Desde <strong>Montevideo</strong>, con negocios en todo el Uruguay.
-              Nuestras páginas están entre las mejores, con cercanía real y código a medida.
+              Mis páginas son, sin exagerar, de las mejores: cercanía real y código a medida.
             </p>
           </div>
 
-          <div class="step">
+          <div class="step reveal">
             <h3>El proceso</h3>
-            <ul>
-              <li><strong>Diagnóstico:</strong> entendemos tu negocio y objetivos.</li>
-              <li><strong>Diseño de la solución:</strong> definimos cómo va a funcionar tu e-commerce, IA o sistema de gestión.</li>
-              <li><strong>Desarrollo:</strong> construimos e integramos todo, probando cada detalle.</li>
-              <li><strong>Lanzamiento:</strong> publicamos, medimos y optimizamos. Soporte hasta el último día.</li>
+            <ul class="service-list">
+              <li><strong>Diagnóstico:</strong> entiendo tu negocio y tus objetivos.</li>
+              <li><strong>Diseño de la solución:</strong> definimos juntos cómo va a funcionar tu sistema o tu e-commerce, y dónde te suma la IA.</li>
+              <li><strong>Desarrollo:</strong> construyo e integro todo, probando cada detalle.</li>
+              <li><strong>Lanzamiento:</strong> publico, mido y optimizo. Soporte hasta el último día.</li>
             </ul>
           </div>
         </div>
 
-        <div class="logo-carousel" aria-label="Tecnologías que usamos">
-          <div class="logo-track">
-            <img src="imagenes/js.webp" alt="JavaScript" width="80" height="50" loading="lazy" decoding="async" />
-            <img src="imagenes/html.webp" alt="HTML5" width="80" height="50" loading="lazy" decoding="async" />
-            <img src="imagenes/css.webp" alt="CSS3" width="80" height="50" loading="lazy" decoding="async" />
-            <img src="imagenes/stripe.webp" alt="Stripe" width="80" height="50" loading="lazy" decoding="async" />
-            <img src="imagenes/mp.webp" alt="Mercado Pago" width="80" height="50" loading="lazy" decoding="async" />
-            <img src="imagenes/python.webp" alt="Python" width="80" height="50" loading="lazy" decoding="async" />
-
-            <img src="imagenes/js.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
-            <img src="imagenes/html.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
-            <img src="imagenes/css.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
-            <img src="imagenes/stripe.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
-            <img src="imagenes/mp.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
-            <img src="imagenes/python.webp" alt="" width="80" height="50" loading="lazy" decoding="async" aria-hidden="true" />
+        <div class="stack reveal" aria-labelledby="stack-title">
+          <h3 id="stack-title" class="stack-title">Con qué trabajo</h3>
+          <p class="stack-intro">Stack moderno y probado en producción, siempre con código propio y sin plataformas cerradas.</p>
+          <div class="reels" data-reels>
+          <div class="reel">
+            <p class="reel-label">Frontend</p>
+            <div class="reel-window">
+              <ul class="reel-strip">
+                <li class="is-focus"><img src="imagenes/stack/nextdotjs.svg" alt="Next.js" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/typescript.svg" alt="TypeScript" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/tailwindcss.svg" alt="Tailwind CSS" width="48" height="48" loading="lazy" decoding="async" /></li>
+              </ul>
+            </div>
+            <p class="reel-name">Next.js</p>
+          </div>
+          <div class="reel">
+            <p class="reel-label">Backend</p>
+            <div class="reel-window">
+              <ul class="reel-strip">
+                <li class="is-focus"><img src="imagenes/stack/python.svg" alt="Python" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/fastapi.svg" alt="FastAPI" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/sqlalchemy.svg" alt="SQLAlchemy" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/postgresql.svg" alt="PostgreSQL" width="48" height="48" loading="lazy" decoding="async" /></li>
+              </ul>
+            </div>
+            <p class="reel-name">Python</p>
+          </div>
+          <div class="reel">
+            <p class="reel-label">Infraestructura</p>
+            <div class="reel-window">
+              <ul class="reel-strip">
+                <li class="is-focus"><img src="imagenes/stack/vercel.svg" alt="Vercel" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/railway.svg" alt="Railway" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/github.svg" alt="GitHub" width="48" height="48" loading="lazy" decoding="async" /></li>
+              </ul>
+            </div>
+            <p class="reel-name">Vercel</p>
+          </div>
+          <div class="reel">
+            <p class="reel-label">Pagos</p>
+            <div class="reel-window">
+              <ul class="reel-strip">
+                <li class="is-focus"><img src="imagenes/stack/mercadopago.svg" alt="Mercado Pago" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/stripe.svg" alt="Stripe" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/paypal.svg" alt="PayPal" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/payoneer.svg" alt="Payoneer" width="48" height="48" loading="lazy" decoding="async" /></li>
+              </ul>
+            </div>
+            <p class="reel-name">Mercado Pago</p>
+          </div>
+          <div class="reel">
+            <p class="reel-label">Integraciones</p>
+            <div class="reel-window">
+              <ul class="reel-strip">
+                <li class="is-focus"><img src="imagenes/stack/whatsapp.svg" alt="WhatsApp" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/resend.svg" alt="Resend" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/cloudinary.svg" alt="Cloudinary" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/googleanalytics.svg" alt="Google Analytics" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/googlesearchconsole.svg" alt="Search Console" width="48" height="48" loading="lazy" decoding="async" /></li>
+              </ul>
+            </div>
+            <p class="reel-name">WhatsApp</p>
+          </div>
+          <div class="reel">
+            <p class="reel-label">IA</p>
+            <div class="reel-window">
+              <ul class="reel-strip">
+                <li class="is-focus"><img src="imagenes/stack/openai.svg" alt="OpenAI" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/claude.svg" alt="Claude" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/googlegemini.svg" alt="Gemini" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/grok.svg" alt="Grok" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/ollama.svg" alt="Ollama" width="48" height="48" loading="lazy" decoding="async" /></li>
+                <li><img src="imagenes/stack/n8n.svg" alt="n8n" width="48" height="48" loading="lazy" decoding="async" /></li>
+              </ul>
+            </div>
+            <p class="reel-name">OpenAI</p>
+          </div>
           </div>
         </div>
       </div>
@@ -375,38 +682,106 @@
     <section id="faq" class="section reveal" aria-labelledby="faq-title">
       <div class="container">
         <div class="section-header reveal">
+          <p class="eyebrow" aria-hidden="true">Preguntas frecuentes</p>
           <h2 id="faq-title">Preguntas frecuentes sobre desarrollo a medida</h2>
-          <p>Lo que nos preguntan antes de arrancar un e-commerce, un proyecto de IA o un sistema de gestión.</p>
+          <p>Lo que me preguntan antes de arrancar un desarrollo a medida o un e-commerce.</p>
         </div>
-        <div class="faq-list">
-          <details class="faq-item reveal">
-            <summary>¿Qué es el código a medida?</summary>
-            <p>
-              Es una web, tienda o sistema hecho a tu medida: vos decidís cómo funciona cada detalle,
-              con código propio y total control sobre tu proyecto.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>¿Cuánto tarda un e-commerce a medida?</summary>
-            <p>
-              Depende del alcance, pero un e-commerce bien armado suele estar en semanas, no meses eternos.
-              Arrancamos con un diagnóstico corto y te damos tiempos reales.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>¿Trabajan solo en Montevideo?</summary>
-            <p>
-              Estamos basados en Montevideo y trabajamos con negocios en todo el Uruguay.
-              Coordinamos por WhatsApp.
-            </p>
-          </details>
-          <details class="faq-item reveal">
-            <summary>¿Qué pueden hacer con IA para mi negocio?</summary>
-            <p>
-              Asistentes que responden consultas 24/7, automatizaciones de atención y flujos de ventas,
-              integrados a tu web o WhatsApp y entrenados con la información de tu negocio.
-            </p>
-          </details>
+        <div class="faq-list" data-accordion="closed" data-hover-open>
+          <div class="faq-item reveal" data-accordion-item>
+            <h3 class="faq-q">
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-1-btn" aria-expanded="true" aria-controls="faq-1">
+                <span class="faq-num" aria-hidden="true">01</span>
+                <span class="faq-text">¿Qué es el código a medida y cuánto tarda?</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" data-accordion-panel id="faq-1" role="region" aria-labelledby="faq-1-btn">
+              <div class="faq-panel-inner">
+                <p>
+                  Es una web, tienda o sistema hecho desde cero para tu negocio, con código propio: sin Shopify, sin
+                  plantillas y sin depender de una plataforma. Vos decidís cómo funciona cada detalle y tenés control
+                  total sobre tu proyecto. ¿Los tiempos? Depende del alcance, pero un proyecto bien armado suele estar
+                  en semanas, no meses eternos: arranco con un diagnóstico corto y te doy tiempos reales.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-accordion-item>
+            <h3 class="faq-q">
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-2-btn" aria-expanded="true" aria-controls="faq-2">
+                <span class="faq-num" aria-hidden="true">02</span>
+                <span class="faq-text">¿Trabajás solo en Uruguay?</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" data-accordion-panel id="faq-2" role="region" aria-labelledby="faq-2-btn">
+              <div class="faq-panel-inner">
+                <p>
+                  No. Estoy en Montevideo y trabajo con negocios de todo el Uruguay, y también tomo proyectos de
+                  Argentina y de donde sea que me necesiten. Coordinamos todo online y por WhatsApp, directo conmigo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-accordion-item>
+            <h3 class="faq-q">
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-3-btn" aria-expanded="true" aria-controls="faq-3">
+                <span class="faq-num" aria-hidden="true">03</span>
+                <span class="faq-text">¿Le podés integrar IA a mi web o sistema?</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" data-accordion-panel id="faq-3" role="region" aria-labelledby="faq-3-btn">
+              <div class="faq-panel-inner">
+                <p>
+                  Sí, es un plus que le sumo a tu desarrollo a medida o e-commerce. Integro inteligencia artificial
+                  para negocios en Uruguay y Argentina: chatbots con IA para WhatsApp y la web que atienden a tus
+                  clientes 24/7, asistentes virtuales entrenados con la información de tu negocio, agentes de IA que
+                  responden consultas, toman pedidos o agendan turnos, y automatización de procesos con n8n. Trabajo
+                  con modelos de lenguaje (LLM) como los de OpenAI (ChatGPT), Claude y Gemini, conectados directo a tu
+                  sistema.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-accordion-item>
+            <h3 class="faq-q">
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-4-btn" aria-expanded="true" aria-controls="faq-4">
+                <span class="faq-num" aria-hidden="true">04</span>
+                <span class="faq-text">¿Con qué tecnologías trabajás?</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" data-accordion-panel id="faq-4" role="region" aria-labelledby="faq-4-btn">
+              <div class="faq-panel-inner">
+                <p>
+                  Frontend con Next.js, TypeScript y Tailwind CSS; backend en Python con FastAPI y PostgreSQL; deploy
+                  en Vercel y Railway. Integro pagos con Mercado Pago o Stripe, cobros del exterior con PayPal y
+                  Payoneer, emails, WhatsApp e IA (OpenAI, Claude, Gemini, automatizaciones con n8n). Siempre con
+                  código propio y sin plataformas cerradas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item reveal" data-accordion-item>
+            <h3 class="faq-q">
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-5-btn" aria-expanded="true" aria-controls="faq-5">
+                <span class="faq-num" aria-hidden="true">05</span>
+                <span class="faq-text">¿Mi web va a aparecer en Google y en las IAs?</span>
+                <span class="service-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" data-accordion-panel id="faq-5" role="region" aria-labelledby="faq-5-btn">
+              <div class="faq-panel-inner">
+                <p>
+                  La dejo preparada para eso desde el código. SEO para que Google te muestre, y GEO para que las IAs
+                  como ChatGPT, Gemini o Perplexity te encuentren y te recomienden cuando alguien pregunta por lo que
+                  hacés: velocidad, datos estructurados, textos claros y fáciles de citar, y un archivo llms.txt
+                  pensado para las IAs.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -414,14 +789,15 @@
     <section id="contacto" class="section contact reveal" aria-labelledby="contacto-title">
       <div class="container contact-grid">
         <div class="reveal contact-intro">
-          <h2 id="contacto-title">Contanos tu proyecto</h2>
+          <p class="eyebrow" aria-hidden="true">Contacto</p>
+          <h2 id="contacto-title">Contame tu proyecto</h2>
           <p>
-            Completá el formulario y en menos de 12 horas te escribimos con una propuesta clara.
-            También podés mandarnos un WhatsApp directo.
+            Completá el formulario y en menos de 12 horas te escribo con una propuesta clara.
+            También podés mandarme un WhatsApp directo.
           </p>
           <ul class="contact-list">
-            <li>Definimos alcance y tiempos</li>
-            <li>Te proponemos la mejor opción (e-commerce, IA o gestión)</li>
+            <li>Definimos juntos alcance y tiempos</li>
+            <li>Te propongo la mejor opción (desarrollo a medida o e-commerce, con IA si te suma)</li>
             <li>Sin compromiso</li>
           </ul>
 
@@ -445,7 +821,6 @@
           method="POST"
           data-endpoint="https://formspree.io/f/meeyvgoj"
           novalidate
-          onsubmit="handleSubmit(event); return false;"
         >
           <div class="contact-form-fields" id="contact-form-fields">
             <input type="hidden" name="_subject" value="Nuevo mensaje desde Systek" />
@@ -464,19 +839,19 @@
             <div class="field">
               <label for="servicio">¿Qué necesitás?</label>
               <select id="servicio" name="servicio">
+                <option value="gestion">Desarrollo a medida</option>
                 <option value="ecommerce">E-commerce a medida</option>
-                <option value="ia">Inteligencia artificial</option>
-                <option value="gestion">Desarrollo de gestión a medida</option>
+                <option value="ia">Integrar IA a mi web o sistema</option>
                 <option value="otro">Otra consulta</option>
               </select>
             </div>
             <div class="field">
-              <label for="mensaje">Contanos tu proyecto</label>
+              <label for="mensaje">Contame tu proyecto</label>
               <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Qué necesitás, plazos, ideas..."></textarea>
             </div>
             <button type="submit" class="btn btn-full" id="contact-submit">Enviar mensaje</button>
             <p class="form-hint" id="form-hint">
-              No mandamos spam. Usamos tus datos solo para responderte.
+              No mando spam. Uso tus datos solo para responderte.
             </p>
           </div>
 
@@ -488,7 +863,7 @@
               </svg>
             </div>
             <p class="success-title">¡Correcto!</p>
-            <p class="success-text">Gracias, su mensaje ha sido enviado.</p>
+            <p class="success-text">Gracias, tu mensaje fue enviado.</p>
             <button type="button" class="btn btn-outline btn-small" id="send-another-msg">
               Enviar otro mensaje
             </button>
@@ -499,6 +874,9 @@
   </main>
 
   <footer class="footer">
+    <a href="#top" class="footer-top" aria-label="Volver arriba de todo">
+      <span class="footer-top-icon" aria-hidden="true"></span>
+    </a>
     <div class="footer-content">
       <div class="footer-contact">
         <p><a href="mailto:systekuy@gmail.com" class="footer-phone">systekuy@gmail.com</a></p>
@@ -518,17 +896,18 @@
           <a href="https://www.instagram.com/systek.uy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Systek">
             <img src="imagenes/instagram.webp" alt="" width="20" height="20" loading="lazy" decoding="async" />
           </a>
+          <a href="https://www.linkedin.com/company/systekuy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Systek">
+            <img src="imagenes/linkedin.svg" alt="" width="20" height="20" loading="lazy" decoding="async" />
+          </a>
         </div>
-        <span class="footer-note">© <span id="year"></span> Systek. Desarrollo web a medida en Uruguay.</span>
-        <button class="btn btn-small btn-outline" type="button" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">
-          ¿Listo? Escribinos desde el formulario
-        </button>
+        <span class="footer-note">© <span id="year">2026</span> Systek · Desde 2025 · Desarrollo web a medida en Uruguay.</span>
+        <a href="#contacto" class="btn btn-small btn-outline">¿Listo? Escribime desde el formulario</a>
       </div>
     </div>
   </footer>
 
   <a href="https://wa.me/59897990860" class="whatsapp-floating" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp con Systek"></a>
 
-  <script src="script.js?v=20260909c" defer></script>
+  <script src="script.js?v=20260917g" defer></script>
 </body>
 </html>

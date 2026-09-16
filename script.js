@@ -1,3 +1,19 @@
+// Textos que genera JS, según el idioma de la página (<html lang>)
+var EN = /^en/i.test(document.documentElement.lang);
+var T = EN ? {
+  hint: "No spam. I only use your details to reply to you.",
+  sending: "Sending message...",
+  error: "Couldn't send it. Please try again later.",
+  toDark: "Switch to dark mode",
+  toLight: "Switch to light mode"
+} : {
+  hint: "No mando spam. Uso tus datos solo para responderte.",
+  sending: "Enviando mensaje...",
+  error: "Error al enviar. Intentá de nuevo más tarde.",
+  toDark: "Cambiar a modo oscuro",
+  toLight: "Cambiar a modo claro"
+};
+
 function showFormSuccess() {
   const fields = document.getElementById("contact-form-fields");
   const success = document.getElementById("contact-form-success");
@@ -15,7 +31,7 @@ function showFormFields() {
   if (fields) fields.hidden = false;
   if (form) form.reset();
   if (hint) {
-    hint.textContent = "No mando spam. Uso tus datos solo para responderte.";
+    hint.textContent = T.hint;
     hint.style.color = "";
   }
 }
@@ -39,7 +55,7 @@ function handleSubmit(event) {
   const endpoint = form.getAttribute("data-endpoint") || "https://formspree.io/f/meeyvgoj";
 
   if (hint) {
-    hint.textContent = "Enviando mensaje...";
+    hint.textContent = T.sending;
     hint.style.color = "";
   }
   if (submitBtn) submitBtn.disabled = true;
@@ -71,7 +87,7 @@ function handleSubmit(event) {
     .catch(function (err) {
       console.error("Error al enviar formulario:", err);
       if (hint) {
-        hint.textContent = "Error al enviar. Intentá de nuevo más tarde.";
+        hint.textContent = T.error;
         hint.style.color = "#fca5a5";
       }
     })
@@ -94,7 +110,7 @@ function initThemeToggle() {
 
   function sync() {
     var light = isLight();
-    button.setAttribute("aria-label", light ? "Cambiar a modo oscuro" : "Cambiar a modo claro");
+    button.setAttribute("aria-label", light ? T.toDark : T.toLight);
     if (metaTheme) metaTheme.setAttribute("content", light ? "#eef2f8" : "#0f172a");
   }
 
@@ -554,7 +570,7 @@ function initEcosystem() {
   });
 
   function format(metric, value) {
-    var text = String(Math.round(value)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    var text = String(Math.round(value)).replace(/\B(?=(\d{3})+(?!\d))/g, EN ? "," : ".");
     return metric.money ? "$ " + text : text;
   }
 

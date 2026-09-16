@@ -9,6 +9,9 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#eef2f8" />
   <link rel="canonical" href="https://www.systek.uy/" />
+  <link rel="alternate" hreflang="es" href="https://www.systek.uy/" />
+  <link rel="alternate" hreflang="en" href="https://www.systek.uy/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.systek.uy/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Systek | Desarrollos a medida, e-commerce e IA en Uruguay" />
@@ -20,6 +23,7 @@
   <meta property="og:url" content="https://www.systek.uy/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_UY" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:site_name" content="Systek" />
 
   <!-- Twitter -->
@@ -38,8 +42,8 @@
 
   <!-- Performance -->
   <link rel="preload" href="font/Source_Serif_4/SourceSerif4-Variable-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="styles.css?v=20260917p" as="style" />
-  <link rel="stylesheet" href="styles.css?v=20260917p" />
+  <link rel="preload" href="styles.css?v=20260918a" as="style" />
+  <link rel="stylesheet" href="styles.css?v=20260918a" />
   <!-- Marca que hay JS (las animaciones/acordeón solo esconden contenido si JS corre: crawlers sin JS ven todo) -->
   <!-- Tema guardado (claro/oscuro) antes de pintar, para que no parpadee. Default: claro (data-theme en <html>) -->
   <script>
@@ -91,6 +95,7 @@
         "sameAs": [
           "https://www.instagram.com/systek.uy/",
           "https://www.linkedin.com/company/systekuy/",
+          "https://github.com/systekuy",
           "https://maps.app.goo.gl/rZnhSp1rqTvkkSRV8"
         ],
         "knowsAbout": [
@@ -265,7 +270,12 @@
             <path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" />
           </svg>
         </button>
-        <a href="#contacto" class="btn btn-small btn-outline">Escribime</a>
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <a href="./" hreflang="es" lang="es" aria-current="true">ES</a>
+          <span aria-hidden="true">/</span>
+          <a href="en/" hreflang="en" lang="en">EN</a>
+        </div>
+        <a href="#contacto" class="nav-cta">Escribime</a>
       </div>
     </div>
   </header>
@@ -922,6 +932,9 @@
           <a href="https://www.linkedin.com/company/systekuy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Systek">
             <img src="imagenes/linkedin.svg" alt="" width="20" height="20" loading="lazy" decoding="async" />
           </a>
+          <a href="https://github.com/systekuy" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Systek">
+            <img src="imagenes/github.svg" alt="" width="20" height="20" loading="lazy" decoding="async" />
+          </a>
         </div>
         <span class="footer-note">© <span id="year">2026</span> Systek · Desde 2025 · Desarrollo web a medida en Uruguay.</span>
         <a href="#contacto" class="btn btn-small btn-outline">¿Listo? Escribime desde el formulario</a>
@@ -931,6 +944,6 @@
 
   <a href="https://wa.me/59897990860" class="whatsapp-floating" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp con Systek"></a>
 
-  <script src="script.js?v=20260917g" defer></script>
+  <script src="script.js?v=20260918a" defer></script>
 </body>
 </html>

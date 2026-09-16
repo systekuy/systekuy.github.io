@@ -1267,6 +1267,12 @@ textarea,
   margin-top: 1.4rem;
 }
 
+/* Métricas debajo de "Sobre el proyecto": sin doble línea con el borde del desplegable */
+.case-more + .case-metrics {
+  margin-top: 0;
+  border-top: 0;
+}
+
 .case-more {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);

@@ -38,8 +38,8 @@
 
   <!-- Performance -->
   <link rel="preload" href="font/Source_Serif_4/SourceSerif4-Variable-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="styles.css?v=20260917o" as="style" />
-  <link rel="stylesheet" href="styles.css?v=20260917o" />
+  <link rel="preload" href="styles.css?v=20260917p" as="style" />
+  <link rel="stylesheet" href="styles.css?v=20260917p" />
   <!-- Marca que hay JS (las animaciones/acordeón solo esconden contenido si JS corre: crawlers sin JS ven todo) -->
   <!-- Tema guardado (claro/oscuro) antes de pintar, para que no parpadee. Default: claro (data-theme en <html>) -->
   <script>
@@ -54,7 +54,7 @@
   </script>
 
   <!-- JSON-LD: ProfessionalService (Organization) + fundador + Services + FAQ
-       foundingDate = mismo año que el footer. Sumar a sameAs los perfiles de GBP/Clutch/etc. cuando existan. -->
+       foundingDate = mismo año que el footer. Sumar a sameAs otros perfiles (Clutch, etc.) cuando existan. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -87,9 +87,11 @@
           "addressLocality": "Montevideo",
           "addressCountry": "UY"
         },
+        "hasMap": "https://maps.app.goo.gl/rZnhSp1rqTvkkSRV8",
         "sameAs": [
           "https://www.instagram.com/systek.uy/",
-          "https://www.linkedin.com/company/systekuy/"
+          "https://www.linkedin.com/company/systekuy/",
+          "https://maps.app.goo.gl/rZnhSp1rqTvkkSRV8"
         ],
         "knowsAbout": [
           "desarrollo web a medida",
@@ -201,14 +203,6 @@
           },
           {
             "@type": "Question",
-            "name": "¿Le podés integrar IA a mi web o sistema?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sí, es un plus que le sumo a tu desarrollo a medida o e-commerce. Integro inteligencia artificial para negocios en Uruguay y Argentina: chatbots con IA para WhatsApp y la web que atienden a tus clientes 24/7, asistentes virtuales entrenados con la información de tu negocio, agentes de IA que responden consultas, toman pedidos o agendan turnos, y automatización de procesos con n8n. Trabajo con modelos de lenguaje (LLM) como los de OpenAI (ChatGPT), Claude y Gemini, conectados directo a tu sistema."
-            }
-          },
-          {
-            "@type": "Question",
             "name": "¿Con qué tecnologías trabajás?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -220,7 +214,7 @@
             "name": "¿Mi web va a aparecer en Google y en las IAs?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "La dejo preparada para eso desde el código. SEO para que Google te muestre, y GEO para que las IAs como ChatGPT, Gemini o Perplexity te encuentren y te recomienden cuando alguien pregunta por lo que hacés: velocidad, datos estructurados, textos claros y fáciles de citar, y un archivo llms.txt pensado para las IAs."
+              "text": "La dejo preparada para eso desde el código. SEO para que Google te muestre, y GEO para que las IAs como ChatGPT, Gemini o Perplexity te encuentren y te recomienden cuando alguien pregunta por lo que hacés: velocidad, datos estructurados, textos claros y fáciles de citar, y un archivo llms.txt pensado para las IAs. Y si querés que la IA también trabaje para tu negocio, te integro inteligencia artificial: chatbots con IA para WhatsApp y la web que atienden a tus clientes 24/7, asistentes virtuales entrenados con la información de tu negocio, agentes de IA que responden consultas, toman pedidos o agendan turnos, y automatización de procesos con n8n, con modelos de lenguaje (LLM) de OpenAI (ChatGPT), Claude y Gemini."
             }
           }
         ]
@@ -509,13 +503,8 @@
                    loading="lazy"
                    decoding="async" />
             </a>
-            <ul class="case-metrics" aria-label="Resultados de Gingers">
-              <li><strong data-count="100" data-prefix="+">+100</strong><span>pedidos</span></li>
-              <li><strong data-count="50" data-prefix="+">+50</strong><span>productos</span></li>
-              <li><strong data-count="20" data-prefix="+">+20</strong><span>clientes</span></li>
-            </ul>
             <blockquote class="case-quote">
-              <p>“Quedó muuuuyyy buena, súper rápida y práctica, funciona todo de lujo.”</p>
+              <p>“Quedó muuuuyyy buena, súper rápida y práctica.”</p>
               <footer><span class="case-quote-name">Pilar de Arteaga</span> · Gingers</footer>
             </blockquote>
             <div class="case-more">
@@ -536,6 +525,11 @@
                 </div>
               </div>
             </div>
+            <ul class="case-metrics" aria-label="Resultados de Gingers">
+              <li><strong data-count="100" data-prefix="+">+100</strong><span>pedidos</span></li>
+              <li><strong data-count="50" data-prefix="+">+50</strong><span>productos</span></li>
+              <li><strong data-count="20" data-prefix="+">+20</strong><span>clientes</span></li>
+            </ul>
           </article>
 
           <article class="case reveal" data-accordion-item>
@@ -773,32 +767,11 @@
             <h3 class="faq-q">
               <button type="button" class="faq-toggle" data-accordion-toggle id="faq-4-btn" aria-expanded="true" aria-controls="faq-4">
                 <span class="faq-num" aria-hidden="true">04</span>
-                <span class="faq-text">¿Le podés integrar IA a mi web o sistema?</span>
-                <span class="service-icon" aria-hidden="true"></span>
-              </button>
-            </h3>
-            <div class="faq-panel" data-accordion-panel id="faq-4" role="region" aria-labelledby="faq-4-btn">
-              <div class="faq-panel-inner">
-                <p>
-                  Sí, es un plus que le sumo a tu desarrollo a medida o e-commerce. Integro inteligencia artificial
-                  para negocios en Uruguay y Argentina: chatbots con IA para WhatsApp y la web que atienden a tus
-                  clientes 24/7, asistentes virtuales entrenados con la información de tu negocio, agentes de IA que
-                  responden consultas, toman pedidos o agendan turnos, y automatización de procesos con n8n. Trabajo
-                  con modelos de lenguaje (LLM) como los de OpenAI (ChatGPT), Claude y Gemini, conectados directo a tu
-                  sistema.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item reveal" data-accordion-item>
-            <h3 class="faq-q">
-              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-5-btn" aria-expanded="true" aria-controls="faq-5">
-                <span class="faq-num" aria-hidden="true">05</span>
                 <span class="faq-text">¿Con qué tecnologías trabajás?</span>
                 <span class="service-icon" aria-hidden="true"></span>
               </button>
             </h3>
-            <div class="faq-panel" data-accordion-panel id="faq-5" role="region" aria-labelledby="faq-5-btn">
+            <div class="faq-panel" data-accordion-panel id="faq-4" role="region" aria-labelledby="faq-4-btn">
               <div class="faq-panel-inner">
                 <p>
                   Frontend con Next.js, TypeScript y Tailwind CSS; backend en Python con FastAPI y PostgreSQL; deploy
@@ -811,19 +784,23 @@
           </div>
           <div class="faq-item reveal" data-accordion-item>
             <h3 class="faq-q">
-              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-6-btn" aria-expanded="true" aria-controls="faq-6">
-                <span class="faq-num" aria-hidden="true">06</span>
+              <button type="button" class="faq-toggle" data-accordion-toggle id="faq-5-btn" aria-expanded="true" aria-controls="faq-5">
+                <span class="faq-num" aria-hidden="true">05</span>
                 <span class="faq-text">¿Mi web va a aparecer en Google y en las IAs?</span>
                 <span class="service-icon" aria-hidden="true"></span>
               </button>
             </h3>
-            <div class="faq-panel" data-accordion-panel id="faq-6" role="region" aria-labelledby="faq-6-btn">
+            <div class="faq-panel" data-accordion-panel id="faq-5" role="region" aria-labelledby="faq-5-btn">
               <div class="faq-panel-inner">
                 <p>
                   La dejo preparada para eso desde el código. SEO para que Google te muestre, y GEO para que las IAs
                   como ChatGPT, Gemini o Perplexity te encuentren y te recomienden cuando alguien pregunta por lo que
                   hacés: velocidad, datos estructurados, textos claros y fáciles de citar, y un archivo llms.txt
-                  pensado para las IAs.
+                  pensado para las IAs. Y si querés que la IA también trabaje para tu negocio, te integro inteligencia
+                  artificial: chatbots con IA para WhatsApp y la web que atienden a tus clientes 24/7, asistentes
+                  virtuales entrenados con la información de tu negocio, agentes de IA que responden consultas, toman
+                  pedidos o agendan turnos, y automatización de procesos con n8n, con modelos de lenguaje (LLM) de
+                  OpenAI (ChatGPT), Claude y Gemini.
                 </p>
               </div>
             </div>

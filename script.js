@@ -32,7 +32,7 @@ function showFormFields() {
   if (form) form.reset();
   if (hint) {
     hint.textContent = T.hint;
-    hint.style.color = "";
+    hint.classList.remove("is-error");
   }
 }
 
@@ -56,7 +56,7 @@ function handleSubmit(event) {
 
   if (hint) {
     hint.textContent = T.sending;
-    hint.style.color = "";
+    hint.classList.remove("is-error");
   }
   if (submitBtn) submitBtn.disabled = true;
 
@@ -88,7 +88,7 @@ function handleSubmit(event) {
       console.error("Error al enviar formulario:", err);
       if (hint) {
         hint.textContent = T.error;
-        hint.style.color = "#fca5a5";
+        hint.classList.add("is-error");
       }
     })
     .finally(function () {
@@ -131,17 +131,28 @@ function initThemeToggle() {
       return;
     }
 
-    // El círculo del cambio de tema sale desde el botón
+    // El círculo del cambio de tema sale desde el botón. Se anima desde JS con los px ya calculados:
+    // Safari no hereda variables CSS en ::view-transition-new y el círculo salía de arriba al centro
     var rect = button.getBoundingClientRect();
     var x = rect.left + rect.width / 2;
     var y = rect.top + rect.height / 2;
     var radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
-    root.style.setProperty("--theme-x", x + "px");
-    root.style.setProperty("--theme-y", y + "px");
-    root.style.setProperty("--theme-r", radius + "px");
-    document.startViewTransition(function () {
+    var at = " at " + x + "px " + y + "px)";
+    var transition = document.startViewTransition(function () {
       apply(next);
     });
+    transition.ready
+      .then(function () {
+        root.animate(
+          { clipPath: ["circle(0px" + at, "circle(" + radius + "px" + at] },
+          {
+            duration: 600,
+            easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+            pseudoElement: "::view-transition-new(root)"
+          }
+        );
+      })
+      .catch(function () {});
   });
 
   sync();
@@ -184,15 +195,21 @@ function initHeroWaves() {
   var vPoints = 40;
   var t = 0;
 
+  // Devuelve false si el hero no cambió de tamaño: en celular, "resize" salta con cada scroll
+  // (se esconde/aparece la barra del navegador) y recrear el canvas ahí da tirones
   function resize() {
     var rect = hero.getBoundingClientRect();
-    width = Math.max(1, Math.floor(rect.width));
-    height = Math.max(1, Math.floor(rect.height));
+    var w = Math.max(1, Math.floor(rect.width));
+    var h = Math.max(1, Math.floor(rect.height));
+    if (w === width && h === height) return false;
+    width = w;
+    height = h;
     canvas.width = Math.floor(width * dpr);
     canvas.height = Math.floor(height * dpr);
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return true;
   }
 
   function mousePushAt(x, y) {
@@ -266,6 +283,16 @@ function initHeroWaves() {
       ctx.stroke();
     }
 
+    // Difuminado de abajo dentro del canvas (antes era mask-image en CSS, caro en Safari/iOS con un canvas animado)
+    var fadeTop = height * 0.72;
+    var fade = ctx.createLinearGradient(0, fadeTop, 0, height);
+    fade.addColorStop(0, "rgba(0, 0, 0, 0)");
+    fade.addColorStop(1, "rgba(0, 0, 0, 1)");
+    ctx.globalCompositeOperation = "destination-out";
+    ctx.fillStyle = fade;
+    ctx.fillRect(0, fadeTop, width, height - fadeTop);
+    ctx.globalCompositeOperation = "source-over";
+
     if (!reduceMotion && visible) {
       rafId = requestAnimationFrame(drawFrame);
     }
@@ -296,8 +323,7 @@ function initHeroWaves() {
   }
 
   window.addEventListener("resize", function () {
-    resize();
-    if (reduceMotion) drawFrame();
+    if (resize() && reduceMotion) drawFrame();
   });
 
   hero.addEventListener("mousemove", onPointerMove, { passive: true });
@@ -495,7 +521,11 @@ function initReels() {
     });
   }
 
+  // Solo si cambia el ancho: en celular el scroll dispara "resize" (barra del navegador) y los rodillos saltaban a mitad del giro
+  var lastWidth = window.innerWidth;
   window.addEventListener("resize", function () {
+    if (window.innerWidth === lastWidth) return;
+    lastWidth = window.innerWidth;
     reels.forEach(function (reel) {
       settle(reel);
       place(reel, false);
@@ -669,12 +699,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if ("IntersectionObserver" in window && revealEls.length) {
     var observer = new IntersectionObserver(
       function (entries) {
+        // Aparece una sola vez: antes se volvía a esconder al salir y el contenido "parpadeaba" al subir y bajar
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-          } else {
-            entry.target.classList.remove("in-view");
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
         });
       },
       // threshold 0 + margen: con 0.18, un bloque más alto que ~5 pantallas nunca llegaba al umbral y quedaba invisible

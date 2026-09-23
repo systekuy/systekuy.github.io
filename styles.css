@@ -45,6 +45,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* hidden = respaldo para iOS < 16, que no entiende clip (la marca de agua daba scroll horizontal) */
+    overflow-x: hidden;
     overflow-x: clip;
   }
 
@@ -60,7 +62,13 @@
     font-weight: 400;
     background: radial-gradient(circle at top left, #1d283a 0, #020617 45%, #000 100%);
     color: var(--text);
+  }
+
+  /* Suavizado fino solo con texto claro sobre fondo oscuro (solo afecta a macOS; en el tema claro
+     el texto se veía más flaco que en Windows) */
+  :root:not([data-theme="light"]) body {
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
 body::before {
@@ -136,6 +144,10 @@ textarea,
     justify-content: space-between;
     border: 1px solid transparent;
     border-radius: 0;
+    /* El blur está siempre (arriba no se nota: detrás está la barra opaca). Prenderlo y apagarlo con la clase
+       hacía parpadear la navbar en Safari */
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
     /* Volver arriba: se "incrusta" con un leve rebote */
     transition:
       max-width 0.6s cubic-bezier(0.34, 1.35, 0.64, 1),
@@ -156,8 +168,6 @@ textarea,
     border-radius: 999px;
     border-color: rgba(148, 163, 184, 0.22);
     background-color: rgba(11, 18, 36, 0.72);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
-    backdrop-filter: blur(14px) saturate(140%);
     box-shadow: 0 18px 50px rgba(2, 6, 23, 0.55);
     /* Bajar: se despega suave, sin rebote */
     transition:
@@ -221,9 +231,11 @@ textarea,
     box-shadow: none;
   }
 
-  .case-media:hover .case-img {
-    transform: scale(1.03);
-    transition: transform 0.18s ease;
+  @media (hover: hover) {
+    .case-media:hover .case-img {
+      transform: scale(1.03);
+      transition: transform 0.18s ease;
+    }
   }
 
   .nav-links {
@@ -263,9 +275,12 @@ textarea,
   text-decoration: none;
   }
 
-  .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 22px 55px rgba(37, 99, 235, 0.75);
+  /* Hovers que mueven o agrandan: solo con mouse (en pantallas táctiles quedaban "pegados" después de tocar) */
+  @media (hover: hover) {
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(37, 99, 235, 0.75);
+    }
   }
 
   .btn-small {
@@ -280,9 +295,11 @@ textarea,
     color: var(--text);
   }
 
-  .btn-outline:hover {
-    background: rgba(15, 23, 42, 0.9);
-    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.85);
+  @media (hover: hover) {
+    .btn-outline:hover {
+      background: rgba(15, 23, 42, 0.9);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.85);
+    }
   }
 
   .btn-full {
@@ -294,8 +311,10 @@ textarea,
   box-shadow: 0 14px 35px rgba(15, 23, 42, 0.6);
 }
 
-.btn-secondary:hover {
-  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.85);
+@media (hover: hover) {
+  .btn-secondary:hover {
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.85);
+  }
 }
 
 /* Compensa el scroll para la navbar fija */
@@ -324,19 +343,15 @@ textarea,
     z-index: 1;
   }
 
-  /* El fondo del hero (color + ondas + oscurecido) se difumina abajo hacia el fondo de la página */
-  .hero-bg,
-  .hero::after {
-    -webkit-mask-image: linear-gradient(#000 72%, transparent);
-    mask-image: linear-gradient(#000 72%, transparent);
-  }
-
+  /* El fondo del hero (color + ondas + oscurecido) se difumina abajo hacia el fondo de la página.
+     Sin mask-image (en Safari/iOS, una máscara sobre un canvas animado se recalcula en cada frame):
+     el color y el oscurecido terminan en transparente, y las ondas se difuminan dentro del canvas (script.js) */
   .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
     overflow: hidden;
-    background: #07111f;
+    background: linear-gradient(#07111f 72%, rgba(7, 17, 31, 0));
   }
 
   .hero-waves {
@@ -357,7 +372,8 @@ textarea,
       to bottom,
       rgba(2, 6, 23, 0.15) 0%,
       rgba(2, 6, 23, 0.1) 45%,
-      rgba(2, 6, 23, 0.55) 100%
+      rgba(2, 6, 23, 0.32) 72%,
+      rgba(2, 6, 23, 0) 100%
     );
     pointer-events: none;
   }
@@ -384,7 +400,7 @@ textarea,
   font-weight: 700;
     line-height: 1.08;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 24px rgba(2, 6, 23, 0.45);
+    /* Sin text-shadow: con background-clip: text, Safari pinta la sombra encima del degradé y lo oscurece */
     position: relative;
     z-index: 2;
   }
@@ -1130,8 +1146,10 @@ textarea,
   transition: transform 0.2s ease;
 }
 
-.case-logo-link:hover {
-  transform: scale(1.05);
+@media (hover: hover) {
+  .case-logo-link:hover {
+    transform: scale(1.05);
+  }
 }
 
 .case-logo {
@@ -1499,6 +1517,19 @@ textarea,
     font-family: inherit;
     font-size: 1.05rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    /* Sin estilo nativo: en Safari/iOS el select era un botón gris y los inputs traían sombra interna */
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Flecha propia del select (la nativa se fue con appearance: none) */
+  select {
+    padding-right: 1.6rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%239ca3af' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.2rem center;
+    background-size: 12px 8px;
+    cursor: pointer;
   }
 
   select option {
@@ -1535,6 +1566,10 @@ textarea,
     color: var(--text-soft);
   }
 
+  .form-hint.is-error {
+    color: #fca5a5;
+  }
+
   .contact-intro {
     display: flex;
     flex-direction: column;
@@ -1557,20 +1592,15 @@ textarea,
     height: auto;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 0 18px rgba(59, 130, 246, 0.25));
+    /* Brillo fijo y solo flota: animar el drop-shadow repintaba la imagen en cada frame (tirones en Safari) */
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.28));
     animation: logo-float 6s ease-in-out infinite;
-    will-change: transform, filter;
+    will-change: transform;
   }
 
   @keyframes logo-float {
-    0%, 100% {
-      transform: translateY(0);
-      filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.2));
-    }
-    50% {
-      transform: translateY(-10px);
-      filter: drop-shadow(0 0 28px rgba(139, 92, 246, 0.35));
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1580,7 +1610,10 @@ textarea,
     .contact-logo,
     .gradient-text,
     .hero-scroll-hint-icon,
-    .eco-activity-list li.is-new {
+    .eco-activity-list li.is-new,
+    .whatsapp-floating::after,
+    .footer-top:hover .footer-top-icon,
+    .footer-top:focus-visible .footer-top-icon {
       animation: none;
     }
 
@@ -1647,7 +1680,7 @@ textarea,
 }
 
 .footer-links a:hover {
-  color: var(--primary-soft);
+  color: var(--primary);
 }
 
 .footer-actions {
@@ -1671,11 +1704,18 @@ textarea,
   transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
 }
 
-.social-links a:hover img,
 .social-links a:focus-visible img {
   opacity: 1;
   transform: translateY(-2px);
   filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.85));
+}
+
+@media (hover: hover) {
+  .social-links a:hover img {
+    opacity: 1;
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.85));
+  }
 }
 
 .footer-note {
@@ -1696,10 +1736,10 @@ textarea,
   background-repeat: no-repeat;
   background-position: center;
   background-size: 36px 36px;
-  box-shadow: 0 20px 45px rgba(22, 163, 74, 0.75);
+  box-shadow: 0 14px 34px rgba(22, 163, 74, 0.45);
   text-decoration: none;
   z-index: 9999;
-  animation: whatsapp-pulse 1.3s ease-in-out infinite;
+  transition: transform 0.2s ease;
   /* Evita que transforms de ancestros/stacking lo “atrapen” visualmente */
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
@@ -1708,15 +1748,26 @@ textarea,
   pointer-events: auto;
 }
 
-.whatsapp-floating:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 26px 65px rgba(22, 163, 74, 0.9);
+/* El pulso es un anillo aparte y más espaciado: antes la animación pisaba el transform y el hover no andaba */
+.whatsapp-floating::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  animation: whatsapp-pulse 2.6s ease-out infinite;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .whatsapp-floating:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
 }
 
 @keyframes whatsapp-pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
-  70% { transform: scale(1.06); box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
+  60%, 100% { box-shadow: 0 0 0 14px rgba(34, 197, 94, 0); }
 }
 
 /* RESPONSIVE GENERAL */
@@ -1768,7 +1819,7 @@ textarea,
     aspect-ratio: 1 / 1;
     transform: translate(45%, -50%);
     opacity: 0.09;
-    filter: blur(2px);
+    /* Sin filter: blur: en un elemento fixed, iOS lo recalculaba con el scroll */
     -webkit-mask-image: radial-gradient(circle, #000 30%, transparent 70%);
     mask-image: radial-gradient(circle, #000 30%, transparent 70%);
   }
@@ -1898,6 +1949,13 @@ textarea,
 
   .reel {
     --reel-item: 60px;
+  }
+
+  /* La monoespaciada cambia según el sistema (SF Mono en iPhone es más ancha que Consolas):
+     más chica y con menos espaciado para que "Infraestructura" entre sin cortarse en cualquiera */
+  .reel-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
   }
 
   .reel-strip img {
@@ -2308,20 +2366,12 @@ textarea,
   transform: rotate(0deg) scale(1);
 }
 
-/* Cambio de tema: círculo que se expande desde el botón (View Transitions; si no hay soporte, cambia directo) */
+/* Cambio de tema: círculo que se expande desde el botón (View Transitions; si no hay soporte, cambia directo).
+   El círculo lo anima script.js con element.animate(): con variables CSS en @keyframes, Safari salía de arriba al centro */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
-}
-
-::view-transition-new(root) {
-  animation: theme-reveal 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes theme-reveal {
-  from { clip-path: circle(0 at var(--theme-x, 50%) var(--theme-y, 0)); }
-  to { clip-path: circle(var(--theme-r, 150vmax) at var(--theme-x, 50%) var(--theme-y, 0)); }
 }
 
 /* ================================================================
@@ -2358,6 +2408,12 @@ textarea,
   border-left: 2px solid var(--hint, rgba(191, 219, 254, 0.9));
   border-top: 2px solid var(--hint, rgba(191, 219, 254, 0.9));
   transform: rotate(45deg);
+  opacity: 0.75;
+}
+
+/* Rebota solo al pasar el mouse (antes rebotaba siempre: una animación infinita menos) */
+.footer-top:hover .footer-top-icon,
+.footer-top:focus-visible .footer-top-icon {
   animation: footer-top-bounce 1.6s ease-in-out infinite;
 }
 
@@ -2400,9 +2456,14 @@ textarea,
   filter: invert(1);
 }
 
-:root[data-theme="light"] .social-links a:hover img,
 :root[data-theme="light"] .social-links a:focus-visible img {
   filter: invert(1) drop-shadow(0 0 6px rgba(37, 99, 235, 0.55));
+}
+
+@media (hover: hover) {
+  :root[data-theme="light"] .social-links a:hover img {
+    filter: invert(1) drop-shadow(0 0 6px rgba(37, 99, 235, 0.55));
+  }
 }
 
 :root[data-theme="light"] .theme-toggle:hover .theme-icon-sun,
@@ -2416,19 +2477,7 @@ textarea,
 }
 
 :root[data-theme="light"] .contact-logo {
-  animation-name: logo-float-light;
-  filter: invert(1);
-}
-
-@keyframes logo-float-light {
-  0%, 100% {
-    transform: translateY(0);
-    filter: invert(1) drop-shadow(0 0 14px rgba(37, 99, 235, 0.15));
-  }
-  50% {
-    transform: translateY(-10px);
-    filter: invert(1) drop-shadow(0 0 28px rgba(124, 58, 237, 0.25));
-  }
+  filter: invert(1) drop-shadow(0 0 20px rgba(37, 99, 235, 0.18));
 }
 
 /* Navbar */
@@ -2451,9 +2500,11 @@ textarea,
   border-color: rgba(15, 23, 42, 0.25);
 }
 
-:root[data-theme="light"] .btn-outline:hover {
-  background: rgba(15, 23, 42, 0.05);
-  box-shadow: none;
+@media (hover: hover) {
+  :root[data-theme="light"] .btn-outline:hover {
+    background: rgba(15, 23, 42, 0.05);
+    box-shadow: none;
+  }
 }
 
 :root[data-theme="light"] .btn-secondary {
@@ -2464,7 +2515,7 @@ textarea,
 
 /* Hero */
 :root[data-theme="light"] .hero-bg {
-  background: #eaf0fa;
+  background: linear-gradient(#eaf0fa 72%, rgba(234, 240, 250, 0));
 }
 
 :root[data-theme="light"] .hero::after {
@@ -2472,11 +2523,11 @@ textarea,
     to bottom,
     rgba(255, 255, 255, 0.1) 0%,
     rgba(255, 255, 255, 0.05) 45%,
-    rgba(255, 255, 255, 0.4) 100%
+    rgba(255, 255, 255, 0.2) 72%,
+    rgba(255, 255, 255, 0) 100%
   );
 }
 
-:root[data-theme="light"] .hero-copy h1,
 :root[data-theme="light"] .hero-subtitle {
   text-shadow: none;
 }
@@ -2583,8 +2634,16 @@ textarea,
   border-bottom-color: rgba(15, 23, 42, 0.25);
 }
 
+:root[data-theme="light"] select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23475569' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
 :root[data-theme="light"] select option {
   background: #ffffff;
+}
+
+:root[data-theme="light"] .form-hint.is-error {
+  color: #b91c1c;
 }
 
 :root[data-theme="light"] input::placeholder,

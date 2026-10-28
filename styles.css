@@ -343,18 +343,21 @@ textarea,
     z-index: 1;
   }
 
-  /* El fondo del hero (color + ondas + oscurecido) se difumina abajo hacia el fondo de la página.
+  /* El fondo del hero (color + malla + oscurecido) se difumina abajo hacia el fondo de la página.
      Sin mask-image (en Safari/iOS, una máscara sobre un canvas animado se recalcula en cada frame):
-     el color y el oscurecido terminan en transparente, y las ondas se difuminan dentro del canvas (script.js) */
+     el color y el oscurecido terminan en transparente, y la malla se difumina en su shader (script.js).
+     El resplandor azul → violeta antes lo pintaba el canvas; ahora es CSS */
   .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
     overflow: hidden;
-    background: linear-gradient(#07111f 72%, rgba(7, 17, 31, 0));
+    background:
+      radial-gradient(ellipse 75% 75% at 65% 30%, rgba(59, 130, 246, 0.16), rgba(139, 92, 246, 0.08) 45%, rgba(7, 17, 31, 0) 100%),
+      linear-gradient(#07111f 72%, rgba(7, 17, 31, 0));
   }
 
-  .hero-waves {
+  .hero-mesh {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -2515,7 +2518,9 @@ textarea,
 
 /* Hero */
 :root[data-theme="light"] .hero-bg {
-  background: linear-gradient(#eaf0fa 72%, rgba(234, 240, 250, 0));
+  background:
+    radial-gradient(ellipse 75% 75% at 65% 30%, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.05) 45%, rgba(234, 240, 250, 0) 100%),
+    linear-gradient(#eaf0fa 72%, rgba(234, 240, 250, 0));
 }
 
 :root[data-theme="light"] .hero::after {

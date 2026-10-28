@@ -177,8 +177,8 @@ function initNavbarScroll() {
 }
 
 // Fondo del hero: la malla de líneas de siempre, pero con una dimensión más. Es una tela en 3D que ondula
-// en profundidad, se retuerce sobre sí misma y gira despacio frente a la cámara. El cursor la toca apenas:
-// brilla un poco y aparta los hilos; si te quedás, el hueco se abre de a poco y se cierra solo al irte.
+// en profundidad, se retuerce sobre sí misma y gira despacio frente a la cámara. El cursor la hunde
+// suave, como un pozo que lo sigue, y al irse la tela vuelve sola.
 // Todo se calcula en la GPU (WebGL sin librerías): JS solo actualiza unos pocos uniforms por cuadro
 function initHeroMesh() {
   var canvas = document.getElementById("hero-mesh");
@@ -199,7 +199,6 @@ function initHeroMesh() {
   var H_LINES = small ? 56 : 50;
   var V_LINES = Math.round(((H_LINES * (aspect0 * 1.6 + 0.4)) / 2.4) * 0.85);
   var SAMPLES = small ? 90 : 150;
-  var TRAIL = small ? 12 : 24; // huecos del cursor: el actual + los que va dejando atrás mientras se cierran
   var count = (H_LINES + V_LINES) * SAMPLES;
 
   // Mismos colores que la malla de antes: horizontales celestes/azules y verticales violetas
@@ -209,7 +208,6 @@ function initHeroMesh() {
   };
 
   var VERTEX = [
-    "#define TRAIL " + TRAIL,
     "#define CAM 2.6",
     "attribute vec4 aGrid;", // u, v (de -1 a 1), 0 = horizontal / 1 = vertical, avance a lo largo de la línea
     "attribute vec2 aSeed;", // azar, fase del pulso (0 = la línea no lleva pulsos)
@@ -220,7 +218,7 @@ function initHeroMesh() {
     "uniform float uLines;",
     "uniform float uLineBoost;",
     "uniform vec4 uCam;", // cos/sen del giro y de la inclinación de la cámara
-    "uniform vec4 uTrail[TRAIL];", // x, y, fuerza, radio
+    "uniform vec4 uWell;", // pozo del cursor: x, y, fuerza, radio
     "uniform vec3 uColH, uColV, uGlow;",
     "uniform vec2 uAlpha;", // líneas, puntos
     "varying vec4 vColor;",
@@ -246,32 +244,22 @@ function initHeroMesh() {
     "  float z2 = q.y * uCam.w + z1 * uCam.z;",
     "  float persp = CAM / max(CAM + z2, 0.4);",
     "  vec2 pos = uView * 0.5 + vec2(x1, -y2) * persp * uView.y * 0.5;",
-    // Cursor: cada hueco aparta los hilos; cuanto más fuerza junta, más se desvía cada punto por su lado
-    "  float lit = 0.0;",
-    "  for (int i = 0; i < TRAIL; i++) {",
-    "    vec4 h = uTrail[i];",
-    "    if (h.z > 0.003) {",
-    "      vec2 d = pos - h.xy;",
-    "      float dist = length(d) + 0.001;",
-    "      float fall = exp(-dist * dist / (h.w * h.w));",
-    "      vec2 n = d / dist;",
-    "      vec2 dir = n + vec2(-n.y, n.x) * (aSeed.x - 0.5) * h.z;",
-    "      pos += dir * h.z * h.w * 0.9 * fall * (1.0 + (aSeed.x - 0.5) * h.z);",
-    "      lit = max(lit, h.z * fall);",
-    "    }",
-    "  }",
     // Brillo: más cerca = más fuerte, se apaga en los bordes de la tela y crece hacia abajo como antes
     "  float near = clamp(persp, 0.45, 1.6);",
     "  near *= near;",
+    // Cursor: hunde la tela como un pozo. Los puntos se corren hacia el centro y lo del fondo queda más
+    // lejos, más tenue (el corrimiento nunca supera la distancia, así que los hilos no se cruzan)
+    "  vec2 d = pos - uWell.xy;",
+    "  float sink = uWell.z * exp(-dot(d, d) / (uWell.w * uWell.w));",
+    "  pos -= d * 0.7 * sink;",
+    "  near *= 1.0 - 0.65 * sink;",
     "  float edge = smoothstep(1.0, 0.8, max(abs(aGrid.x), abs(aGrid.y)));",
     "  float grad = 0.55 + 0.45 * (aGrid.y * 0.5 + 0.5);",
     "  float pulse = aSeed.y > 0.0 ? pow(0.5 + 0.5 * sin(aGrid.w * 12.566 - t * 1.2 + aSeed.y), 24.0) : 0.0;",
-    "  float alpha = (uLines > 0.5 ? uAlpha.x * uLineBoost : uAlpha.y) * near * grad + pulse * 0.45 + lit * 0.25;",
-    // Donde el hueco ya juntó fuerza, los hilos se cortan
-    "  if (uLines > 0.5) alpha *= 1.0 - smoothstep(0.35, 0.85, lit);",
+    "  float alpha = (uLines > 0.5 ? uAlpha.x * uLineBoost : uAlpha.y) * near * grad + pulse * 0.45;",
     "  alpha *= edge * clamp((uView.y - pos.y) / (uView.y * 0.28), 0.0, 1.0);", // difuminado de abajo
-    "  vec3 col = mix(mix(uColH, uColV, aGrid.z), uGlow, lit * 0.6 + pulse * 0.4);",
-    "  gl_PointSize = (aSeed.x < 0.04 ? 3.0 : 1.5) * near * (1.0 + lit + pulse) * uDpr;",
+    "  vec3 col = mix(mix(uColH, uColV, aGrid.z), uGlow, pulse * 0.4);",
+    "  gl_PointSize = (aSeed.x < 0.04 ? 3.0 : 1.5) * near * (1.0 + pulse) * uDpr;",
     "  gl_Position = vec4(pos.x / uView.x * 2.0 - 1.0, 1.0 - pos.y / uView.y * 2.0, 0.0, 1.0);",
     "  vColor = vec4(col * alpha, alpha);",
     "  vSprite = 1.0 - uLines;",
@@ -319,12 +307,11 @@ function initHeroMesh() {
     }
   }
 
-  var trail = new Float32Array(TRAIL * 4);
-  var head = -1; // hueco que sigue al cursor
   var width = 0;
   var height = 0;
-  var radius = 60;
+  var radius = 180;
   var pointer = { x: 0, y: 0, active: false };
+  var well = { x: 0, y: 0, strength: 0 }; // pozo que sigue al cursor con un poco de retraso
   var tilt = { x: 0, y: 0 };
   var time = 4;
   var last = 0;
@@ -360,7 +347,7 @@ function initHeroMesh() {
       gl.vertexAttribPointer(at, attr[1], gl.FLOAT, false, 24, attr[2]);
     });
     [
-      "uView", "uExtent", "uDpr", "uTime", "uLines", "uLineBoost", "uCam", "uTrail",
+      "uView", "uExtent", "uDpr", "uTime", "uLines", "uLineBoost", "uCam", "uWell",
       "uColH", "uColV", "uGlow", "uAlpha"
     ].forEach(function (name) {
       loc[name] = gl.getUniformLocation(program, name);
@@ -403,22 +390,8 @@ function initHeroMesh() {
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
     gl.viewport(0, 0, canvas.width, canvas.height);
-    radius = width < 760 ? 48 : 60;
+    radius = width < 760 ? 120 : 180;
     return true;
-  }
-
-  // Ocupa el lugar del hueco más cerrado (nunca el que sigue al cursor)
-  function spawnHole(x, y, strength) {
-    var slot = -1;
-    for (var j = 0; j < TRAIL; j++) {
-      if (j === head) continue;
-      if (slot < 0 || trail[j * 4 + 2] < trail[slot * 4 + 2]) slot = j;
-    }
-    trail[slot * 4] = x;
-    trail[slot * 4 + 1] = y;
-    trail[slot * 4 + 2] = strength;
-    trail[slot * 4 + 3] = radius;
-    return slot;
   }
 
   function schedule() {
@@ -433,23 +406,16 @@ function initHeroMesh() {
     if (!reduceMotion) time += dt;
     applyTheme();
 
-    // Los huecos que quedaron atrás se cierran solos en un par de segundos
-    var heal = Math.exp(-dt * 1.2);
-    for (var j = 0; j < TRAIL; j++) {
-      if (j !== head) trail[j * 4 + 2] *= heal;
+    // El pozo sigue al cursor con un poco de retraso y se hunde o se levanta en ~medio segundo.
+    // Si estaba apagado, aparece directo donde está el cursor (sin cruzar la pantalla)
+    if (pointer.active && well.strength < 0.02) {
+      well.x = pointer.x;
+      well.y = pointer.y;
     }
-    if (pointer.active) {
-      if (head < 0) {
-        head = spawnHole(pointer.x, pointer.y, 0.12);
-      } else if (Math.hypot(pointer.x - trail[head * 4], pointer.y - trail[head * 4 + 1]) > radius * 0.4) {
-        // El cursor se movió: el hueco anterior queda atrás cerrándose y arranca uno nuevo, más suave
-        head = spawnHole(pointer.x, pointer.y, Math.max(0.12, trail[head * 4 + 2] * 0.5));
-      }
-      // Mientras el cursor se queda quieto, el hueco se abre (y se deshilacha) de a poco
-      trail[head * 4 + 2] += (1 - trail[head * 4 + 2]) * (1 - Math.exp(-dt * 0.45));
-    } else {
-      head = -1;
-    }
+    var follow = 1 - Math.exp(-dt * 8);
+    well.x += (pointer.x - well.x) * follow;
+    well.y += (pointer.y - well.y) * follow;
+    well.strength += ((pointer.active ? 1 : 0) - well.strength) * (1 - Math.exp(-dt * 4));
 
     // Paralaje leve: la tela se inclina hacia el cursor
     var ease = Math.min(1, dt * 1.8);
@@ -465,7 +431,7 @@ function initHeroMesh() {
     gl.uniform1f(loc.uDpr, dpr);
     gl.uniform1f(loc.uTime, time);
     gl.uniform4f(loc.uCam, Math.cos(yaw), Math.sin(yaw), Math.cos(pitch), Math.sin(pitch));
-    gl.uniform4fv(loc.uTrail, trail);
+    gl.uniform4f(loc.uWell, well.x, well.y, well.strength, radius);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.uniform1f(loc.uLines, 1);
     gl.drawElements(gl.LINES, lineIdx.length, gl.UNSIGNED_SHORT, 0);

@@ -177,8 +177,7 @@ function initNavbarScroll() {
 }
 
 // Fondo del hero: la malla de líneas de siempre, pero con una dimensión más. Es una tela en 3D que ondula
-// en profundidad, se retuerce sobre sí misma y gira despacio frente a la cámara. El cursor la hunde
-// suave, como un pozo que lo sigue, y al irse la tela vuelve sola.
+// en profundidad, se retuerce sobre sí misma y gira despacio frente a la cámara.
 // Todo se calcula en la GPU (WebGL sin librerías): JS solo actualiza unos pocos uniforms por cuadro
 function initHeroMesh() {
   var canvas = document.getElementById("hero-mesh");
@@ -218,7 +217,6 @@ function initHeroMesh() {
     "uniform float uLines;",
     "uniform float uLineBoost;",
     "uniform vec4 uCam;", // cos/sen del giro y de la inclinación de la cámara
-    "uniform vec4 uWell;", // pozo del cursor: x, y, fuerza, radio
     "uniform vec3 uColH, uColV, uGlow;",
     "uniform vec2 uAlpha;", // líneas, puntos
     "varying vec4 vColor;",
@@ -247,17 +245,12 @@ function initHeroMesh() {
     // Brillo: más cerca = más fuerte, se apaga en los bordes de la tela y crece hacia abajo como antes
     "  float near = clamp(persp, 0.45, 1.6);",
     "  near *= near;",
-    // Cursor: hunde la tela como un pozo. Los puntos se corren hacia el centro y lo del fondo queda más
-    // lejos, más tenue (el corrimiento nunca supera la distancia, así que los hilos no se cruzan)
-    "  vec2 d = pos - uWell.xy;",
-    "  float sink = uWell.z * exp(-dot(d, d) / (uWell.w * uWell.w));",
-    "  pos -= d * 0.7 * sink;",
-    "  near *= 1.0 - 0.65 * sink;",
     "  float edge = smoothstep(1.0, 0.8, max(abs(aGrid.x), abs(aGrid.y)));",
     "  float grad = 0.55 + 0.45 * (aGrid.y * 0.5 + 0.5);",
     "  float pulse = aSeed.y > 0.0 ? pow(0.5 + 0.5 * sin(aGrid.w * 12.566 - t * 1.2 + aSeed.y), 24.0) : 0.0;",
     "  float alpha = (uLines > 0.5 ? uAlpha.x * uLineBoost : uAlpha.y) * near * grad + pulse * 0.45;",
     "  alpha *= edge * clamp((uView.y - pos.y) / (uView.y * 0.28), 0.0, 1.0);", // difuminado de abajo
+    "  alpha *= smoothstep(0.0, uView.y * 0.2, pos.y);", // difuminado de arriba, hacia la navbar
     "  vec3 col = mix(mix(uColH, uColV, aGrid.z), uGlow, pulse * 0.4);",
     "  gl_PointSize = (aSeed.x < 0.04 ? 3.0 : 1.5) * near * (1.0 + pulse) * uDpr;",
     "  gl_Position = vec4(pos.x / uView.x * 2.0 - 1.0, 1.0 - pos.y / uView.y * 2.0, 0.0, 1.0);",
@@ -309,10 +302,6 @@ function initHeroMesh() {
 
   var width = 0;
   var height = 0;
-  var radius = 180;
-  var pointer = { x: 0, y: 0, active: false };
-  var well = { x: 0, y: 0, strength: 0 }; // pozo que sigue al cursor con un poco de retraso
-  var tilt = { x: 0, y: 0 };
   var time = 4;
   var last = 0;
   var theme = null;
@@ -347,7 +336,7 @@ function initHeroMesh() {
       gl.vertexAttribPointer(at, attr[1], gl.FLOAT, false, 24, attr[2]);
     });
     [
-      "uView", "uExtent", "uDpr", "uTime", "uLines", "uLineBoost", "uCam", "uWell",
+      "uView", "uExtent", "uDpr", "uTime", "uLines", "uLineBoost", "uCam",
       "uColH", "uColV", "uGlow", "uAlpha"
     ].forEach(function (name) {
       loc[name] = gl.getUniformLocation(program, name);
@@ -390,7 +379,6 @@ function initHeroMesh() {
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
     gl.viewport(0, 0, canvas.width, canvas.height);
-    radius = width < 760 ? 120 : 180;
     return true;
   }
 
@@ -406,24 +394,9 @@ function initHeroMesh() {
     if (!reduceMotion) time += dt;
     applyTheme();
 
-    // El pozo sigue al cursor con un poco de retraso y se hunde o se levanta en ~medio segundo.
-    // Si estaba apagado, aparece directo donde está el cursor (sin cruzar la pantalla)
-    if (pointer.active && well.strength < 0.02) {
-      well.x = pointer.x;
-      well.y = pointer.y;
-    }
-    var follow = 1 - Math.exp(-dt * 8);
-    well.x += (pointer.x - well.x) * follow;
-    well.y += (pointer.y - well.y) * follow;
-    well.strength += ((pointer.active ? 1 : 0) - well.strength) * (1 - Math.exp(-dt * 4));
-
-    // Paralaje leve: la tela se inclina hacia el cursor
-    var ease = Math.min(1, dt * 1.8);
-    tilt.x += ((pointer.active ? pointer.x / width - 0.5 : 0) - tilt.x) * ease;
-    tilt.y += ((pointer.active ? pointer.y / height - 0.5 : 0) - tilt.y) * ease;
     // Arriba la tela se aleja (inclinación positiva): así se lee la profundidad
-    var yaw = 0.3 * Math.sin(time * 0.06) + tilt.x * 0.25;
-    var pitch = 0.22 + 0.08 * Math.sin(time * 0.045) + tilt.y * 0.12;
+    var yaw = 0.3 * Math.sin(time * 0.06);
+    var pitch = 0.22 + 0.08 * Math.sin(time * 0.045);
 
     gl.uniform2f(loc.uView, width, height);
     // La tela es más grande que el hero para que al girar y retorcerse nunca se le vean los bordes
@@ -431,7 +404,6 @@ function initHeroMesh() {
     gl.uniform1f(loc.uDpr, dpr);
     gl.uniform1f(loc.uTime, time);
     gl.uniform4f(loc.uCam, Math.cos(yaw), Math.sin(yaw), Math.cos(pitch), Math.sin(pitch));
-    gl.uniform4f(loc.uWell, well.x, well.y, well.strength, radius);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.uniform1f(loc.uLines, 1);
     gl.drawElements(gl.LINES, lineIdx.length, gl.UNSIGNED_SHORT, 0);
@@ -439,18 +411,6 @@ function initHeroMesh() {
     gl.drawArrays(gl.POINTS, 0, count);
 
     if (!reduceMotion && visible) schedule();
-  }
-
-  function onPointerMove(event) {
-    var point = event.touches ? event.touches[0] : event;
-    var rect = hero.getBoundingClientRect();
-    pointer.x = point.clientX - rect.left;
-    pointer.y = point.clientY - rect.top;
-    pointer.active = true;
-  }
-
-  function onPointerLeave() {
-    pointer.active = false;
   }
 
   resize();
@@ -484,12 +444,6 @@ function initHeroMesh() {
     lost = false;
     if (setupGL()) schedule();
   });
-
-  if (reduceMotion) return;
-  hero.addEventListener("mousemove", onPointerMove, { passive: true });
-  hero.addEventListener("touchmove", onPointerMove, { passive: true });
-  hero.addEventListener("mouseleave", onPointerLeave);
-  hero.addEventListener("touchend", onPointerLeave);
 }
 
 function setAccordionItemOpen(item, open) {
@@ -563,6 +517,40 @@ function initCounters() {
   counters.forEach(function (el) {
     observer.observe(el);
   });
+}
+
+function initCasesCarousel() {
+  var track = document.querySelector(".cases-grid");
+  var nav = document.querySelector(".cases-nav");
+  if (!track || !nav) return;
+
+  var prev = nav.querySelector("[data-cases-prev]");
+  var next = nav.querySelector("[data-cases-next]");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Las flechas solo aparecen si hay casos que no entran en pantalla
+  function update() {
+    var max = track.scrollWidth - track.clientWidth;
+    nav.hidden = max <= 1;
+    prev.disabled = track.scrollLeft <= 1;
+    next.disabled = track.scrollLeft >= max - 1;
+  }
+
+  function move(direction) {
+    var card = track.querySelector(".case");
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    track.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: reduceMotion ? "auto" : "smooth" });
+  }
+
+  prev.addEventListener("click", function () {
+    move(-1);
+  });
+  next.addEventListener("click", function () {
+    move(1);
+  });
+  track.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
 }
 
 function initReels() {
@@ -852,6 +840,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initAccordions();
   initEcosystem();
   initCounters();
+  initCasesCarousel();
   initReels();
   initFaqHover();
 

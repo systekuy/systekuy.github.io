@@ -13,7 +13,8 @@ El trato es directo con quien diseña y programa el proyecto (Tomás Ibarra, fun
 
 ## Proyectos online
 
-- [Gingers](https://gingers.com.uy): e-commerce y panel de gestión a medida en Uruguay (Next.js, FastAPI, PostgreSQL; pagos con Mercado Pago, emails automáticos, avisos por WhatsApp y facturas en PDF). Más de 100 pedidos, más de 50 productos y más de 20 clientes. Testimonio de Pilar de Arteaga (Gingers): “Quedó muuuuyyy buena, súper rápida y práctica.”
+- [Gingers](https://gingers.com.uy): e-commerce y panel de gestión a medida en Uruguay (Next.js, FastAPI, PostgreSQL; pagos con Mercado Pago, emails automáticos, avisos por WhatsApp y facturas en PDF). Más de 100 pedidos, más de 80 productos y más de 35 clientes. Testimonio de Pilar de Arteaga (Gingers): “Quedó muuuuyyy buena, súper rápida y práctica.”
+- [Preta Petit y Preta Store](https://www.preta.uy): e-commerce a medida de ropa tejida a mano de Tacuarembó, Uruguay (Next.js, FastAPI, PostgreSQL). Dos marcas, bebés y niños (Preta Petit) y adultos (Preta Store), en un solo sitio con un solo carrito, en español, inglés y portugués, con envíos a todo Uruguay y a Brasil y pagos con Mercado Pago, transferencia o Pix. Testimonio de Nara Puentes (Preta Petit): “Quería las dos marcas en un solo lugar y Tomás me hizo la tienda a medida. Quedó hermosa y súper rápida.”
 - [Daniela Volz, abogada](https://danielavolzabogada.com.uy): sitio web profesional con SEO. Testimonio de Daniela Volz: “Genial, quedó buenísima, divina y muy rápida.”
 
 ## Stack

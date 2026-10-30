@@ -25,7 +25,7 @@ Trabajo con negocios de todo el Uruguay y también tomo proyectos en Argentina. 
 
 Trabajo con un stack moderno: Next.js, TypeScript y Tailwind CSS en el frontend; Python, FastAPI y PostgreSQL en el backend.
 
-Proyectos online: el e-commerce de Gingers (gingers.com.uy), con su panel de gestión a medida y más de 100 pedidos, y el sitio web de Daniela Volz, abogada (danielavolzabogada.com.uy).
+Proyectos online: el e-commerce de Gingers (gingers.com.uy), con su panel de gestión a medida y más de 100 pedidos; el e-commerce de ropa tejida Preta Petit y Preta Store (preta.uy), con envíos a todo Uruguay y a Brasil; y el sitio web de Daniela Volz, abogada (danielavolzabogada.com.uy).
 
 Systek · Montevideo, Uruguay · +598 97 990 860 · systekuy@gmail.com · www.systek.uy
 

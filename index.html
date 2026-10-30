@@ -42,8 +42,8 @@
 
   <!-- Performance -->
   <link rel="preload" href="font/Source_Serif_4/SourceSerif4-Variable-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="styles.css?v=20261028b" as="style" />
-  <link rel="stylesheet" href="styles.css?v=20261028b" />
+  <link rel="preload" href="styles.css?v=20261030j" as="style" />
+  <link rel="stylesheet" href="styles.css?v=20261030j" />
   <!-- Marca que hay JS (las animaciones/acordeón solo esconden contenido si JS corre: crawlers sin JS ven todo) -->
   <!-- Tema guardado (claro/oscuro) antes de pintar, para que no parpadee. Default: claro (data-theme en <html>) -->
   <script>
@@ -177,7 +177,16 @@
         "url": "https://gingers.com.uy",
         "creator": { "@id": "https://www.systek.uy/#business" },
         "about": { "@id": "https://www.systek.uy/#ecommerce" },
-        "description": "Tienda online y panel de gestión a medida con Next.js, FastAPI y PostgreSQL: pagos con Mercado Pago, emails automáticos de pedidos, avisos por WhatsApp y facturas en PDF. Más de 100 pedidos, más de 50 productos y más de 20 clientes."
+        "description": "Tienda online y panel de gestión a medida con Next.js, FastAPI y PostgreSQL: pagos con Mercado Pago, emails automáticos de pedidos, avisos por WhatsApp y facturas en PDF. Más de 100 pedidos, más de 80 productos y más de 35 clientes."
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.systek.uy/#caso-preta",
+        "name": "Preta Petit y Preta Store: e-commerce a medida de ropa tejida",
+        "url": "https://www.preta.uy",
+        "creator": { "@id": "https://www.systek.uy/#business" },
+        "about": { "@id": "https://www.systek.uy/#ecommerce" },
+        "description": "Tienda online a medida con Next.js, FastAPI y PostgreSQL para una marca de ropa tejida a mano de Tacuarembó, Uruguay: dos marcas (bebés y niños, y adultos) en un solo sitio con un solo carrito, en español, inglés y portugués, con envíos a todo Uruguay y a Brasil y pagos con Mercado Pago, transferencia o Pix."
       },
       {
         "@type": "FAQPage",
@@ -513,33 +522,91 @@
                    loading="lazy"
                    decoding="async" />
             </a>
-            <blockquote class="case-quote">
-              <p>“Quedó muuuuyyy buena, súper rápida y práctica.”</p>
-              <footer><span class="case-quote-name">Pilar de Arteaga</span> · Gingers</footer>
-            </blockquote>
-            <div class="case-more">
-              <button type="button" class="case-toggle" data-accordion-toggle id="caso-gingers-btn" aria-expanded="true" aria-controls="caso-gingers">
-                <span>Sobre el proyecto</span>
-                <span class="service-icon" aria-hidden="true"></span>
-              </button>
-              <div class="case-panel" data-accordion-panel id="caso-gingers" role="region" aria-labelledby="caso-gingers-btn">
-                <div class="case-panel-inner">
-                  <p>
-                    <strong>Gingers</strong> necesitaba su tienda desde cero. Hoy su e-commerce es una de las principales fuentes de ingresos del negocio.
-                  </p>
-                  <p>
-                    Le hice la tienda y su panel de gestión a medida: pedidos, productos, clientes e ingresos en un solo lugar,
-                    con pagos con Mercado Pago, emails automáticos de cada pedido, avisos por WhatsApp y facturas en PDF.
-                  </p>
-                  <a href="https://gingers.com.uy" class="service-link" target="_blank" rel="noopener noreferrer">Visitar gingers.com.uy</a>
+            <div class="case-proof">
+              <blockquote class="case-quote">
+                <p>“Quedó muuuuyyy buena, súper rápida y práctica.”</p>
+                <footer><span class="case-quote-name">Pilar de Arteaga</span> · Gingers</footer>
+              </blockquote>
+              <ul class="case-metrics" aria-label="Resultados de Gingers">
+                <li><strong data-count="100" data-prefix="+">+100</strong><span>pedidos</span></li>
+                <li><strong data-count="80" data-prefix="+">+80</strong><span>productos</span></li>
+                <li><strong data-count="35" data-prefix="+">+35</strong><span>clientes</span></li>
+              </ul>
+            </div>
+            <div class="case-foot">
+              <div class="case-more">
+                <button type="button" class="case-toggle" data-accordion-toggle id="caso-gingers-btn" aria-expanded="true" aria-controls="caso-gingers">
+                  <span>Sobre el proyecto</span>
+                  <span class="service-icon" aria-hidden="true"></span>
+                </button>
+                <div class="case-panel" data-accordion-panel id="caso-gingers" role="region" aria-labelledby="caso-gingers-btn">
+                  <div class="case-panel-inner">
+                    <p>
+                      <strong>Gingers</strong> necesitaba su tienda desde cero. Hoy su e-commerce es una de las principales fuentes de ingresos del negocio.
+                    </p>
+                    <p>
+                      Le hice la tienda y su panel de gestión a medida: pedidos, productos, clientes e ingresos en un solo lugar,
+                      con pagos con Mercado Pago, emails automáticos de cada pedido, avisos por WhatsApp y facturas en PDF.
+                    </p>
+                    <a href="https://gingers.com.uy" class="service-link" target="_blank" rel="noopener noreferrer">Visitar gingers.com.uy</a>
+                  </div>
                 </div>
               </div>
             </div>
-            <ul class="case-metrics" aria-label="Resultados de Gingers">
-              <li><strong data-count="100" data-prefix="+">+100</strong><span>pedidos</span></li>
-              <li><strong data-count="50" data-prefix="+">+50</strong><span>productos</span></li>
-              <li><strong data-count="20" data-prefix="+">+20</strong><span>clientes</span></li>
-            </ul>
+          </article>
+
+          <article class="case reveal" data-accordion-item>
+            <header class="case-head">
+              <a class="case-logo-link" href="https://www.preta.uy" target="_blank" rel="noopener noreferrer" tabindex="-1">
+                <img src="imagenes/preta_logo.webp"
+                     alt="Logo de Preta Petit"
+                     class="case-logo"
+                     width="56"
+                     height="56"
+                     loading="lazy"
+                     decoding="async" />
+              </a>
+              <div>
+                <p class="case-kind">E-commerce a medida</p>
+                <h3 class="case-title">
+                  <a href="https://www.preta.uy" target="_blank" rel="noopener noreferrer">Preta Petit y Store</a>
+                </h3>
+              </div>
+            </header>
+            <a class="case-media" href="https://www.preta.uy" target="_blank" rel="noopener noreferrer" tabindex="-1">
+              <img src="imagenes/preta.webp"
+                   alt="Captura del e-commerce de ropa tejida Preta Petit y Preta Store en Uruguay"
+                   class="case-img"
+                   width="1200"
+                   height="546"
+                   loading="lazy"
+                   decoding="async" />
+            </a>
+            <blockquote class="case-quote">
+              <p>“Quería las dos marcas en un solo lugar y Tomás me hizo la tienda a medida. Quedó hermosa y súper rápida.”</p>
+              <footer><span class="case-quote-name">Nara Puentes</span> · Preta Petit</footer>
+            </blockquote>
+            <div class="case-foot">
+              <div class="case-more">
+                <button type="button" class="case-toggle" data-accordion-toggle id="caso-preta-btn" aria-expanded="true" aria-controls="caso-preta">
+                  <span>Sobre el proyecto</span>
+                  <span class="service-icon" aria-hidden="true"></span>
+                </button>
+                <div class="case-panel" data-accordion-panel id="caso-preta" role="region" aria-labelledby="caso-preta-btn">
+                  <div class="case-panel-inner">
+                    <p>
+                      <strong>Preta</strong> vende ropa tejida a mano desde Tacuarembó, Uruguay, con dos marcas: Preta Petit para bebés y niños, y Preta Store para adultos.
+                    </p>
+                    <p>
+                      Le hice el e-commerce a medida, desde cero: las dos marcas en un solo sitio, cada una con su identidad, con un solo carrito, un envío y un pago.
+                      Se compra en español, inglés o portugués, con envíos a todo Uruguay y a Brasil, y pagos con Mercado Pago, transferencia o Pix.
+                      Textos, fotos y productos se editan desde su propio panel, y la tienda está preparada con SEO y GEO.
+                    </p>
+                    <a href="https://www.preta.uy" class="service-link" target="_blank" rel="noopener noreferrer">Visitar preta.uy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
 
           <article class="case reveal" data-accordion-item>
@@ -556,7 +623,7 @@
               <div>
                 <p class="case-kind">Sitio web profesional</p>
                 <h3 class="case-title">
-                  <a href="https://danielavolzabogada.com.uy" target="_blank" rel="noopener noreferrer">Daniela Volz, abogada</a>
+                  <a href="https://danielavolzabogada.com.uy" target="_blank" rel="noopener noreferrer">Abogada</a>
                 </h3>
               </div>
             </header>
@@ -573,17 +640,19 @@
               <p>“Genial, quedó buenísima, divina y muy rápida.”</p>
               <footer><span class="case-quote-name">Daniela Volz</span> · abogada</footer>
             </blockquote>
-            <div class="case-more">
-              <button type="button" class="case-toggle" data-accordion-toggle id="caso-volz-btn" aria-expanded="true" aria-controls="caso-volz">
-                <span>Sobre el proyecto</span>
-                <span class="service-icon" aria-hidden="true"></span>
-              </button>
-              <div class="case-panel" data-accordion-panel id="caso-volz" role="region" aria-labelledby="caso-volz-btn">
-                <div class="case-panel-inner">
-                  <p>
-                    Una web simple y rápida para mostrar servicios. Con SEO bien armado, impulsó consultas y proyectos nuevos.
-                  </p>
-                  <a href="https://danielavolzabogada.com.uy" class="service-link" target="_blank" rel="noopener noreferrer">Visitar danielavolzabogada.com.uy</a>
+            <div class="case-foot">
+              <div class="case-more">
+                <button type="button" class="case-toggle" data-accordion-toggle id="caso-volz-btn" aria-expanded="true" aria-controls="caso-volz">
+                  <span>Sobre el proyecto</span>
+                  <span class="service-icon" aria-hidden="true"></span>
+                </button>
+                <div class="case-panel" data-accordion-panel id="caso-volz" role="region" aria-labelledby="caso-volz-btn">
+                  <div class="case-panel-inner">
+                    <p>
+                      Una web simple y rápida para mostrar servicios. Con SEO bien armado, impulsó consultas y proyectos nuevos.
+                    </p>
+                    <a href="https://danielavolzabogada.com.uy" class="service-link" target="_blank" rel="noopener noreferrer">Visitar danielavolzabogada.com.uy</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -592,6 +661,10 @@
           <!-- Plantilla para el próximo caso (copiar un <article class="case"> de arriba y cambiar):
                logo + tipo ("Desarrollo a medida") + nombre, captura, métricas con data-count (opcional),
                y en el panel: problema, qué hice y resultado. Ids únicos en el botón y el panel. -->
+        </div>
+        <div class="cases-nav" role="group" aria-label="Moverse entre los casos" hidden>
+          <button type="button" class="cases-arrow" data-cases-prev aria-label="Ver casos anteriores"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg></button>
+          <button type="button" class="cases-arrow" data-cases-next aria-label="Ver más casos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg></button>
         </div>
       </div>
     </section>
@@ -944,6 +1017,6 @@
 
   <a href="https://wa.me/59897990860" class="whatsapp-floating" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp con Systek"></a>
 
-  <script src="script.js?v=20261028b" defer></script>
+  <script src="script.js?v=20261030j" defer></script>
 </body>
 </html>

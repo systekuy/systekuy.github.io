@@ -1791,6 +1791,46 @@ textarea,
   font-size: 0.8rem;
 }
 
+.legal {
+  padding: 3.5rem 0 5rem;
+}
+
+.legal h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: 0 0 0.75rem;
+}
+
+.legal h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.55rem;
+}
+
+.legal p,
+.legal li {
+  color: var(--text-soft);
+  line-height: 1.7;
+  max-width: 42rem;
+}
+
+.legal ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.legal a {
+  color: #93c5fd;
+}
+
+:root[data-theme="light"] .legal a {
+  color: var(--primary);
+}
+
+.legal-updated {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
 /* WhatsApp flotante */
 .whatsapp-floating {
   position: fixed;

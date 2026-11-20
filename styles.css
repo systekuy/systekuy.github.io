@@ -524,20 +524,12 @@ textarea,
   .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
     margin: 0 0 0.9rem;
     font-family: var(--font-mono);
     font-size: var(--fs-label);
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--text-soft);
-  }
-
-  .eyebrow::before {
-    content: "";
-    width: 22px;
-    height: 1px;
-    background: var(--cherry);
   }
 
   .section-header h2,

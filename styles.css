@@ -112,7 +112,7 @@ textarea,
     margin: 0 auto;
   }
 
-  /* NAV — arriba: barra encastrada; al bajar: óvalo flotante. La barra mide siempre 70px (sin saltos de layout) */
+  /* NAV: arriba es una barra encastrada y al bajar, un óvalo flotante. La barra mide siempre 70px (sin saltos de layout) */
   .nav {
     position: sticky;
     top: 0;
@@ -346,7 +346,7 @@ textarea,
   /* El fondo del hero (color + malla + oscurecido) se difumina abajo hacia el fondo de la página.
      Sin mask-image (en Safari/iOS, una máscara sobre un canvas animado se recalcula en cada frame):
      el color y el oscurecido terminan en transparente, y la malla se difumina en su shader (script.js).
-     El resplandor azul → violeta antes lo pintaba el canvas; ahora es CSS */
+     El resplandor de azul a violeta es CSS */
   .hero-bg {
     position: absolute;
     inset: 0;
@@ -557,7 +557,7 @@ textarea,
     color: var(--text-soft);
   }
 
-/* SERVICIOS — acordeón numerado (se abre con click/Enter/Espacio, no con hover) */
+/* SERVICIOS: acordeón numerado (se abre con click/Enter/Espacio, no con hover) */
 .services-accordion {
   border-top: 1px solid var(--border);
 }
@@ -734,7 +734,7 @@ textarea,
   border-color: #fff;
 }
 
-/* INTEGRACIONES — panel central + nodos satélite, siempre visible */
+/* INTEGRACIONES: panel central + nodos satélite, siempre visible */
 .eco {
   --eco-gap: 3.5rem;
   display: grid;
@@ -1130,7 +1130,7 @@ textarea,
   font-weight: 600;
 }
 
-/* CASOS — sin card: logo + título, captura, métricas que cuentan y detalle desplegable */
+/* CASOS sin card: logo + título, captura, métricas que cuentan y detalle desplegable */
 /* Una sola línea: entran 3 y el resto se desliza. Las filas compartidas (subgrid) alinean captura, testimonio y detalle */
 .cases-grid {
   display: grid;
@@ -1856,7 +1856,7 @@ textarea,
   pointer-events: auto;
 }
 
-/* El pulso es un anillo aparte y más espaciado: antes la animación pisaba el transform y el hover no andaba */
+/* El pulso es un anillo aparte y más espaciado, así no pisa el transform del hover */
 .whatsapp-floating::after {
   content: "";
   position: absolute;
@@ -2228,7 +2228,7 @@ textarea,
   }
 }
 
-/* FAQ — mismo acordeón que Servicios; en desktop se abre al pasar el cursor */
+/* FAQ: mismo acordeón que Servicios; en desktop se abre al pasar el cursor */
 .faq-list {
   border-top: 1px solid var(--border);
 }
@@ -2530,7 +2530,7 @@ textarea,
   opacity: 0.75;
 }
 
-/* Rebota solo al pasar el mouse (antes rebotaba siempre: una animación infinita menos) */
+/* Rebota solo al pasar el mouse */
 .footer-top:hover .footer-top-icon,
 .footer-top:focus-visible .footer-top-icon {
   animation: footer-top-bounce 1.6s ease-in-out infinite;
@@ -2567,7 +2567,7 @@ textarea,
   background: radial-gradient(circle at top left, #e3ebfa 0, #f6f8fc 45%, #ffffff 100%);
 }
 
-/* Logos blancos → oscuros */
+/* Logos blancos pasan a oscuros */
 :root[data-theme="light"] .logo-img,
 :root[data-theme="light"] .error-404-logo,
 :root[data-theme="light"] .social-links img,

@@ -33,7 +33,7 @@
   <meta name="twitter:image" content="https://www.systek.uy/imagenes/og-image.jpg" />
   <meta name="twitter:image:alt" content="Systek: desarrollos a medida, e-commerce e IA en Uruguay" />
 
-  <!-- Icons / PWA-ish -->
+  <!-- Icons -->
   <link rel="icon" href="imagenes/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="imagenes/favicon-48.png" />
@@ -42,10 +42,8 @@
 
   <!-- Performance -->
   <link rel="preload" href="font/Source_Serif_4/SourceSerif4-Variable-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="styles.css?v=20261117b" as="style" />
-  <link rel="stylesheet" href="styles.css?v=20261117b" />
-  <!-- Marca que hay JS (las animaciones/acordeón solo esconden contenido si JS corre: crawlers sin JS ven todo) -->
-  <!-- Tema guardado (claro/oscuro) antes de pintar, para que no parpadee. Default: claro (data-theme en <html>) -->
+  <link rel="preload" href="styles.css?v=20261120a" as="style" />
+  <link rel="stylesheet" href="styles.css?v=20261120a" />
   <script>
     (function () {
       var root = document.documentElement;
@@ -57,8 +55,7 @@
     })();
   </script>
 
-  <!-- JSON-LD: ProfessionalService (Organization) + fundador + Services + FAQ
-       foundingDate = mismo año que el footer. Sumar a sameAs otros perfiles (Clutch, etc.) cuando existan. -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -196,7 +193,7 @@
             "name": "¿Qué es el código a medida y cuánto tarda?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Es una web, tienda o sistema hecho desde cero para tu negocio, con código propio: sin Shopify, sin plantillas y sin depender de una plataforma. Vos decidís cómo funciona cada detalle y tenés control total sobre tu proyecto. ¿Los tiempos? Depende del alcance, pero un proyecto bien armado suele estar en semanas, no meses eternos: arranco con un diagnóstico corto y te doy tiempos reales."
+              "text": "Es una web, tienda o sistema hecho desde cero para tu negocio, con código propio, sin Shopify ni plantillas y sin depender de ninguna plataforma. Vos decidís cómo funciona cada detalle y tenés control total sobre tu proyecto. Los tiempos dependen del alcance, pero un proyecto bien armado suele estar listo en semanas. Arranco con un diagnóstico corto y te doy tiempos reales."
             }
           },
           {
@@ -204,7 +201,7 @@
             "name": "¿Cuánto cuesta un desarrollo a medida?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Los proyectos arrancan a partir de 250 USD. El precio final depende de lo que necesites: no es lo mismo una web profesional que un e-commerce o un sistema con usuarios, pagos e integraciones. Después de un diagnóstico corto te paso un presupuesto claro, sin letra chica, y sabés desde el principio cuánto vas a invertir."
+              "text": "Los proyectos arrancan a partir de 250 USD. El precio final depende de lo que necesites, porque no es lo mismo una web profesional que un e-commerce o un sistema con usuarios, pagos e integraciones. Después de un diagnóstico corto te paso un presupuesto claro, sin letra chica, y sabés desde el principio cuánto vas a invertir."
             }
           },
           {
@@ -220,7 +217,7 @@
             "name": "¿Con qué tecnologías trabajás?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Frontend con Next.js, TypeScript y Tailwind CSS; backend en Python con FastAPI y PostgreSQL; deploy en Vercel y Railway. Integro pagos con Mercado Pago o Stripe, cobros del exterior con PayPal y Payoneer, emails, WhatsApp e IA (OpenAI, Claude, Gemini, automatizaciones con n8n). Siempre con código propio y sin plataformas cerradas."
+              "text": "En el frontend uso Next.js, TypeScript y Tailwind CSS, en el backend Python con FastAPI y PostgreSQL, y publico en Vercel y Railway. Integro pagos con Mercado Pago o Stripe, cobros del exterior con PayPal y Payoneer, emails, WhatsApp e IA (OpenAI, Claude, Gemini, automatizaciones con n8n). Siempre con código propio y sin plataformas cerradas."
             }
           },
           {
@@ -228,7 +225,7 @@
             "name": "¿Mi web va a aparecer en Google y en las IAs?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "La dejo preparada para eso desde el código. SEO para que Google te muestre, y GEO para que las IAs como ChatGPT, Gemini o Perplexity te encuentren y te recomienden cuando alguien pregunta por lo que hacés: velocidad, datos estructurados, textos claros y fáciles de citar, y un archivo llms.txt pensado para las IAs. Y si querés que la IA también trabaje para tu negocio, te integro inteligencia artificial: chatbots con IA para WhatsApp y la web que atienden a tus clientes 24/7, asistentes virtuales entrenados con la información de tu negocio, agentes de IA que responden consultas, toman pedidos o agendan turnos, y automatización de procesos con n8n, con modelos de lenguaje (LLM) de OpenAI (ChatGPT), Claude y Gemini."
+              "text": "La dejo preparada para eso desde el código. Le hago SEO para que Google te muestre y GEO para que las IAs como ChatGPT, Gemini o Perplexity te encuentren y te recomienden cuando alguien pregunta por lo que hacés. Cuido la velocidad, los datos estructurados y que los textos sean claros y fáciles de citar, y le sumo un archivo llms.txt pensado para las IAs. Y si querés que la IA también trabaje para tu negocio, te integro inteligencia artificial, como chatbots con IA para WhatsApp y la web que atienden a tus clientes 24/7, asistentes virtuales entrenados con la información de tu negocio, agentes de IA que responden consultas, toman pedidos o agendan turnos, y automatización de procesos con n8n, con modelos de lenguaje (LLM) de OpenAI (ChatGPT), Claude y Gemini."
             }
           }
         ]
@@ -252,7 +249,7 @@
       <a href="#top" class="logo">
         <img
           src="imagenes/logo_blanco_transparente.webp"
-          alt="Logo Systek — desarrollo web a medida Uruguay"
+          alt="Logo de Systek, desarrollo web a medida en Uruguay"
           class="logo-img"
           width="42"
           height="42"
@@ -301,8 +298,8 @@
           </h1>
           <p class="hero-tagline">Trabajos únicos: vos lo soñás, Systek lo desarrolla.</p>
           <p class="hero-subtitle">
-            En Systek hago desarrollo web con código propio, sin Shopify ni plantillas: desarrollos a medida, e-commerce e IA integrada donde te sume.
-            Trabajo desde Montevideo con negocios en todo el Uruguay: rápido, cercano, y con el nivel que ves en las páginas grandes — solo que me escribís por WhatsApp.
+            En Systek hago desarrollo web con código propio, sin Shopify ni plantillas. Te armo desarrollos a medida, e-commerce e IA integrada donde te sume.
+            Trabajo desde Montevideo con negocios de todo el Uruguay, rápido y cercano, con el nivel que ves en las páginas grandes pero hablando directo conmigo por WhatsApp.
           </p>
           <div class="hero-actions">
             <a href="https://wa.me/59897990860" class="btn" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
@@ -323,7 +320,6 @@
           <p>Desarrollos a medida para tu negocio, tiendas online y, si te suma, inteligencia artificial integrada a todo lo que construyo.</p>
         </div>
 
-        <!-- Acordeón: sin JS se ven todos abiertos; script.js los colapsa (menos el primero) -->
         <div class="services-accordion" data-accordion="first-open">
           <article class="service-item" data-accordion-item>
             <h3 class="service-heading">
@@ -337,12 +333,12 @@
             <div class="service-panel" data-accordion-panel id="servicio-desarrollos" role="region" aria-labelledby="servicio-desarrollos-btn">
               <div class="service-panel-inner">
                 <p>
-                  Webs, plataformas y sistemas a medida, hechos desde cero con código propio para lo que tu negocio
-                  o tu idea necesite. Sin los límites de una plantilla ni de una plataforma: si lo podés imaginar,
-                  lo construyo.
+                  Webs, plataformas y sistemas a medida, hechos desde cero con código propio para lo que tu negocio o
+                  tu idea necesite, sin los límites de una plantilla ni de una plataforma. Si lo podés imaginar, lo
+                  construyo.
                 </p>
                 <ul class="service-list">
-                  <li>La funcionalidad exacta que necesitás, no la que trae un software genérico</li>
+                  <li>Las funciones exactas que necesita tu negocio</li>
                   <li>Cuentas de usuario, pagos online y un panel para manejar todo</li>
                   <li>Conectado con lo que ya usás: pagos, WhatsApp, email</li>
                   <li>Pensado para crecer con vos</li>
@@ -364,8 +360,8 @@
             <div class="service-panel" data-accordion-panel id="servicio-ecommerce" role="region" aria-labelledby="servicio-ecommerce-btn">
               <div class="service-panel-inner">
                 <p>
-                  Tu tienda online hecha desde cero con código propio, sin Shopify ni plantillas: funciona como
-                  vos querés, no como te deja una plataforma.
+                  Tu tienda online hecha desde cero con código propio, sin Shopify ni plantillas, para que funcione
+                  como vos querés y no como te deja una plataforma.
                 </p>
                 <ul class="service-list">
                   <li>Catálogo, carrito y checkout pensados para tu producto</li>
@@ -389,9 +385,9 @@
             <div class="service-panel" data-accordion-panel id="servicio-ia" role="region" aria-labelledby="servicio-ia-btn">
               <div class="service-panel-inner">
                 <p>
-                  La inteligencia artificial no es un producto aparte: es un plus que le sumo a tu sistema o
-                  e-commerce. Uso modelos de lenguaje para armar asistentes que conocen tu negocio y automatizaciones
-                  que te sacan tareas repetitivas de encima.
+                  La inteligencia artificial te la sumo como un plus dentro de tu sistema o e-commerce. Uso modelos de
+                  lenguaje para armar asistentes que conocen tu negocio y automatizaciones que te sacan tareas
+                  repetitivas de encima.
                 </p>
                 <ul class="service-list">
                   <li>Asistentes que responden a tus clientes 24/7 en la web o WhatsApp</li>
@@ -413,8 +409,8 @@
           <p class="eyebrow" aria-hidden="true">Integraciones</p>
           <h2 id="integraciones-title">Tu web o sistema, conectado con lo que ya usás</h2>
           <p>
-            Lo que te desarrollo no queda aislado: lo conecto con tus pagos, tus canales de venta y tus
-            herramientas del día a día, para que todo pase por un solo lugar.
+            Lo que te desarrollo lo conecto con tus pagos, tus canales de venta y las herramientas que usás
+            todos los días, para que todo pase por un solo lugar.
           </p>
         </div>
 
@@ -657,10 +653,6 @@
               </div>
             </div>
           </article>
-
-          <!-- Plantilla para el próximo caso (copiar un <article class="case"> de arriba y cambiar):
-               logo + tipo ("Desarrollo a medida") + nombre, captura, métricas con data-count (opcional),
-               y en el panel: problema, qué hice y resultado. Ids únicos en el botón y el panel. -->
         </div>
         <div class="cases-nav" role="group" aria-label="Moverse entre los casos" hidden>
           <button type="button" class="cases-arrow" data-cases-prev aria-label="Ver casos anteriores"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg></button>
@@ -674,19 +666,20 @@
         <div class="section-header reveal">
           <p class="eyebrow" aria-hidden="true">Cómo trabajo</p>
           <h2 id="proceso-title">Cómo trabajo el desarrollo web a medida</h2>
-          <p>Proceso claro, de punta a punta. Sin estructuras infladas ni costos de más.</p>
+          <p>Un proceso claro de punta a punta, sin estructuras infladas ni costos de más.</p>
         </div>
 
         <div class="steps">
           <div class="step reveal">
             <h3>Quién soy</h3>
             <p>
-              Detrás de <strong>Systek</strong> estoy yo, <strong>Tomás Ibarra</strong>: desarrollo, diseño y estrategia digital
-              de cada proyecto pasan por mí. Sin intermediarios, hablás directo con quien lo construye.
+              Detrás de <strong>Systek</strong> estoy yo, <strong>Tomás Ibarra</strong>. El desarrollo, el diseño
+              y la estrategia digital de cada proyecto pasan por mí, así que hablás directo con quien lo
+              construye, sin intermediarios.
             </p>
             <p>
-              Desde <strong>Montevideo</strong>, con negocios en todo el Uruguay.
-              Mis páginas son, sin exagerar, de las mejores: cercanía real y código a medida.
+              Trabajo desde <strong>Montevideo</strong> con negocios de todo el Uruguay.
+              Mis páginas son, sin exagerar, de las mejores, con cercanía real y código a medida.
             </p>
           </div>
 
@@ -696,14 +689,14 @@
               <li><strong>Diagnóstico:</strong> entiendo tu negocio y tus objetivos.</li>
               <li><strong>Diseño de la solución:</strong> definimos juntos cómo va a funcionar tu sistema o tu e-commerce, y dónde te suma la IA.</li>
               <li><strong>Desarrollo:</strong> construyo e integro todo, probando cada detalle.</li>
-              <li><strong>Lanzamiento:</strong> publico, mido y optimizo. Soporte hasta el último día.</li>
+              <li><strong>Lanzamiento:</strong> publico, mido y optimizo, con soporte hasta el último día.</li>
             </ul>
           </div>
         </div>
 
         <div class="stack reveal" aria-labelledby="stack-title">
           <h3 id="stack-title" class="stack-title">Con qué trabajo</h3>
-          <p class="stack-intro">Stack moderno y probado en producción.</p>
+          <p class="stack-intro">El stack que uso en los proyectos que ya están online.</p>
           <div class="reels" data-reels>
           <div class="reel">
             <p class="reel-label">Frontend</p>
@@ -802,10 +795,10 @@
             <div class="faq-panel" data-accordion-panel id="faq-1" role="region" aria-labelledby="faq-1-btn">
               <div class="faq-panel-inner">
                 <p>
-                  Es una web, tienda o sistema hecho desde cero para tu negocio, con código propio: sin Shopify, sin
-                  plantillas y sin depender de una plataforma. Vos decidís cómo funciona cada detalle y tenés control
-                  total sobre tu proyecto. ¿Los tiempos? Depende del alcance, pero un proyecto bien armado suele estar
-                  en semanas, no meses eternos: arranco con un diagnóstico corto y te doy tiempos reales.
+                  Es una web, tienda o sistema hecho desde cero para tu negocio, con código propio, sin Shopify ni
+                  plantillas y sin depender de ninguna plataforma. Vos decidís cómo funciona cada detalle y tenés
+                  control total sobre tu proyecto. Los tiempos dependen del alcance, pero un proyecto bien armado
+                  suele estar listo en semanas. Arranco con un diagnóstico corto y te doy tiempos reales.
                 </p>
               </div>
             </div>
@@ -821,8 +814,8 @@
             <div class="faq-panel" data-accordion-panel id="faq-2" role="region" aria-labelledby="faq-2-btn">
               <div class="faq-panel-inner">
                 <p>
-                  Los proyectos arrancan a partir de 250 USD. El precio final depende de lo que necesites: no es lo
-                  mismo una web profesional que un e-commerce o un sistema con usuarios, pagos e integraciones.
+                  Los proyectos arrancan a partir de 250 USD. El precio final depende de lo que necesites, porque no
+                  es lo mismo una web profesional que un e-commerce o un sistema con usuarios, pagos e integraciones.
                   Después de un diagnóstico corto te paso un presupuesto claro, sin letra chica, y sabés desde el
                   principio cuánto vas a invertir.
                 </p>
@@ -857,10 +850,10 @@
             <div class="faq-panel" data-accordion-panel id="faq-4" role="region" aria-labelledby="faq-4-btn">
               <div class="faq-panel-inner">
                 <p>
-                  Frontend con Next.js, TypeScript y Tailwind CSS; backend en Python con FastAPI y PostgreSQL; deploy
-                  en Vercel y Railway. Integro pagos con Mercado Pago o Stripe, cobros del exterior con PayPal y
-                  Payoneer, emails, WhatsApp e IA (OpenAI, Claude, Gemini, automatizaciones con n8n). Siempre con
-                  código propio y sin plataformas cerradas.
+                  En el frontend uso Next.js, TypeScript y Tailwind CSS, en el backend Python con FastAPI y
+                  PostgreSQL, y publico en Vercel y Railway. Integro pagos con Mercado Pago o Stripe, cobros del
+                  exterior con PayPal y Payoneer, emails, WhatsApp e IA (OpenAI, Claude, Gemini, automatizaciones con
+                  n8n). Siempre con código propio y sin plataformas cerradas.
                 </p>
               </div>
             </div>
@@ -876,14 +869,14 @@
             <div class="faq-panel" data-accordion-panel id="faq-5" role="region" aria-labelledby="faq-5-btn">
               <div class="faq-panel-inner">
                 <p>
-                  La dejo preparada para eso desde el código. SEO para que Google te muestre, y GEO para que las IAs
-                  como ChatGPT, Gemini o Perplexity te encuentren y te recomienden cuando alguien pregunta por lo que
-                  hacés: velocidad, datos estructurados, textos claros y fáciles de citar, y un archivo llms.txt
-                  pensado para las IAs. Y si querés que la IA también trabaje para tu negocio, te integro inteligencia
-                  artificial: chatbots con IA para WhatsApp y la web que atienden a tus clientes 24/7, asistentes
-                  virtuales entrenados con la información de tu negocio, agentes de IA que responden consultas, toman
-                  pedidos o agendan turnos, y automatización de procesos con n8n, con modelos de lenguaje (LLM) de
-                  OpenAI (ChatGPT), Claude y Gemini.
+                  La dejo preparada para eso desde el código. Le hago SEO para que Google te muestre y GEO para que
+                  las IAs como ChatGPT, Gemini o Perplexity te encuentren y te recomienden cuando alguien pregunta por
+                  lo que hacés. Cuido la velocidad, los datos estructurados y que los textos sean claros y fáciles de
+                  citar, y le sumo un archivo llms.txt pensado para las IAs. Y si querés que la IA también trabaje
+                  para tu negocio, te integro inteligencia artificial, como chatbots con IA para WhatsApp y la web que
+                  atienden a tus clientes 24/7, asistentes virtuales entrenados con la información de tu negocio,
+                  agentes de IA que responden consultas, toman pedidos o agendan turnos, y automatización de procesos
+                  con n8n, con modelos de lenguaje (LLM) de OpenAI (ChatGPT), Claude y Gemini.
                 </p>
               </div>
             </div>
@@ -1019,6 +1012,6 @@
 
   <a href="https://wa.me/59897990860" class="whatsapp-floating" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp con Systek"></a>
 
-  <script src="script.js?v=20261030j" defer></script>
+  <script src="script.js?v=20261120a" defer></script>
 </body>
 </html>

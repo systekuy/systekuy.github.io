@@ -1,8 +1,8 @@
 # Textos sugeridos para perfiles de Systek (Google Business Profile, LinkedIn, directorios)
 
-## NAP — copiar EXACTO en todos lados (coincide con la web y el JSON-LD)
+## NAP: copiar EXACTO en todos lados (coincide con la web y el JSON-LD)
 Nombre: Systek
-Ubicación: Montevideo, Uruguay   (sin calle: atendés online → "zona de servicio", no dirección física)
+Ubicación: Montevideo, Uruguay   (sin calle: atendés online, así que va "zona de servicio" y no dirección física)
 Teléfono: +598 97 990 860
 Email: systekuy@gmail.com
 Web: https://www.systek.uy/
@@ -11,17 +11,17 @@ LinkedIn: https://www.linkedin.com/company/systekuy/
 Año de fundación: 2025  (igual en footer web y "foundingDate" del JSON-LD)
 
 ---------------------------------------------------------------------
-## 1) Descripción base (≈270 palabras) — LinkedIn "Acerca de", CUTI, Clutch, DesignRush, Sortlist, GoodFirms
+## 1) Descripción base (unas 270 palabras) para LinkedIn "Acerca de", CUTI, Clutch, DesignRush, Sortlist, GoodFirms
 
-En Systek hago desarrollo web a medida desde Montevideo, Uruguay, desde 2025. Hago desarrollos a medida, e-commerce e IA con código propio: sin Shopify, sin WordPress y sin plantillas. Tu sistema o tu tienda se hace desde cero para cómo funciona tu negocio.
+En Systek hago desarrollo web a medida desde Montevideo, Uruguay, desde 2025. Hago desarrollos a medida, e-commerce e IA con código propio, sin Shopify, sin WordPress y sin plantillas. Tu sistema o tu tienda se hace desde cero para cómo funciona tu negocio.
 
 Me enfoco en dos cosas:
-• Desarrollos a medida: webs, plataformas y sistemas hechos desde cero para lo que tu negocio o tu idea necesite: cuentas de usuario, pagos online, paneles para manejar todo y la funcionalidad exacta que buscás, sin los límites de un software genérico.
+• Desarrollos a medida: webs, plataformas y sistemas hechos desde cero para lo que tu negocio o tu idea necesite, con cuentas de usuario, pagos online, paneles para manejar todo y la funcionalidad exacta que buscás, sin los límites de un software genérico.
 • E-commerce a medida: catálogo, carrito y checkout, pagos con Mercado Pago, Stripe o PayPal (también desde el exterior), envíos, analítica, y SEO y GEO para que te encuentren en Google y te recomienden las IAs como ChatGPT o Gemini.
 
 Y si te suma, les integro inteligencia artificial: asistentes basados en modelos de lenguaje que responden a tus clientes 24/7 en la web o por WhatsApp, entrenados con la información de tu negocio, y automatizaciones de atención y ventas con n8n. Todo se conecta con lo que ya usás: Mercado Pago, Mercado Libre, WhatsApp, email y Google Calendar.
 
-Trabajo con negocios de todo el Uruguay y también tomo proyectos en Argentina. Hablás directo conmigo, que soy quien diseña y programa tu proyecto: sin intermediarios, sin burocracia y con tiempos reales desde el primer diagnóstico.
+Trabajo con negocios de todo el Uruguay y también tomo proyectos en Argentina. Hablás directo conmigo, que soy quien diseña y programa tu proyecto, sin intermediarios, sin burocracia y con tiempos reales desde el primer diagnóstico.
 
 Trabajo con un stack moderno: Next.js, TypeScript y Tailwind CSS en el frontend; Python, FastAPI y PostgreSQL en el backend.
 
@@ -37,24 +37,24 @@ Systek
 
 ### Categoría principal
 Diseñador de sitios web
-(alternativa: Servicio de desarrollo de software — elegí la que Google deje como principal y el resto como adicionales)
+(alternativa: Servicio de desarrollo de software. Elegí la que Google deje como principal y el resto como adicionales)
 
 ### Categorías adicionales
 Desarrollador de software
 Servicio de comercio electrónico
 
 ### Descripción (750 caracteres máx.)
-En Systek hago desarrollo web con código propio, sin Shopify ni plantillas. Me enfoco en desarrollos a medida (webs, plataformas y sistemas hechos para lo que necesites), e-commerce e IA, conectados con Mercado Pago, WhatsApp y lo que ya usás. Con IA armo asistentes que responden a tus clientes 24/7 y automatizaciones de atención y ventas. Trabajo desde Montevideo con negocios de todo el Uruguay y también tomo proyectos en Argentina: rápido, cercano, y con el nivel que ves en las páginas grandes — solo que me escribís por WhatsApp.
+En Systek hago desarrollo web con código propio, sin Shopify ni plantillas. Me enfoco en desarrollos a medida (webs, plataformas y sistemas hechos para lo que necesites), e-commerce e IA, conectados con Mercado Pago, WhatsApp y lo que ya usás. Con IA armo asistentes que responden a tus clientes 24/7 y automatizaciones de atención y ventas. Trabajo desde Montevideo con negocios de todo el Uruguay y también tomo proyectos en Argentina, rápido y cercano, con el nivel que ves en las páginas grandes pero hablando directo conmigo por WhatsApp.
 
 ### Zona de servicio
 - Uruguay (todo el país; base Montevideo)
-No marques una dirección física si no atendés público en un local — usá "zona de servicio".
+No marques una dirección física si no atendés público en un local. Usá "zona de servicio".
 
 ### Acción principal del perfil
-"Enviar mensaje" o "Sitio web" → https://www.systek.uy/#contacto
+"Enviar mensaje" o "Sitio web", con el link https://www.systek.uy/#contacto
 
 ---------------------------------------------------------------------
-## 3) LinkedIn (página de empresa) — campos cortos
+## 3) LinkedIn (página de empresa): campos cortos
 Eslogan (120 caracteres máx.): Desarrollos a medida, e-commerce e IA en Uruguay, con código propio, sin Shopify ni plantillas.
 Sector: Desarrollo de software
 Tamaño: 0-1 empleados

@@ -176,7 +176,7 @@ function initNavbarScroll() {
   window.addEventListener("scroll", updateNav, { passive: true });
 }
 
-// Fondo del hero: la malla de líneas de siempre, pero con una dimensión más. Es una tela en 3D que ondula
+// Fondo del hero: una malla de líneas como tela en 3D que ondula
 // en profundidad, se retuerce sobre sí misma y gira despacio frente a la cámara.
 // Todo se calcula en la GPU (WebGL sin librerías): JS solo actualiza unos pocos uniforms por cuadro
 function initHeroMesh() {
@@ -200,7 +200,7 @@ function initHeroMesh() {
   var SAMPLES = small ? 90 : 150;
   var count = (H_LINES + V_LINES) * SAMPLES;
 
-  // Mismos colores que la malla de antes: horizontales celestes/azules y verticales violetas
+  // Colores: horizontales celestes/azules y verticales violetas
   var PALETTES = {
     dark: { h: [0.49, 0.83, 0.99], v: [0.65, 0.55, 0.98], glow: [0.85, 0.95, 1], line: 0.3, point: 0.5, additive: true },
     light: { h: [0.15, 0.39, 0.92], v: [0.49, 0.23, 0.93], glow: [0.05, 0.6, 0.85], line: 0.38, point: 0.45, additive: false }
@@ -224,7 +224,7 @@ function initHeroMesh() {
     "void main() {",
     "  vec2 p = aGrid.xy * uExtent;",
     "  float t = uTime;",
-    // Ondas que cruzan la malla, como antes, pero ahora en profundidad
+    // Ondas que cruzan la malla en profundidad
     "  float z = 0.26 * sin(p.x * 1.5 + p.y * 0.5 + t * 0.7)",
     "          + 0.18 * sin(p.y * 2.1 - t * 0.55)",
     "          + 0.08 * sin((p.x - p.y) * 3.1 + t * 1.0);",
@@ -242,7 +242,7 @@ function initHeroMesh() {
     "  float z2 = q.y * uCam.w + z1 * uCam.z;",
     "  float persp = CAM / max(CAM + z2, 0.4);",
     "  vec2 pos = uView * 0.5 + vec2(x1, -y2) * persp * uView.y * 0.5;",
-    // Brillo: más cerca = más fuerte, se apaga en los bordes de la tela y crece hacia abajo como antes
+    // Brillo: más cerca = más fuerte, se apaga en los bordes de la tela y crece hacia abajo
     "  float near = clamp(persp, 0.45, 1.6);",
     "  near *= near;",
     "  float edge = smoothstep(1.0, 0.8, max(abs(aGrid.x), abs(aGrid.y)));",
@@ -649,7 +649,7 @@ function initReels() {
 
   function start() {
     if (timer || kickoff) return;
-    // Primer giro casi apenas aparece en pantalla (antes esperaba 3s y se podía pasar de largo sin verlo moverse)
+    // Primer giro casi apenas aparece en pantalla, para que no se pase de largo sin verlo moverse
     kickoff = setTimeout(function () {
       kickoff = null;
       tick();
@@ -779,7 +779,7 @@ function initEcosystem() {
     var node = nodes[current];
     node.classList.add("is-active");
 
-    // data-effect="pedidos:1,cobrado:1890" → suben los números del panel
+    // data-effect="pedidos:1,cobrado:1890" sube los números del panel
     (node.getAttribute("data-effect") || "").split(",").forEach(function (pair) {
       var bits = pair.split(":");
       if (bits.length === 2) bump(bits[0].trim(), parseInt(bits[1], 10) || 0);
@@ -848,7 +848,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if ("IntersectionObserver" in window && revealEls.length) {
     var observer = new IntersectionObserver(
       function (entries) {
-        // Aparece una sola vez: antes se volvía a esconder al salir y el contenido "parpadeaba" al subir y bajar
+        // Aparece una sola vez, así el contenido no parpadea al subir y bajar
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
           entry.target.classList.add("in-view");

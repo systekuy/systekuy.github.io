@@ -565,7 +565,7 @@ textarea,
 .service-toggle {
   width: 100%;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 1.5rem;
   padding: 1.6rem 0.25rem;
@@ -597,26 +597,10 @@ textarea,
   line-height: 1.15;
 }
 
-.service-tag {
-  font-family: var(--font-mono);
-  font-size: var(--fs-label);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-soft);
-  padding: 0.4rem 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
 .service-icon {
   position: relative;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.3s ease;
 }
 
 .service-icon::before,
@@ -638,11 +622,6 @@ textarea,
 
 .service-toggle[aria-expanded="true"] .service-num {
   color: var(--cherry);
-}
-
-[aria-expanded="true"] > .service-icon {
-  border-color: var(--primary);
-  background: var(--primary-soft);
 }
 
 [aria-expanded="true"] > .service-icon::after {
@@ -2078,20 +2057,16 @@ textarea,
     font-size: 0.85rem;
   }
 
-  /* Servicios: título arriba, tag abajo */
+  /* Servicios */
   .service-toggle {
     grid-template-columns: auto minmax(0, 1fr) auto;
-    grid-template-areas:
-      "num title icon"
-      ". tag icon";
+    grid-template-areas: "num title icon";
     column-gap: 0.9rem;
-    row-gap: 0.6rem;
     padding: 1.3rem 0;
   }
 
   .service-num { grid-area: num; align-self: start; padding-top: 0.45rem; }
   .service-title { grid-area: title; }
-  .service-tag { grid-area: tag; justify-self: start; white-space: normal; }
   .service-toggle .service-icon { grid-area: icon; width: 40px; height: 40px; }
 
   .service-panel-inner,
